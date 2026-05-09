@@ -51,7 +51,7 @@
     targetAmount = sum;
 
     const pool = new Set<number>([sum]);
-    while (pool.size < 3) {
+    while (pool.size < 4) {
       const offset = (rand(-2, 2) || 1) * 10;
       const val = Math.max(10, sum + offset);
       if (val !== sum) pool.add(val);

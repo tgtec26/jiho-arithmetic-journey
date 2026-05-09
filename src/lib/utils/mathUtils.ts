@@ -8,14 +8,14 @@ export function generateQuestion(mode: GameMode): Question {
 
   switch (mode) {
     case 'addition':
-      num1 = Math.floor(Math.random() * 20) + 1;
-      num2 = Math.floor(Math.random() * 20) + 1;
+      num1 = Math.floor(Math.random() * 89) + 11;
+      num2 = Math.floor(Math.random() * 89) + 11;
       operator = '+';
       answer = num1 + num2;
       break;
     case 'subtraction':
-      num1 = Math.floor(Math.random() * 20) + 10;
-      num2 = Math.floor(Math.random() * num1) + 1;
+      num1 = Math.floor(Math.random() * 89) + 11;
+      num2 = Math.floor(Math.random() * (num1 - 11 + 1)) + 11;
       operator = '-';
       answer = num1 - num2;
       break;

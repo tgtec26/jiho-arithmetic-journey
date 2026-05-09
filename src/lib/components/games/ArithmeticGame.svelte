@@ -31,7 +31,10 @@
     gameStore.updateProgress(round - 1, TOTAL_ROUNDS);
   }
 
-  function handleAnswer(choice: number) {
+  function handleAnswer(choice: number, event: Event) {
+    if (event.currentTarget instanceof HTMLElement) {
+      event.currentTarget.blur();
+    }
     if (isChecking || !currentQuestion) return;
 
     if (choice === currentQuestion.answer) {
@@ -74,9 +77,9 @@
 
       <!-- 정답 버튼 (1행 4열 가로 배치 최적화) -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl">
-        {#each currentQuestion.options as option}
+        {#each currentQuestion.options as option, i (`${round}-${i}`)}
           <button
-            onclick={() => handleAnswer(option)}
+            onclick={(e) => handleAnswer(option, e)}
             disabled={isChecking}
             class="bg-white border-b-8 border-gray-300 rounded-[30px] p-6 sm:p-8 text-4xl sm:text-6xl font-black text-deep-blue 
                    hover:bg-bright-text hover:scale-105 active:scale-95 transition-all
