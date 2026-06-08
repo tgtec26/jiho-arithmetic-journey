@@ -12,6 +12,7 @@ export type GameMode =
   | 'itx'
   | 'fraction'
   | 'motor'
+  | 'lego'
   | 'menu';
 
 export interface Question {
