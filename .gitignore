@@ -22,3 +22,9 @@ Thumbs.db
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .env*.local
+
+# Brainstorm mockups
+.superpowers/
+
+# Doll reference photos (product images, local only)
+worksheets/reference/
