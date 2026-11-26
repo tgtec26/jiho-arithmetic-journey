@@ -28,3 +28,6 @@ vite.config.ts.timestamp-*
 
 # Doll reference photos (product images, local only)
 worksheets/reference/
+
+# Worksheet build output
+worksheets/out/
