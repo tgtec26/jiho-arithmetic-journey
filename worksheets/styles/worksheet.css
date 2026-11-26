@@ -1,0 +1,224 @@
+/* 지호의 곱셈 이야기 학습지 — A4 인쇄용. 배경은 흰색, 색은 표시용으로만. */
+:root {
+	--ink: #2b2b2b;
+	--line: #444;
+	--grid-line: #b9b9b9;
+	--hint: #bbb;
+	--ones: #f28c28;
+	--ones-tint: #fff4e8;
+	--tens: #2f80ed;
+	--tens-tint: #ecf3fd;
+	--story: #e8a33b;
+	--font-title: 'BM Dohyeon', 'Spoqa Han Sans Neo', sans-serif;
+	--font-body: 'Spoqa Han Sans Neo', 'Nanum Gothic', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* ---------- 문제 칸 (94 × 86mm) ---------- */
+.problem {
+	width: 94mm;
+	height: 86mm;
+	border: 0.4mm solid var(--line);
+	border-radius: 4mm;
+	padding: 3mm;
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-body);
+	color: var(--ink);
+	background: #fff;
+}
+.problem.story {
+	border: 0.7mm solid var(--story);
+}
+.ptitle {
+	font-family: var(--font-title);
+	font-size: 15pt;
+	height: 9mm;
+	line-height: 9mm;
+	white-space: nowrap;
+}
+.ptitle .num {
+	margin-right: 1mm;
+}
+.ptitle .star {
+	font-family: var(--font-body);
+	font-size: 9pt;
+	color: var(--story);
+	font-weight: 700;
+	margin-left: 2mm;
+	vertical-align: middle;
+}
+.pbody {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding-top: 1mm;
+}
+
+/* 격자 */
+.grid {
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.grid th,
+.grid td {
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+}
+.grid .corner {
+	width: 10mm;
+	height: 6mm;
+	color: #888;
+	font-size: 10pt;
+}
+.grid th[data-role='head'] {
+	font-size: 12pt;
+	font-weight: 700;
+}
+.grid tr:first-child th[data-role='head'] {
+	width: 13mm;
+	height: 6mm;
+	border-bottom: 0.4mm solid var(--line);
+}
+.grid th.left {
+	width: 10mm;
+	height: 13mm;
+	padding-left: 2.6mm;
+	border-right: 0.4mm solid var(--line);
+	position: relative;
+}
+.grid th.left::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 2mm;
+	height: 2mm;
+	margin-top: -1mm;
+	border-radius: 50%;
+}
+.grid th.left.ones::before {
+	background: var(--ones);
+}
+.grid th.left.tens::before {
+	background: var(--tens);
+}
+.grid td.cell {
+	width: 13mm;
+	height: 13mm;
+	border: 0.4mm solid var(--line);
+}
+.grid td.cell.ones {
+	background: var(--ones-tint);
+}
+.grid td.cell.tens {
+	background: var(--tens-tint);
+}
+.grid .hint,
+.vertical .hint {
+	color: var(--hint);
+}
+.grid .hint {
+	font-size: 9pt;
+}
+.grid.small tr:first-child th[data-role='head'] {
+	width: 9mm;
+	height: 5mm;
+}
+.grid.small th.left {
+	height: 9mm;
+}
+.grid.small td.cell {
+	width: 9mm;
+	height: 9mm;
+}
+
+/* 줄 합 칸 */
+.rowsums {
+	margin-top: 3mm;
+}
+.rowsum {
+	display: flex;
+	align-items: center;
+	height: 10mm;
+}
+.rowsum .eq {
+	margin: 0 1.5mm;
+	font-size: 13pt;
+}
+.rowsum .box {
+	display: inline-block;
+	width: 26mm;
+	height: 8.5mm;
+	border: 0.4mm solid var(--line);
+	border-radius: 1.5mm;
+}
+
+/* 색 점 */
+.dot {
+	display: inline-block;
+	width: 3mm;
+	height: 3mm;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.dot.ones {
+	background: var(--ones);
+}
+.dot.tens {
+	background: var(--tens);
+}
+
+/* 세로셈 모눈 */
+.vertical {
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.vertical td {
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+}
+.vertical td.op {
+	width: 6mm;
+	font-size: 14pt;
+}
+.vertical td.d {
+	width: 9mm;
+	height: 9mm;
+	border: 0.25mm dashed var(--grid-line);
+	font-size: 17pt;
+	font-weight: 500;
+}
+.vertical td.carry {
+	height: 5mm;
+	border: 0.25mm dotted var(--grid-line);
+	border-bottom: none;
+}
+.vertical tr.v-carry td.carry {
+	width: 9mm;
+}
+.vertical tr.v-b td,
+.vertical tr.v-p2 td {
+	border-bottom: 0.6mm solid var(--line);
+}
+
+/* 이야기 문제 답 */
+.answer {
+	font-family: var(--font-title);
+	font-size: 13pt;
+	text-align: right;
+	height: 9mm;
+	line-height: 9mm;
+}
+.answer .blank {
+	display: inline-block;
+	width: 28mm;
+	border-bottom: 0.4mm solid var(--line);
+	margin: 0 1mm;
+}
