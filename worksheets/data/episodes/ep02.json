@@ -1,0 +1,121 @@
+{
+	"id": 2,
+	"topic": "train",
+	"icon": "🚂",
+	"title": "꼬마 기차",
+	"fixed": 12,
+	"story": {
+		"other": 14,
+		"unit": "명"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-train",
+					"x": 46,
+					"y": 62,
+					"w": 52
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 놀이공원에 꼬마 기차가 있어요!",
+					"x": 3,
+					"y": 4,
+					"w": 62,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-conductor",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-train",
+					"x": 40,
+					"y": 60,
+					"w": 58
+				}
+			],
+			"bubbles": [
+				{
+					"text": "꼬마 기차는 객차가 12칸이란다.",
+					"x": 3,
+					"y": 3,
+					"w": 60,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 8,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 60,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "한 칸에 14명씩 탈 수 있대!",
+					"x": 3,
+					"y": 4,
+					"w": 56,
+					"tail": "bl"
+				},
+				{
+					"text": "나도 탈래!",
+					"x": 60,
+					"y": 36,
+					"w": 32,
+					"tail": "br"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 꼬마 기차에는 모두 몇 명이 탈 수 있을까?",
+					"x": 3,
+					"y": 4,
+					"w": 78,
+					"tail": "bl"
+				}
+			]
+		}
+	]
+}

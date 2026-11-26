@@ -1,0 +1,121 @@
+{
+	"id": 3,
+	"topic": "coding",
+	"icon": "🤖",
+	"title": "레고 로봇",
+	"fixed": 13,
+	"story": {
+		"other": 15,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-coding-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-lego-robot",
+					"x": 58,
+					"y": 50,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 레고 로봇을 만들어 코딩해 볼 거예요.",
+					"x": 3,
+					"y": 3,
+					"w": 74,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 8,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-lego-blocks",
+					"x": 52,
+					"y": 56,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "로봇 한 대에 블록이 13개 필요해요.",
+					"x": 3,
+					"y": 3,
+					"w": 70,
+					"tail": "none"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 60,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "우리 반 친구는 15명이에요!",
+					"x": 3,
+					"y": 3,
+					"w": 58,
+					"tail": "bl"
+				},
+				{
+					"text": "모두 하나씩 만들자!",
+					"x": 52,
+					"y": 34,
+					"w": 44,
+					"tail": "br"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-sitting",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 블록은 모두 몇 개가 필요할까?",
+					"x": 30,
+					"y": 4,
+					"w": 66,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

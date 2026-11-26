@@ -4,46 +4,143 @@
 	"icon": "⚽",
 	"title": "월드컵 16강",
 	"fixed": 16,
-	"story": { "other": 11, "unit": "명" },
+	"story": {
+		"other": 11,
+		"unit": "명"
+	},
 	"practice": null,
 	"panels": [
 		{
 			"stickers": [
-				{ "id": "prop-tv", "x": 56, "y": 34, "w": 40 },
-				{ "id": "dad-smiling", "x": 2, "y": 30, "w": 30 },
-				{ "id": "jiho-cheering", "x": 28, "y": 38, "w": 30 }
-			],
-			"bubbles": [{ "text": "아빠! 오늘 월드컵 16강 경기가 시작해요!", "x": 4, "y": 4, "w": 62, "tail": "bl" }]
-		},
-		{
-			"stickers": [
-				{ "id": "prop-flags", "x": 4, "y": 26, "w": 92 },
-				{ "id": "dad-explaining", "x": 4, "y": 44, "w": 32 },
-				{ "id": "gamdori-surprised", "x": 64, "y": 54, "w": 30 }
+				{
+					"id": "prop-tv",
+					"x": 54,
+					"y": 42,
+					"w": 42
+				},
+				{
+					"id": "dad-smiling",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "jiho-cheering",
+					"x": 27,
+					"y": 42,
+					"h": 55
+				}
 			],
 			"bubbles": [
-				{ "text": "16강에는 16개 나라가 올라왔단다.", "x": 4, "y": 4, "w": 54, "tail": "bl" },
-				{ "text": "우와, 16나라나!", "x": 60, "y": 32, "w": 36, "tail": "br" }
+				{
+					"text": "아빠! 오늘 월드컵 16강 경기가 시작해요!",
+					"x": 18,
+					"y": 4,
+					"w": 64,
+					"tail": "bl"
+				}
 			]
 		},
 		{
 			"stickers": [
-				{ "id": "guest-soccer7", "x": 4, "y": 32, "w": 30 },
-				{ "id": "guest-soccer9", "x": 33, "y": 28, "w": 32 },
-				{ "id": "jiho-pointing", "x": 66, "y": 42, "w": 30 }
+				{
+					"id": "prop-flags",
+					"x": 6,
+					"y": 25,
+					"w": 88
+				},
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 45,
+					"h": 52
+				},
+				{
+					"id": "gamdori-surprised",
+					"x": 64,
+					"y": 61,
+					"h": 36
+				}
 			],
 			"bubbles": [
-				{ "text": "손흥민 선수랑 홀란 선수도 나와요!", "x": 36, "y": 4, "w": 60, "tail": "br" },
-				{ "text": "한 팀은 11명이 함께 뛰어.", "x": 2, "y": 18, "w": 46, "tail": "none" }
+				{
+					"text": "16강에는 16개 나라가 올라왔단다.",
+					"x": 3,
+					"y": 3,
+					"w": 60,
+					"tail": "bl"
+				},
+				{
+					"text": "우와, 16나라나!",
+					"x": 52,
+					"y": 49,
+					"w": 44,
+					"tail": "br"
+				}
 			]
 		},
 		{
 			"stickers": [
-				{ "id": "jiho-thinking", "x": 8, "y": 36, "w": 34 },
-				{ "id": "sarang-curious", "x": 56, "y": 52, "w": 30 }
+				{
+					"id": "guest-soccer7",
+					"x": 4,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "guest-soccer9",
+					"x": 27,
+					"y": 32,
+					"h": 64
+				},
+				{
+					"id": "jiho-pointing",
+					"x": 64,
+					"y": 46,
+					"h": 52,
+					"flip": true
+				}
 			],
 			"bubbles": [
-				{ "text": "그럼 16강에서 뛰는 선수는 모두 몇 명일까?", "x": 34, "y": 6, "w": 62, "tail": "br" }
+				{
+					"text": "축구 한 팀은 11명이에요.",
+					"x": 2,
+					"y": 3,
+					"w": 38,
+					"tail": "none"
+				},
+				{
+					"text": "손흥민 선수랑 홀란 선수도 나와요!",
+					"x": 42,
+					"y": 3,
+					"w": 55,
+					"tail": "br"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 10,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 60,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 16강에서 뛰는 선수는 모두 몇 명일까?",
+					"x": 30,
+					"y": 4,
+					"w": 66,
+					"tail": "br"
+				}
 			]
 		}
 	]
