@@ -63,7 +63,7 @@
 					"h": 62
 				},
 				{
-					"id": "guest-soccer9",
+					"id": "guest-soccer9-sky",
 					"x": 30,
 					"y": 32,
 					"h": 64
@@ -78,7 +78,7 @@
 			"bubbles": [
 				{
 					"text": "K리그 1부에는 12팀이 있어!",
-					"speaker": "guest-soccer9"
+					"speaker": "guest-soccer9-sky"
 				},
 				{
 					"text": "우와!",
