@@ -1,12 +1,13 @@
 // 학습지 빌드: node worksheets/build.js [--only=1,2,3] [--strict]
 // HTML → 크롬 헤드리스 PDF → 페이지 수 검사
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { ROOT, loadEpisodes, loadStickers, validateEpisode } from './lib/episodes.js';
 import { renderEpisode, wrapDocument } from './lib/render-page.js';
 import { renderAnswerKey } from './lib/render-answers.js';
+import { makeStickerLookup } from './lib/stickers.js';
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const OUT_HTML = join(ROOT, 'out', 'html');
@@ -23,22 +24,15 @@ function fail(lines) {
 	process.exit(1);
 }
 
-const stickers = loadStickers();
-const stickerIds = new Set(stickers.map((s) => s.id));
-const stickerFile = new Map(stickers.map((s) => [s.id, s.file]));
+const stickerIds = new Set(loadStickers().map((s) => s.id));
 const episodes = loadEpisodes().filter((ep) => !only || only.has(ep.id));
 if (!episodes.length) fail(['빌드할 회차가 없음']);
 
 const errors = episodes.flatMap((ep) => validateEpisode(ep, stickerIds));
 if (errors.length) fail(['회차 검증 실패:', ...errors]);
 
-const missing = new Set();
-const stickerSrc = (id) => {
-	const file = stickerFile.get(id);
-	if (file && existsSync(join(ROOT, file))) return `../../${file}`;
-	missing.add(id);
-	return null;
-};
+const lookup = makeStickerLookup('../../');
+const missing = lookup.missing;
 
 mkdirSync(OUT_HTML, { recursive: true });
 mkdirSync(OUT_PDF, { recursive: true });
@@ -46,7 +40,7 @@ mkdirSync(OUT_PDF, { recursive: true });
 const docs = [];
 const bodies = [];
 for (const ep of episodes) {
-	const body = renderEpisode(ep, stickerSrc);
+	const body = renderEpisode(ep, lookup.src, lookup.aspect);
 	bodies.push(body);
 	const name = `ep${String(ep.id).padStart(2, '0')}`;
 	writeFileSync(join(OUT_HTML, `${name}.html`), wrapDocument(body, CSS, `${ep.id}회 ${ep.title}`));

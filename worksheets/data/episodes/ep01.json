@@ -34,10 +34,7 @@
 			"bubbles": [
 				{
 					"text": "아빠! 오늘 월드컵 16강 경기가 시작해요!",
-					"x": 18,
-					"y": 4,
-					"w": 64,
-					"tail": "bl"
+					"speaker": "jiho-cheering"
 				}
 			]
 		},
@@ -45,9 +42,9 @@
 			"stickers": [
 				{
 					"id": "prop-flags",
-					"x": 6,
-					"y": 25,
-					"w": 88
+					"x": 36,
+					"y": 4,
+					"w": 60
 				},
 				{
 					"id": "dad-explaining",
@@ -65,17 +62,11 @@
 			"bubbles": [
 				{
 					"text": "16강에는 16개 나라가 올라왔단다.",
-					"x": 3,
-					"y": 3,
-					"w": 60,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				},
 				{
 					"text": "우와, 16나라나!",
-					"x": 52,
-					"y": 49,
-					"w": 44,
-					"tail": "br"
+					"speaker": "gamdori-surprised"
 				}
 			]
 		},
@@ -84,20 +75,20 @@
 				{
 					"id": "guest-soccer7",
 					"x": 4,
-					"y": 34,
-					"h": 62
+					"y": 43,
+					"h": 54
 				},
 				{
 					"id": "guest-soccer9",
 					"x": 27,
-					"y": 32,
-					"h": 64
+					"y": 41,
+					"h": 56
 				},
 				{
 					"id": "jiho-pointing",
 					"x": 64,
-					"y": 46,
-					"h": 52,
+					"y": 49,
+					"h": 49,
 					"flip": true
 				}
 			],
@@ -111,10 +102,7 @@
 				},
 				{
 					"text": "손흥민 선수랑 홀란 선수도 나와요!",
-					"x": 42,
-					"y": 3,
-					"w": 55,
-					"tail": "br"
+					"speaker": "jiho-pointing"
 				}
 			]
 		},
@@ -136,10 +124,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 16강에서 뛰는 선수는 모두 몇 명일까?",
-					"x": 30,
-					"y": 4,
-					"w": 66,
-					"tail": "br"
+					"speaker": "sarang-curious"
 				}
 			]
 		}

@@ -34,17 +34,11 @@
 			"bubbles": [
 				{
 					"text": "오늘은 감돌이 생일이에요!",
-					"x": 3,
-					"y": 3,
-					"w": 50,
-					"tail": "bl"
+					"speaker": "jiho-happy"
 				},
 				{
 					"text": "고마워!",
-					"x": 64,
-					"y": 34,
-					"w": 26,
-					"tail": "br"
+					"speaker": "gamdori-cheering"
 				}
 			]
 		},
@@ -66,10 +60,7 @@
 			"bubbles": [
 				{
 					"text": "의자를 한 줄에 14개씩 놓자.",
-					"x": 3,
-					"y": 3,
-					"w": 56,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -97,10 +88,7 @@
 			"bubbles": [
 				{
 					"text": "의자를 16줄 놓았어요!",
-					"x": 3,
-					"y": 3,
-					"w": 46,
-					"tail": "bl"
+					"speaker": "jiho-cheering"
 				}
 			]
 		},
@@ -122,10 +110,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 의자는 모두 몇 개일까?",
-					"x": 34,
-					"y": 4,
-					"w": 62,
-					"tail": "br"
+					"speaker": "gamdori-thinking"
 				}
 			]
 		}

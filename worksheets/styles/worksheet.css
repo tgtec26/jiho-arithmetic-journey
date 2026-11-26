@@ -195,13 +195,9 @@
 	font-size: 17pt;
 	font-weight: 500;
 }
-.vertical td.carry {
-	height: 5mm;
-	border: 0.25mm dotted var(--grid-line);
-	border-bottom: none;
-}
-.vertical tr.v-carry td.carry {
-	width: 9mm;
+.vertical tr.v-gap td {
+	height: 2.5mm;
+	border: none;
 }
 .vertical tr.v-b td,
 .vertical tr.v-p2 td {
@@ -367,9 +363,37 @@ body {
 	padding: 1.8mm 2.6mm;
 	font-family: var(--font-body);
 	font-weight: 700;
-	font-size: 11.5pt;
+	font-size: 14pt;
 	line-height: 1.35;
 	word-break: keep-all;
+}
+.bubble.anchored {
+	width: max-content;
+	max-width: 66%;
+}
+.bubble.narration {
+	width: max-content;
+	max-width: 94%;
+	border-radius: 1.5mm;
+	background: #fff;
+}
+.bubble.tail-l::after,
+.bubble.tail-r::after {
+	content: '';
+	position: absolute;
+	bottom: -2.4mm;
+	width: 3.4mm;
+	height: 3.4mm;
+	background: #fff;
+	border-right: 0.4mm solid var(--ink);
+	border-bottom: 0.4mm solid var(--ink);
+	transform: rotate(45deg);
+}
+.bubble.tail-l::after {
+	left: calc(var(--tail) - 1.7mm);
+}
+.bubble.tail-r::after {
+	right: calc(var(--tail) - 1.7mm);
 }
 .bubble.tail-bl::after,
 .bubble.tail-br::after {

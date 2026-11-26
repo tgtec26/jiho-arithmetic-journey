@@ -57,6 +57,10 @@ export function validateEpisode(ep, stickerIds) {
 		for (const b of bubbles) {
 			if ([...b.text].length > MAX_BUBBLE_CHARS) errors.push(`${tag} ${i + 1}컷: 말풍선 ${MAX_BUBBLE_CHARS}자 초과 "${b.text}"`);
 		}
+		const ids = new Set((panel.stickers ?? []).map((s) => s.id));
+		for (const b of bubbles) {
+			if (b.speaker && !ids.has(b.speaker)) errors.push(`${tag} ${i + 1}컷: 말하는 캐릭터 ${b.speaker}가 이 컷에 없음`);
+		}
 		for (const s of panel.stickers ?? []) {
 			if (!stickerIds.has(s.id)) errors.push(`${tag} ${i + 1}컷: 없는 스티커 ${s.id}`);
 		}

@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "저 높은 건물은 뭐예요?",
-					"x": 3,
-					"y": 3,
-					"w": 46,
-					"tail": "bl"
+					"speaker": "jiho-pointing"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "주차 타워야. 한 층에 차가 37대 들어가.",
-					"x": 3,
-					"y": 3,
-					"w": 64,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -78,10 +72,7 @@
 			"bubbles": [
 				{
 					"text": "주차 타워는 19층이래요!",
-					"x": 3,
-					"y": 3,
-					"w": 50,
-					"tail": "bl"
+					"speaker": "jiho-surprised"
 				}
 			]
 		},
@@ -103,10 +94,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 주차 타워에 차는 모두 몇 대 들어갈까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "gamdori-thinking"
 				}
 			]
 		}

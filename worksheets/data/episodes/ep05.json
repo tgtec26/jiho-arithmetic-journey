@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "Hello, 지호! 오늘도 영어 단어를 외워 볼까요?",
-					"x": 3,
-					"y": 3,
-					"w": 72,
-					"tail": "bl"
+					"speaker": "guest-english-teacher"
 				}
 			]
 		},
@@ -78,17 +75,11 @@
 			"bubbles": [
 				{
 					"text": "12일 동안 매일 할 거예요!",
-					"x": 3,
-					"y": 3,
-					"w": 54,
-					"tail": "bl"
+					"speaker": "jiho-happy"
 				},
 				{
 					"text": "지호 최고!",
-					"x": 60,
-					"y": 36,
-					"w": 32,
-					"tail": "br"
+					"speaker": "gamdori-waving"
 				}
 			]
 		},
@@ -110,10 +101,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 12일 동안 외우는 단어는 모두 몇 개일까?",
-					"x": 3,
-					"y": 4,
-					"w": 80,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		}

@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "오늘은 장난감 기찻길을 만들 거예요!",
-					"x": 3,
-					"y": 3,
-					"w": 66,
-					"tail": "bl"
+					"speaker": "jiho-happy"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "한 줄에 레일을 21개씩 이어 보자.",
-					"x": 3,
-					"y": 3,
-					"w": 62,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -78,10 +72,7 @@
 			"bubbles": [
 				{
 					"text": "기찻길을 13줄이나 만들었어요!",
-					"x": 3,
-					"y": 3,
-					"w": 58,
-					"tail": "bl"
+					"speaker": "jiho-cheering"
 				}
 			]
 		},
@@ -103,10 +94,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 레일은 모두 몇 개 썼을까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "gamdori-thinking"
 				}
 			]
 		}

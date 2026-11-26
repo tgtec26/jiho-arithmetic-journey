@@ -48,14 +48,16 @@ export function renderProblem({ a, b, position, level, unit }) {
 
 	const p2 = cellsOf(null);
 	if (level === 1) p2[COLS - 1] = '<span class="hint">0</span>';
-	const carryRow = `<tr class="v-carry"><td class="op"></td>${'<td class="carry"></td>'.repeat(COLS)}</tr>`;
+	// 빈 간격 줄: 선과 아래 칸 사이를 띄우기만 하고 칸은 그리지 않는다
+	const gap = `<tr class="v-gap"><td colspan="${COLS + 1}"></td></tr>`;
 	const vertical = `
 <table class="vertical">
   ${digitRow('v-a', '', cellsOf(a))}
   ${digitRow('v-b', '×', cellsOf(b))}
-  ${carryRow}
+  ${gap}
   ${digitRow('v-p1', '<span class="dot ones"></span>', cellsOf(null))}
   ${digitRow('v-p2', '<span class="dot tens"></span>', p2)}
+  ${gap}
   ${digitRow('v-sum', '', cellsOf(null))}
 </table>`;
 

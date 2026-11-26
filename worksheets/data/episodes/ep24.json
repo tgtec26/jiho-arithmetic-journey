@@ -40,10 +40,7 @@
 			"bubbles": [
 				{
 					"text": "곱셈 여행을 다 마쳤어요!",
-					"x": 3,
-					"y": 3,
-					"w": 50,
-					"tail": "bl"
+					"speaker": "jiho-cheering"
 				}
 			]
 		},
@@ -65,10 +62,7 @@
 			"bubbles": [
 				{
 					"text": "축하해! 친구 27명을 파티에 초대하자.",
-					"x": 3,
-					"y": 3,
-					"w": 68,
-					"tail": "bl"
+					"speaker": "dad-thumbsup"
 				}
 			]
 		},
@@ -90,10 +84,7 @@
 			"bubbles": [
 				{
 					"text": "친구마다 쿠키를 36개씩 줄 거예요!",
-					"x": 3,
-					"y": 3,
-					"w": 64,
-					"tail": "bl"
+					"speaker": "jiho-happy"
 				}
 			]
 		},
@@ -115,10 +106,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 쿠키는 모두 몇 개 필요할까?",
-					"x": 3,
-					"y": 4,
-					"w": 64,
-					"tail": "bl"
+					"speaker": "dad-thinking"
 				}
 			]
 		}

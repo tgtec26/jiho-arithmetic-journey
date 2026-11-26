@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { ROOT, loadEpisodes, loadStickers, validateEpisode } from '../lib/episodes.js';
 import { renderEpisode, wrapDocument } from '../lib/render-page.js';
 import { applyTextEdits, textOf } from './edit.js';
+import { makeStickerLookup } from '../lib/stickers.js';
 
 const DEFAULT_EPISODE_DIR = join(ROOT, 'data', 'episodes');
 const PORT = 5180;
@@ -44,13 +45,8 @@ function serveStatic(res, urlPath) {
 }
 
 export function createAdminServer({ episodeDir = DEFAULT_EPISODE_DIR, build = runBuild } = {}) {
-	const stickers = loadStickers();
-	const stickerIds = new Set(stickers.map((s) => s.id));
-	const stickerFile = new Map(stickers.map((s) => [s.id, s.file]));
-	const stickerSrc = (id) => {
-		const f = stickerFile.get(id);
-		return f && existsSync(join(ROOT, f)) ? `/${f}` : null;
-	};
+	const stickerIds = new Set(loadStickers().map((s) => s.id));
+	const lookup = makeStickerLookup('/');
 	const find = (id) => loadEpisodes(episodeDir).find((e) => e.id === id);
 	let building = false;
 
@@ -88,7 +84,7 @@ export function createAdminServer({ episodeDir = DEFAULT_EPISODE_DIR, build = ru
 				} catch {
 					next = ep;
 				}
-				return send(res, 200, wrapDocument(renderEpisode(next, stickerSrc), '/styles/worksheet.css'), TYPES['.html']);
+				return send(res, 200, wrapDocument(renderEpisode(next, lookup.src, lookup.aspect), '/styles/worksheet.css'), TYPES['.html']);
 			}
 			if (req.method === 'POST' && path === '/api/build') {
 				if (building) return send(res, 409, { ok: false, log: '이미 만드는 중' });

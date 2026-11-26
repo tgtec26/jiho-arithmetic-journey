@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "아빠, 놀이공원에 꼬마 기차가 있어요!",
-					"x": 3,
-					"y": 4,
-					"w": 62,
-					"tail": "bl"
+					"speaker": "jiho-pointing"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "꼬마 기차는 객차가 12칸이란다.",
-					"x": 3,
-					"y": 3,
-					"w": 60,
-					"tail": "bl"
+					"speaker": "guest-conductor"
 				}
 			]
 		},
@@ -78,17 +72,11 @@
 			"bubbles": [
 				{
 					"text": "한 칸에 14명씩 탈 수 있대!",
-					"x": 3,
-					"y": 4,
-					"w": 56,
-					"tail": "bl"
+					"speaker": "jiho-happy"
 				},
 				{
 					"text": "나도 탈래!",
-					"x": 60,
-					"y": 36,
-					"w": 32,
-					"tail": "br"
+					"speaker": "gamdori-waving"
 				}
 			]
 		},
@@ -110,10 +98,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 꼬마 기차에는 모두 몇 명이 탈 수 있을까?",
-					"x": 3,
-					"y": 4,
-					"w": 78,
-					"tail": "bl"
+					"speaker": "dad-thinking"
 				}
 			]
 		}

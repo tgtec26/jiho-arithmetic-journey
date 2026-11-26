@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "2026년 월드컵에는 48나라가 나왔단다.",
-					"x": 3,
-					"y": 3,
-					"w": 70,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -40,7 +37,7 @@
 				{
 					"id": "prop-flags",
 					"x": 6,
-					"y": 26,
+					"y": 4,
 					"w": 88
 				},
 				{
@@ -59,10 +56,7 @@
 			"bubbles": [
 				{
 					"text": "우와, 48나라나요?",
-					"x": 3,
-					"y": 3,
-					"w": 40,
-					"tail": "bl"
+					"speaker": "jiho-surprised"
 				}
 			]
 		},
@@ -71,20 +65,20 @@
 				{
 					"id": "guest-soccer7",
 					"x": 4,
-					"y": 34,
-					"h": 62
+					"y": 43,
+					"h": 54
 				},
 				{
 					"id": "guest-soccer9",
 					"x": 27,
-					"y": 32,
-					"h": 64
+					"y": 41,
+					"h": 56
 				},
 				{
 					"id": "jiho-pointing",
 					"x": 64,
-					"y": 46,
-					"h": 52,
+					"y": 49,
+					"h": 49,
 					"flip": true
 				}
 			],
@@ -98,10 +92,7 @@
 				},
 				{
 					"text": "손흥민, 홀란 선수도 있어요!",
-					"x": 44,
-					"y": 3,
-					"w": 53,
-					"tail": "br"
+					"speaker": "jiho-pointing"
 				}
 			]
 		},
@@ -123,10 +114,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 월드컵에 나온 선수는 모두 몇 명일까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "sarang-curious"
 				}
 			]
 		}

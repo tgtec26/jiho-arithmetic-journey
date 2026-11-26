@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "새 레고 블록 통이 도착했어요!",
-					"x": 3,
-					"y": 3,
-					"w": 58,
-					"tail": "bl"
+					"speaker": "guest-coding-teacher"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "한 통에 블록이 38개씩 들어 있대요.",
-					"x": 3,
-					"y": 3,
-					"w": 66,
-					"tail": "bl"
+					"speaker": "jiho-happy"
 				}
 			]
 		},
@@ -78,10 +72,7 @@
 			"bubbles": [
 				{
 					"text": "블록 통이 27통이나 있어요!",
-					"x": 3,
-					"y": 3,
-					"w": 54,
-					"tail": "bl"
+					"speaker": "jiho-surprised"
 				}
 			]
 		},
@@ -103,10 +94,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 블록은 모두 몇 개일까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "jiho-thinking"
 				}
 			]
 		}

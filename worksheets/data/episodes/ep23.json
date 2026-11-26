@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "사랑이 발가락을 세어 볼까?",
-					"x": 3,
-					"y": 3,
-					"w": 52,
-					"tail": "bl"
+					"speaker": "jiho-happy"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "고양이 발가락은 앞발 10개, 뒷발 8개, 모두 18개야.",
-					"x": 3,
-					"y": 3,
-					"w": 78,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -78,10 +72,7 @@
 			"bubbles": [
 				{
 					"text": "고양이 카페에 고양이가 42마리 있대요!",
-					"x": 3,
-					"y": 3,
-					"w": 70,
-					"tail": "bl"
+					"speaker": "jiho-surprised"
 				}
 			]
 		},
@@ -103,10 +94,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 고양이 발가락은 모두 몇 개일까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "sarang-curious"
 				}
 			]
 		}

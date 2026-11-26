@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "지호야, 오늘은 새 곡을 배워 볼까?",
-					"x": 3,
-					"y": 3,
-					"w": 62,
-					"tail": "bl"
+					"speaker": "guest-piano-teacher"
 				}
 			]
 		},
@@ -78,17 +75,11 @@
 			"bubbles": [
 				{
 					"text": "오늘 12번 연습할게요!",
-					"x": 3,
-					"y": 3,
-					"w": 52,
-					"tail": "bl"
+					"speaker": "jiho-cheering"
 				},
 				{
 					"text": "나도 들을래!",
-					"x": 56,
-					"y": 42,
-					"w": 38,
-					"tail": "br"
+					"speaker": "gamdori-sitting"
 				}
 			]
 		},
@@ -110,10 +101,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 오늘 치는 마디는 모두 몇 마디일까?",
-					"x": 3,
-					"y": 4,
-					"w": 78,
-					"tail": "bl"
+					"speaker": "dad-thinking"
 				}
 			]
 		}

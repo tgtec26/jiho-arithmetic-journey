@@ -34,10 +34,7 @@
 			"bubbles": [
 				{
 					"text": "아빠, 이 주차장 정말 커요!",
-					"x": 22,
-					"y": 3,
-					"w": 54,
-					"tail": "bl"
+					"speaker": "jiho-pointing"
 				}
 			]
 		},
@@ -59,10 +56,7 @@
 			"bubbles": [
 				{
 					"text": "한 줄에 자동차가 17대씩 서 있구나.",
-					"x": 3,
-					"y": 3,
-					"w": 66,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -84,10 +78,7 @@
 			"bubbles": [
 				{
 					"text": "줄은 모두 12줄이에요!",
-					"x": 3,
-					"y": 3,
-					"w": 50,
-					"tail": "bl"
+					"speaker": "jiho-surprised"
 				}
 			]
 		},
@@ -109,10 +100,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 주차장에 있는 자동차는 모두 몇 대일까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "gamdori-thinking"
 				}
 			]
 		}

@@ -28,17 +28,11 @@
 			"bubbles": [
 				{
 					"text": "사랑이가 간식을 먹고 싶대요!",
-					"x": 3,
-					"y": 3,
-					"w": 56,
-					"tail": "bl"
+					"speaker": "jiho-happy"
 				},
 				{
 					"text": "야옹!",
-					"x": 70,
-					"y": 32,
-					"w": 22,
-					"tail": "br"
+					"speaker": "sarang-jumping"
 				}
 			]
 		},
@@ -60,10 +54,7 @@
 			"bubbles": [
 				{
 					"text": "간식 한 봉지에는 18개가 들어 있어.",
-					"x": 3,
-					"y": 3,
-					"w": 66,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -85,17 +76,11 @@
 			"bubbles": [
 				{
 					"text": "와, 집에 간식이 13봉지나 있어요!",
-					"x": 3,
-					"y": 3,
-					"w": 64,
-					"tail": "bl"
+					"speaker": "jiho-surprised"
 				},
 				{
 					"text": "많다!",
-					"x": 66,
-					"y": 40,
-					"w": 22,
-					"tail": "br"
+					"speaker": "gamdori-surprised"
 				}
 			]
 		},
@@ -117,10 +102,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 간식은 모두 몇 개일까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "sarang-curious"
 				}
 			]
 		}

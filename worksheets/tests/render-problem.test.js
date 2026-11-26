@@ -37,19 +37,21 @@ describe('renderProblem', () => {
 		expect(heads(html)).toEqual(['', '', '', '']);
 	});
 
-	it('vertical: 5 rows × 4 digit cells, 4 carry cells, operands prefilled', () => {
+	it('vertical: 5 rows × 4 digit cells, no carry cells, operands prefilled', () => {
 		const html = renderProblem({ a: 16, b: 11, position: 2, level: 2 });
 		expect(count(html, 'class="d"')).toBe(20);
-		expect(count(html, 'class="carry"')).toBe(4);
+		expect(html).not.toContain('class="carry"');
 		expect(rowCells(html, 'v-a')).toEqual(['', '', '1', '6']);
 		expect(rowCells(html, 'v-b')).toEqual(['', '', '1', '1']);
 		expect(rowCells(html, 'v-sum')).toEqual(['', '', '', '']);
 	});
 
-	it('carry row sits right above the partial products it is used for', () => {
+	it('blank gaps (no cells) separate the operands, partial products and sum', () => {
 		const html = renderProblem({ a: 16, b: 13, position: 3, level: 2 });
 		const order = [...html.matchAll(/<tr class="(v-[a-z0-9]+)">/g)].map((m) => m[1]);
-		expect(order).toEqual(['v-a', 'v-b', 'v-carry', 'v-p1', 'v-p2', 'v-sum']);
+		expect(order).toEqual(['v-a', 'v-b', 'v-gap', 'v-p1', 'v-p2', 'v-gap', 'v-sum']);
+		const gaps = [...html.matchAll(/<tr class="v-gap">([\s\S]*?)<\/tr>/g)].map((m) => m[1]);
+		for (const g of gaps) expect(g).not.toContain('class="d"');
 	});
 
 	it('15 × 88 still fits 4 columns', () => {

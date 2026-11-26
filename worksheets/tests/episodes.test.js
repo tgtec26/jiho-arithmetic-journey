@@ -39,6 +39,20 @@ describe('validateEpisode', () => {
 		expect(validateEpisode(ep, stickerIds).length).toBeGreaterThan(0);
 	});
 
+	it('rejects a speaker that is not in the same panel', () => {
+		const ep = clone(ep01);
+		ep.panels[0].bubbles[0].speaker = 'sarang-curious';
+		expect(validateEpisode(ep, stickerIds).join(' ')).toContain('말하는');
+	});
+
+	it('every bubble with a tail names its speaker', () => {
+		for (const ep of loadEpisodes()) {
+			for (const p of ep.panels) for (const b of p.bubbles) {
+				if (b.tail !== 'none') expect(b.speaker, `${ep.id}회 "${b.text}"`).toBeTruthy();
+			}
+		}
+	});
+
 	it('rejects an unknown sticker id', () => {
 		const ep = clone(ep01);
 		ep.panels[0].stickers[0].id = 'nope-unknown';

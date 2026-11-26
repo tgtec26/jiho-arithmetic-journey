@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "피아노 대회가 2주 남았어요!",
-					"x": 3,
-					"y": 3,
-					"w": 54,
-					"tail": "bl"
+					"speaker": "jiho-happy"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "하루에 27분씩 연습하면 어떨까?",
-					"x": 3,
-					"y": 3,
-					"w": 60,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -84,10 +78,7 @@
 			"bubbles": [
 				{
 					"text": "좋아요! 14일 동안 매일 할게요!",
-					"x": 3,
-					"y": 3,
-					"w": 62,
-					"tail": "bl"
+					"speaker": "jiho-cheering"
 				}
 			]
 		},
@@ -109,10 +100,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 14일 동안 연습하는 시간은 모두 몇 분일까?",
-					"x": 3,
-					"y": 4,
-					"w": 82,
-					"tail": "bl"
+					"speaker": "dad-thinking"
 				}
 			]
 		}

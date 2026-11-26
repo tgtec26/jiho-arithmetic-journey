@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "아빠, 고속 열차를 타러 왔어요!",
-					"x": 3,
-					"y": 3,
-					"w": 60,
-					"tail": "bl"
+					"speaker": "jiho-pointing"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "열차 한 칸에는 좌석이 46개 있어요.",
-					"x": 3,
-					"y": 3,
-					"w": 66,
-					"tail": "bl"
+					"speaker": "guest-conductor"
 				}
 			]
 		},
@@ -78,10 +72,7 @@
 			"bubbles": [
 				{
 					"text": "이 열차는 18칸으로 되어 있단다.",
-					"x": 3,
-					"y": 3,
-					"w": 62,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -103,10 +94,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 열차의 좌석은 모두 몇 개일까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "gamdori-thinking"
 				}
 			]
 		}

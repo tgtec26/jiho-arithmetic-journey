@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "우리 학원에는 피아노가 15대 있어요.",
-					"x": 3,
-					"y": 3,
-					"w": 66,
-					"tail": "bl"
+					"speaker": "guest-piano-teacher"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "피아노 한 대에는 건반이 88개예요.",
-					"x": 3,
-					"y": 3,
-					"w": 64,
-					"tail": "bl"
+					"speaker": "jiho-happy"
 				}
 			]
 		},
@@ -78,17 +72,11 @@
 			"bubbles": [
 				{
 					"text": "건반이 정말 많아요!",
-					"x": 3,
-					"y": 3,
-					"w": 44,
-					"tail": "bl"
+					"speaker": "jiho-surprised"
 				},
 				{
 					"text": "88개나!",
-					"x": 64,
-					"y": 38,
-					"w": 26,
-					"tail": "br"
+					"speaker": "gamdori-surprised"
 				}
 			]
 		},
@@ -110,10 +98,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 학원 피아노 건반은 모두 몇 개일까?",
-					"x": 3,
-					"y": 4,
-					"w": 78,
-					"tail": "bl"
+					"speaker": "dad-thinking"
 				}
 			]
 		}

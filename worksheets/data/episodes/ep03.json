@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "오늘은 레고 로봇을 만들어 코딩해 볼 거예요.",
-					"x": 3,
-					"y": 3,
-					"w": 74,
-					"tail": "bl"
+					"speaker": "guest-coding-teacher"
 				}
 			]
 		},
@@ -78,17 +75,11 @@
 			"bubbles": [
 				{
 					"text": "우리 반 친구는 15명이에요!",
-					"x": 3,
-					"y": 3,
-					"w": 58,
-					"tail": "bl"
+					"speaker": "jiho-surprised"
 				},
 				{
 					"text": "모두 하나씩 만들자!",
-					"x": 52,
-					"y": 34,
-					"w": 44,
-					"tail": "br"
+					"speaker": "gamdori-cheering"
 				}
 			]
 		},
@@ -110,10 +101,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 블록은 모두 몇 개가 필요할까?",
-					"x": 30,
-					"y": 4,
-					"w": 66,
-					"tail": "br"
+					"speaker": "sarang-sitting"
 				}
 			]
 		}

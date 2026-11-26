@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "단어 카드 상자를 나눠 줄게요!",
-					"x": 3,
-					"y": 3,
-					"w": 58,
-					"tail": "bl"
+					"speaker": "guest-english-teacher"
 				}
 			]
 		},
@@ -84,10 +81,7 @@
 			"bubbles": [
 				{
 					"text": "학원에 카드 상자가 23개 왔대요!",
-					"x": 3,
-					"y": 3,
-					"w": 62,
-					"tail": "bl"
+					"speaker": "jiho-surprised"
 				}
 			]
 		},
@@ -109,10 +103,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 카드는 모두 몇 장일까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "sarang-sitting"
 				}
 			]
 		}

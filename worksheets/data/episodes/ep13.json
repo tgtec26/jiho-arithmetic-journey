@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "이번 달에는 영어 동화책을 읽어 봐요!",
-					"x": 3,
-					"y": 3,
-					"w": 68,
-					"tail": "bl"
+					"speaker": "guest-english-teacher"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "동화책 한 권은 26쪽이에요.",
-					"x": 3,
-					"y": 3,
-					"w": 54,
-					"tail": "bl"
+					"speaker": "jiho-reading"
 				}
 			]
 		},
@@ -78,10 +72,7 @@
 			"bubbles": [
 				{
 					"text": "책장에 동화책이 15권 있어요!",
-					"x": 3,
-					"y": 3,
-					"w": 56,
-					"tail": "bl"
+					"speaker": "jiho-surprised"
 				}
 			]
 		},
@@ -103,10 +94,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 15권을 다 읽으면 모두 몇 쪽일까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "sarang-curious"
 				}
 			]
 		}

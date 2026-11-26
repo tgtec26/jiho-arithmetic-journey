@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "아빠, 오늘은 K리그 축구 보러 가요!",
-					"x": 3,
-					"y": 3,
-					"w": 64,
-					"tail": "bl"
+					"speaker": "jiho-kicking"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "한 팀에는 선수가 25명씩 있단다.",
-					"x": 3,
-					"y": 3,
-					"w": 62,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -91,10 +85,7 @@
 				},
 				{
 					"text": "우와!",
-					"x": 70,
-					"y": 38,
-					"w": 22,
-					"tail": "br"
+					"speaker": "gamdori-cheering"
 				}
 			]
 		},
@@ -116,10 +107,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 12팀 선수는 모두 몇 명일까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "sarang-curious"
 				}
 			]
 		}

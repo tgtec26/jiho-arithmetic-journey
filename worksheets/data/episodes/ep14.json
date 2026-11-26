@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "와, 자동차 경주가 시작됐어요!",
-					"x": 3,
-					"y": 3,
-					"w": 58,
-					"tail": "bl"
+					"speaker": "jiho-pointing"
 				}
 			]
 		},
@@ -53,10 +50,7 @@
 			"bubbles": [
 				{
 					"text": "빨간 차는 한 바퀴를 29초에 달려.",
-					"x": 3,
-					"y": 3,
-					"w": 62,
-					"tail": "bl"
+					"speaker": "dad-explaining"
 				}
 			]
 		},
@@ -84,10 +78,7 @@
 			"bubbles": [
 				{
 					"text": "경주는 모두 12바퀴래요!",
-					"x": 3,
-					"y": 3,
-					"w": 50,
-					"tail": "bl"
+					"speaker": "jiho-cheering"
 				}
 			]
 		},
@@ -109,10 +100,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 12바퀴를 다 도는 데 모두 몇 초 걸릴까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "jiho-thinking"
 				}
 			]
 		}

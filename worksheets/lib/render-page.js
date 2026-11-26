@@ -8,8 +8,9 @@ import { renderProblem } from './render-problem.js';
  * 회차 앞뒤 2페이지
  * @param {any} ep
  * @param {(id: string) => string | null} stickerSrc
+ * @param {(id: string) => number} [stickerAspect]
  */
-export function renderEpisode(ep, stickerSrc) {
+export function renderEpisode(ep, stickerSrc, stickerAspect) {
 	const level = hintLevel(ep.id);
 	const others = [ep.story.other, ...practiceOf(ep)];
 	const problems = others.map((b, i) =>
@@ -24,7 +25,7 @@ export function renderEpisode(ep, stickerSrc) {
     <span class="who">이름 <span class="line"></span> 날짜 <span class="line"></span></span>
     <span class="stamp">다 풀었어요</span>
   </header>
-  ${renderComic(ep.panels, stickerSrc)}
+  ${renderComic(ep.panels, stickerSrc, stickerAspect)}
   <div class="problems front-problems">${problems.slice(0, 2).join('')}</div>
 </div>`;
 	const back = `

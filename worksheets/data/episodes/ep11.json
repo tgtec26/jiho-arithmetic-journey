@@ -28,10 +28,7 @@
 			"bubbles": [
 				{
 					"text": "오늘은 움직이는 로봇 팔을 만들어요.",
-					"x": 3,
-					"y": 3,
-					"w": 66,
-					"tail": "bl"
+					"speaker": "guest-coding-teacher"
 				}
 			]
 		},
@@ -84,10 +81,7 @@
 			"bubbles": [
 				{
 					"text": "우리 반이 로봇 팔을 17대 만들 거예요!",
-					"x": 3,
-					"y": 3,
-					"w": 70,
-					"tail": "bl"
+					"speaker": "jiho-cheering"
 				}
 			]
 		},
@@ -109,10 +103,7 @@
 			"bubbles": [
 				{
 					"text": "그럼 부품은 모두 몇 개가 필요할까?",
-					"x": 28,
-					"y": 4,
-					"w": 68,
-					"tail": "br"
+					"speaker": "sarang-sitting"
 				}
 			]
 		}
