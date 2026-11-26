@@ -20,6 +20,7 @@ describe('renderEpisode', () => {
 
 	it('has 4 comic panels and placeholders for missing stickers', () => {
 		expect(count(html, 'class="panel"')).toBe(4);
+		expect(html).not.toContain('pnum'); // 컷 번호는 넣지 않음
 		expect(html).toContain('sticker missing');
 	});
 

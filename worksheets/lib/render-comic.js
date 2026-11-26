@@ -83,7 +83,7 @@ function placeBubbles(items, figures = [], ceiling = EDGE) {
  */
 export function renderComic(panels, stickerSrc, stickerAspect = () => 1) {
 	const body = panels
-		.map((panel, i) => {
+		.map((panel) => {
 			const list = panel.stickers ?? [];
 			const stickers = list
 				.map((s) => {
@@ -117,7 +117,7 @@ export function renderComic(panels, stickerSrc, stickerAspect = () => 1) {
 					return `<div class="bubble tail-none narration" style="left:${pct(b.x)};top:${pct(b.y)}">${escapeHtml(b.text)}</div>`;
 				})
 				.join('');
-			return `<div class="panel"><span class="pnum">${i + 1}</span>${stickers}${bubbles}</div>`;
+			return `<div class="panel">${stickers}${bubbles}</div>`;
 		})
 		.join('');
 	return `<div class="comic">${body}</div>`;
