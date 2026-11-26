@@ -11,16 +11,17 @@ const heads = (html) => [...html.matchAll(/data-role="head"[^>]*>([\s\S]*?)<\/th
 describe('renderProblem', () => {
 	it('level 1: gray hints, gray 0, two row sums', () => {
 		const html = renderProblem({ a: 16, b: 11, position: 2, level: 1 });
-		for (const h of ['1×10', '1×6', '10×10', '10×6']) expect(html).toContain(`<span class="hint">${h}</span>`);
+		const hints = [...html.matchAll(/<span class="hint">(\d+×\d+)<\/span>/g)].map((m) => m[1]);
+		expect(hints).toEqual(['1×6', '1×10', '10×6', '10×10']); // 왼쪽 위부터 계산 순서
 		expect(rowCells(html, 'v-p2')[3]).toBe('<span class="hint">0</span>');
 		expect(count(html, 'class="rowsum"')).toBe(2);
-		expect(heads(html)).toEqual(['10', '6', '1', '10']);
+		expect(heads(html)).toEqual(['6', '10', '1', '10']);
 	});
 
 	it('level 2: no hints, heads filled', () => {
 		const html = renderProblem({ a: 16, b: 11, position: 2, level: 2 });
 		expect(html).not.toContain('class="hint"');
-		expect(heads(html)).toEqual(['10', '6', '1', '10']);
+		expect(heads(html)).toEqual(['6', '10', '1', '10']);
 		expect(count(html, 'class="rowsum"')).toBe(2);
 	});
 

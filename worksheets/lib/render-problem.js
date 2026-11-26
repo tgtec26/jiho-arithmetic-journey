@@ -32,7 +32,7 @@ export function renderProblem({ a, b, position, level, unit }) {
 	const left = (v, kind) => `<th class="left ${kind}" data-role="head">${showHeads ? v : ''}</th>`;
 	const grid = `
 <table class="grid${level === 4 ? ' small' : ''}">
-  <tr><th class="corner">×</th>${head(A.tens * 10)}${head(A.ones)}</tr>
+  <tr><th class="corner">×</th>${head(A.ones)}${head(A.tens * 10)}</tr>
   <tr>${left(B.ones, 'ones')}${cell(r.cells[0], 'ones')}${cell(r.cells[1], 'ones')}</tr>
   <tr>${left(B.tens * 10, 'tens')}${cell(r.cells[2], 'tens')}${cell(r.cells[3], 'tens')}</tr>
 </table>`;

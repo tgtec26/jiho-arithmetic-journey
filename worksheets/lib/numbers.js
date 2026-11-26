@@ -1,5 +1,6 @@
 // 두 자리 수 × 두 자리 수 학습지의 숫자 규칙.
-// 격자: 위 머리 = a(십×10 | 일), 왼쪽 머리 = b(위: 일의 자리, 아래: 십의 자리×10).
+// 격자: 위 머리 = a(왼쪽: 일의 자리, 오른쪽: 십의 자리×10), 왼쪽 머리 = b(위: 일의 자리, 아래: 십의 자리×10).
+// 왼쪽 위 칸부터 세로셈 계산 순서(일의 자리 × 일의 자리 먼저)와 같다.
 
 /** @param {number} n */
 export function digits(n) {
@@ -33,8 +34,8 @@ export function analyze(a, b) {
 		{ rowPart: B.tens * 10, digit: B.tens }
 	];
 	const cols = [
-		{ colPart: A.tens * 10, digit: A.tens },
-		{ colPart: A.ones, digit: A.ones }
+		{ colPart: A.ones, digit: A.ones },
+		{ colPart: A.tens * 10, digit: A.tens }
 	];
 	const cells = rows.flatMap((r) =>
 		cols.map((c) => ({

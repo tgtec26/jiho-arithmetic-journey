@@ -27,9 +27,9 @@ describe('numbers', () => {
 
 	it('analyze', () => {
 		expect(analyze(16, 11)).toMatchObject({ answer: 176, onesRow: 16, tensRow: 160, carries: 0, hardFacts: 0 });
-		expect(analyze(16, 11).cells.map((c) => c.value)).toEqual([10, 6, 100, 60]);
+		expect(analyze(16, 11).cells.map((c) => c.value)).toEqual([6, 10, 60, 100]);
 		expect(analyze(16, 11).cells.map((c) => c.rowPart)).toEqual([1, 1, 10, 10]);
-		expect(analyze(16, 11).cells.map((c) => c.colPart)).toEqual([10, 6, 10, 6]);
+		expect(analyze(16, 11).cells.map((c) => c.colPart)).toEqual([6, 10, 6, 10]);
 		expect(analyze(16, 13)).toMatchObject({ onesRow: 48, tensRow: 160, carries: 1 });
 		expect(analyze(16, 17)).toMatchObject({ carries: 1, hardFacts: 1 });
 		expect(analyze(48, 26)).toMatchObject({ answer: 1248, carries: 2, hardFacts: 1 });
