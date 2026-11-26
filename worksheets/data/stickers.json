@@ -173,5 +173,175 @@
 		"id": "prop-lego-blocks",
 		"file": "assets/stickers/prop-lego-blocks.png",
 		"prompt": "Pile of colorful LEGO-style bricks"
+	},
+	{
+		"id": "prop-piano",
+		"file": "assets/stickers/prop-piano.png",
+		"prompt": "Cute upright piano, black and white keys visible"
+	},
+	{
+		"id": "prop-sheet-music",
+		"file": "assets/stickers/prop-sheet-music.png",
+		"prompt": "Sheet of music paper with simple notes (no letters)"
+	},
+	{
+		"id": "prop-word-cards",
+		"file": "assets/stickers/prop-word-cards.png",
+		"prompt": "Fan of colorful blank flash cards with simple picture icons (apple, cat, sun), no letters"
+	},
+	{
+		"id": "prop-calendar",
+		"file": "assets/stickers/prop-calendar.png",
+		"prompt": "Wall calendar page with an empty grid of squares, no numbers or letters"
+	},
+	{
+		"id": "prop-cat-treats",
+		"file": "assets/stickers/prop-cat-treats.png",
+		"prompt": "Small bag of cat treats with fish-shaped treats spilling out, no text"
+	},
+	{
+		"id": "prop-toy-car",
+		"file": "assets/stickers/prop-toy-car.png",
+		"prompt": "Cute red toy car, side view"
+	},
+	{
+		"id": "prop-car-blue",
+		"file": "assets/stickers/prop-car-blue.png",
+		"prompt": "Cute blue small car, side view"
+	},
+	{
+		"id": "prop-parking-lot",
+		"file": "assets/stickers/prop-parking-lot.png",
+		"prompt": "Parking lot seen from slightly above with neat rows of small colorful cars"
+	},
+	{
+		"id": "prop-birthday-cake",
+		"file": "assets/stickers/prop-birthday-cake.png",
+		"prompt": "Birthday cake with candles and strawberries"
+	},
+	{
+		"id": "prop-chairs-row",
+		"file": "assets/stickers/prop-chairs-row.png",
+		"prompt": "A neat row of small colorful party chairs"
+	},
+	{
+		"id": "prop-balloons",
+		"file": "assets/stickers/prop-balloons.png",
+		"prompt": "Bunch of colorful balloons"
+	},
+	{
+		"id": "prop-trophy",
+		"file": "assets/stickers/prop-trophy.png",
+		"prompt": "Shiny golden soccer trophy cup"
+	},
+	{
+		"id": "prop-rail-track",
+		"file": "assets/stickers/prop-rail-track.png",
+		"prompt": "Wooden toy train track pieces laid in a long line"
+	},
+	{
+		"id": "prop-robot-arm",
+		"file": "assets/stickers/prop-robot-arm.png",
+		"prompt": "Robot arm built from colorful LEGO-style bricks"
+	},
+	{
+		"id": "prop-clock",
+		"file": "assets/stickers/prop-clock.png",
+		"prompt": "Round wall clock with tick marks only, no numbers"
+	},
+	{
+		"id": "prop-book-stack",
+		"file": "assets/stickers/prop-book-stack.png",
+		"prompt": "Stack of colorful picture books, no text on covers"
+	},
+	{
+		"id": "prop-race-car",
+		"file": "assets/stickers/prop-race-car.png",
+		"prompt": "Cute race car with a number-free design, dynamic side view"
+	},
+	{
+		"id": "prop-checkered-flag",
+		"file": "assets/stickers/prop-checkered-flag.png",
+		"prompt": "Black and white checkered racing flag on a pole"
+	},
+	{
+		"id": "prop-stopwatch",
+		"file": "assets/stickers/prop-stopwatch.png",
+		"prompt": "Silver stopwatch with tick marks only, no numbers"
+	},
+	{
+		"id": "prop-cat-bowl",
+		"file": "assets/stickers/prop-cat-bowl.png",
+		"prompt": "Cat food bowl full of kibble"
+	},
+	{
+		"id": "prop-cat-food-bag",
+		"file": "assets/stickers/prop-cat-food-bag.png",
+		"prompt": "Big bag of cat kibble with a cat face picture, no text"
+	},
+	{
+		"id": "prop-teddy-box",
+		"file": "assets/stickers/prop-teddy-box.png",
+		"prompt": "Cardboard box full of small brown teddy bears"
+	},
+	{
+		"id": "prop-globe",
+		"file": "assets/stickers/prop-globe.png",
+		"prompt": "Colorful world globe on a stand"
+	},
+	{
+		"id": "prop-bullet-train",
+		"file": "assets/stickers/prop-bullet-train.png",
+		"prompt": "Sleek white and blue high-speed bullet train, side view"
+	},
+	{
+		"id": "prop-train-seats",
+		"file": "assets/stickers/prop-train-seats.png",
+		"prompt": "Rows of comfortable train seats seen from inside the car"
+	},
+	{
+		"id": "prop-lego-bucket",
+		"file": "assets/stickers/prop-lego-bucket.png",
+		"prompt": "Plastic bucket full of colorful LEGO-style bricks"
+	},
+	{
+		"id": "prop-piano-keys",
+		"file": "assets/stickers/prop-piano-keys.png",
+		"prompt": "Long piano keyboard, black and white keys, seen from above at a slight angle"
+	},
+	{
+		"id": "prop-card-box",
+		"file": "assets/stickers/prop-card-box.png",
+		"prompt": "Open box packed with colorful blank flash cards"
+	},
+	{
+		"id": "prop-parking-tower",
+		"file": "assets/stickers/prop-parking-tower.png",
+		"prompt": "Tall parking tower building with many floors, small cars visible on each floor"
+	},
+	{
+		"id": "prop-cat-paw",
+		"file": "assets/stickers/prop-cat-paw.png",
+		"prompt": "Cute cat paw with pink toe beans, front view"
+	},
+	{
+		"id": "prop-cat-group",
+		"file": "assets/stickers/prop-cat-group.png",
+		"prompt": "Group of many small cute cats of different colors sitting together"
+	},
+	{
+		"id": "prop-cookie-plate",
+		"file": "assets/stickers/prop-cookie-plate.png",
+		"prompt": "Plate piled with round chocolate chip cookies"
+	},
+	{
+		"id": "prop-party-banner",
+		"file": "assets/stickers/prop-party-banner.png",
+		"prompt": "Colorful triangle party bunting banner, no letters"
+	},
+	{
+		"id": "prop-medal",
+		"file": "assets/stickers/prop-medal.png",
+		"prompt": "Gold medal with a red ribbon, star in the center, no text"
 	}
 ]
