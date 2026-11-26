@@ -5,6 +5,7 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT, loadEpisodes, loadStickers, validateEpisode } from './lib/episodes.js';
 import { renderEpisode, wrapDocument } from './lib/render-page.js';
+import { renderAnswerKey } from './lib/render-answers.js';
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const OUT_HTML = join(ROOT, 'out', 'html');
@@ -52,6 +53,8 @@ for (const ep of episodes) {
 }
 writeFileSync(join(OUT_HTML, 'all.html'), wrapDocument(bodies.join(''), CSS));
 docs.push({ name: 'all', pages: 2 * episodes.length });
+writeFileSync(join(OUT_HTML, 'answers.html'), wrapDocument(renderAnswerKey(episodes), CSS, '정답 (아빠용)'));
+docs.push({ name: 'answers', pages: Math.ceil(episodes.length / 6) });
 
 if (missing.size) {
 	const msg = `스티커 파일 없음 (${missing.size}개): ${[...missing].sort().join(', ')}`;

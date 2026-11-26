@@ -389,3 +389,27 @@ body {
 .bubble.tail-br::after {
 	right: 6mm;
 }
+
+/* ---------- 정답지 ---------- */
+.ans-block {
+	border-bottom: 0.3mm dashed #ccc;
+	padding-bottom: 2mm;
+}
+.ans-block h3 {
+	font-family: var(--font-title);
+	font-size: 12pt;
+	font-weight: normal;
+	margin: 1mm 0 1.5mm;
+}
+.ans-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 1.2mm;
+	column-gap: 6mm;
+	font-size: 10.5pt;
+}
+.ans .sub {
+	color: #999;
+	font-size: 8.5pt;
+	margin-left: 1.5mm;
+}
