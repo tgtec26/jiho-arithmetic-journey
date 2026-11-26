@@ -51,9 +51,9 @@ export function renderProblem({ a, b, position, level, unit }) {
 	const carryRow = `<tr class="v-carry"><td class="op"></td>${'<td class="carry"></td>'.repeat(COLS)}</tr>`;
 	const vertical = `
 <table class="vertical">
-  ${carryRow}
   ${digitRow('v-a', '', cellsOf(a))}
   ${digitRow('v-b', '×', cellsOf(b))}
+  ${carryRow}
   ${digitRow('v-p1', '<span class="dot ones"></span>', cellsOf(null))}
   ${digitRow('v-p2', '<span class="dot tens"></span>', p2)}
   ${digitRow('v-sum', '', cellsOf(null))}

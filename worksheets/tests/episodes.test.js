@@ -58,6 +58,15 @@ describe('validateEpisode', () => {
 	});
 });
 
+describe('episode wording', () => {
+	it('episode 4 asks about one day of practice, not an open-ended total', () => {
+		const ep04 = loadEpisodes().find((e) => e.id === 4);
+		const texts = ep04.panels.flatMap((p) => p.bubbles.map((b) => b.text));
+		expect(texts.some((t) => t.includes('매일 12번'))).toBe(false);
+		expect(texts[texts.length - 1]).toContain('오늘');
+	});
+});
+
 describe('all episodes', () => {
 	it('every episode file is valid and ids are unique', () => {
 		const eps = loadEpisodes();

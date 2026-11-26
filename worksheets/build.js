@@ -1,7 +1,8 @@
 // 학습지 빌드: node worksheets/build.js [--only=1,2,3] [--strict]
 // HTML → 크롬 헤드리스 PDF → 페이지 수 검사
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { ROOT, loadEpisodes, loadStickers, validateEpisode } from './lib/episodes.js';
 import { renderEpisode, wrapDocument } from './lib/render-page.js';
@@ -67,16 +68,31 @@ function pageCount(pdf) {
 	return Number(info.match(/^Pages:\s+(\d+)/m)[1]);
 }
 
+// 사용자가 켜 둔 크롬과 부딪히지 않게 빌드 전용 프로필을 쓰고, 실패하면 한 번 더 시도한다.
+const profile = mkdtempSync(join(tmpdir(), 'worksheet-chrome-'));
+function printPdf(html, pdf) {
+	const run = () =>
+		execFileSync(
+			CHROME,
+			['--headless=new', '--disable-gpu', `--user-data-dir=${profile}`, '--no-pdf-header-footer', `--print-to-pdf=${pdf}`, `file://${html}`],
+			{ stdio: 'ignore' }
+		);
+	try {
+		run();
+	} catch {
+		run();
+	}
+}
+
 const wrong = [];
 for (const doc of docs) {
 	const html = join(OUT_HTML, `${doc.name}.html`);
 	const pdf = join(OUT_PDF, `${doc.name}.pdf`);
-	execFileSync(CHROME, ['--headless=new', '--disable-gpu', '--no-pdf-header-footer', `--print-to-pdf=${pdf}`, `file://${html}`], {
-		stdio: 'ignore'
-	});
+	printPdf(html, pdf);
 	const pages = pageCount(pdf);
 	console.log(`${doc.name}.pdf: ${pages}쪽`);
 	if (doc.pages != null && pages !== doc.pages) wrong.push(`${doc.name}.pdf: ${pages}쪽 (예상 ${doc.pages}쪽)`);
 }
+rmSync(profile, { recursive: true, force: true });
 if (wrong.length) fail(['페이지 수가 맞지 않음 (양면 인쇄가 어긋남):', ...wrong]);
 console.log(`완료: ${OUT_PDF}`);

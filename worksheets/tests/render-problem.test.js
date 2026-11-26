@@ -46,6 +46,12 @@ describe('renderProblem', () => {
 		expect(rowCells(html, 'v-sum')).toEqual(['', '', '', '']);
 	});
 
+	it('carry row sits right above the partial products it is used for', () => {
+		const html = renderProblem({ a: 16, b: 13, position: 3, level: 2 });
+		const order = [...html.matchAll(/<tr class="(v-[a-z0-9]+)">/g)].map((m) => m[1]);
+		expect(order).toEqual(['v-a', 'v-b', 'v-carry', 'v-p1', 'v-p2', 'v-sum']);
+	});
+
 	it('15 × 88 still fits 4 columns', () => {
 		const html = renderProblem({ a: 15, b: 88, position: 5, level: 3 });
 		expect(count(html, 'class="d"')).toBe(20);
