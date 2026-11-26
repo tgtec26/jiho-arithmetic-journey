@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>학습지 어드민 · 지호의 곱셈 이야기</title>
+<style>
+	:root { --line: #e3e3e3; --ink: #222; --muted: #777; --accent: #e8a33b; --bad: #d64545; --ok: #2e8b57; }
+	* { box-sizing: border-box; }
+	body { margin: 0; font-family: 'Spoqa Han Sans Neo', 'Apple SD Gothic Neo', sans-serif; color: var(--ink); background: #f7f7f5; height: 100vh; display: flex; flex-direction: column; }
+	header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; background: #fff; border-bottom: 1px solid var(--line); }
+	header h1 { font-size: 16px; margin: 0; flex: 1; }
+	header a { color: var(--ink); font-size: 13px; }
+	button { font: inherit; border: 1px solid #ccc; background: #fff; border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+	button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+	button:disabled { opacity: .5; cursor: default; }
+	#buildStatus { font-size: 12px; color: var(--muted); white-space: pre-wrap; max-width: 280px; }
+	main { flex: 1; display: grid; grid-template-columns: 190px 1fr 1fr; min-height: 0; }
+	nav { overflow: auto; border-right: 1px solid var(--line); background: #fff; }
+	nav button { display: block; width: 100%; text-align: left; border: none; border-bottom: 1px solid #f0f0f0; border-radius: 0; padding: 9px 12px; font-size: 14px; }
+	nav button.on { background: #fff4e3; font-weight: 700; }
+	nav button .dirty { color: var(--accent); }
+	#editor { overflow: auto; padding: 16px 20px; }
+	.info { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+	label.field { display: block; font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+	label.field input { display: block; width: 100%; margin-top: 4px; font: inherit; font-size: 15px; padding: 7px 9px; border: 1px solid #ccc; border-radius: 8px; color: var(--ink); }
+	.panel { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; }
+	.panel h3 { margin: 0 0 6px; font-size: 13px; color: var(--muted); }
+	.bubble { margin-bottom: 8px; }
+	.bubble textarea { width: 100%; font: inherit; font-size: 15px; padding: 7px 9px; border: 1px solid #ccc; border-radius: 8px; resize: vertical; min-height: 40px; }
+	.bubble .meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+	.bubble .meta .over { color: var(--bad); font-weight: 700; }
+	.actions { display: flex; gap: 8px; align-items: center; margin: 14px 0 6px; position: sticky; bottom: 0; background: #f7f7f5; padding: 8px 0; }
+	.actions button { flex: none; white-space: nowrap; }
+	#msg { flex: 1; font-size: 13px; white-space: pre-wrap; }
+	#msg.bad { color: var(--bad); }
+	#msg.ok { color: var(--ok); }
+	#previewWrap { overflow: auto; border-left: 1px solid var(--line); background: #e9e9e6; padding: 12px; }
+	#preview { width: 794px; height: 2260px; border: none; background: #fff; transform-origin: 0 0; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
+</style>
+</head>
+<body>
+<header>
+	<h1>🧸 지호의 곱셈 이야기 · 학습지 어드민</h1>
+	<a href="/out/pdf/all.pdf" target="_blank">24회 묶음 PDF</a>
+	<a href="/out/pdf/answers.pdf" target="_blank">정답지 PDF</a>
+	<button id="build" class="primary">PDF 다시 만들기</button>
+	<span id="buildStatus"></span>
+</header>
+<main>
+	<nav id="list"></nav>
+	<section id="editor"></section>
+	<section id="previewWrap"><iframe id="preview" title="미리보기"></iframe></section>
+</main>
+<script>
+	const MAX = 40;
+	const $ = (s) => document.querySelector(s);
+	let episodes = [];
+	let current = null; // { id, saved(JSON 문자열), data }
+	const dirtyIds = new Set();
+
+	function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]); }
+	const isDirty = () => current && JSON.stringify(current.data) !== current.saved;
+
+	async function loadList() {
+		episodes = await (await fetch('/api/episodes')).json();
+		renderList();
+	}
+	function renderList() {
+		$('#list').innerHTML = episodes.map((e) =>
+			`<button data-id="${e.id}" class="${current?.id === e.id ? 'on' : ''}">${e.icon} ${e.id}회 ${esc(e.title)} ${dirtyIds.has(e.id) ? '<span class="dirty">●</span>' : ''}</button>`).join('');
+		$('#list').querySelectorAll('button').forEach((b) => b.onclick = () => open(Number(b.dataset.id)));
+	}
+
+	async function open(id) {
+		if (isDirty() && !confirm('저장하지 않은 수정이 있어요. 버리고 다른 회차로 갈까요?')) return;
+		if (current) dirtyIds.delete(current.id);
+		const data = await (await fetch(`/api/episodes/${id}`)).json();
+		current = { id, saved: JSON.stringify(data), data };
+		renderEditor();
+		renderList();
+		refreshPreview();
+	}
+
+	function renderEditor() {
+		const d = current.data;
+		const panels = d.panels.map((texts, i) => `
+			<div class="panel"><h3>${i + 1}번 컷${i === 3 ? ' · 마지막 말풍선은 질문(?)으로 끝나야 해요' : ''}</h3>
+			${texts.map((t, j) => `<div class="bubble"><textarea data-p="${i}" data-b="${j}" rows="2">${esc(t)}</textarea>
+				<div class="meta"><span>말풍선 ${j + 1}</span><span class="count" data-p="${i}" data-b="${j}"></span></div></div>`).join('')}
+			</div>`).join('');
+		$('#editor').innerHTML = `
+			<div class="info">${d.id}회 · 이야기 문제 <b>${d.fixed} × ${d.other}</b> (숫자와 그림 위치는 여기서 바꾸지 않아요)</div>
+			<label class="field">제목<input id="title" value="${esc(d.title)}"></label>
+			<label class="field">이야기 문제 답의 단위 (예: 명, 개)<input id="unit" value="${esc(d.unit)}"></label>
+			${panels}
+			<div class="actions"><button id="save" class="primary">저장</button><button id="revert">되돌리기</button><span id="msg"></span></div>`;
+		$('#title').oninput = (e) => { d.title = e.target.value; changed(); };
+		$('#unit').oninput = (e) => { d.unit = e.target.value; changed(); };
+		$('#editor').querySelectorAll('textarea').forEach((ta) => ta.oninput = () => {
+			d.panels[ta.dataset.p][ta.dataset.b] = ta.value.replace(/\n/g, ' ');
+			changed();
+		});
+		$('#save').onclick = save;
+		$('#revert').onclick = () => { current.data = JSON.parse(current.saved); renderEditor(); changed(); };
+		updateCounts();
+	}
+
+	function updateCounts() {
+		document.querySelectorAll('.count').forEach((el) => {
+			const n = [...current.data.panels[el.dataset.p][el.dataset.b]].length;
+			el.textContent = `${n} / ${MAX}자`;
+			el.classList.toggle('over', n > MAX);
+		});
+	}
+
+	let timer;
+	function changed() {
+		updateCounts();
+		if (isDirty()) dirtyIds.add(current.id); else dirtyIds.delete(current.id);
+		renderList();
+		setMsg('');
+		clearTimeout(timer);
+		timer = setTimeout(refreshPreview, 350);
+	}
+
+	async function refreshPreview() {
+		const html = await (await fetch(`/api/preview/${current.id}`, { method: 'POST', body: JSON.stringify(current.data) })).text();
+		$('#preview').srcdoc = html;
+	}
+
+	function setMsg(text, kind = '') { const m = $('#msg'); if (!m) return; m.textContent = text; m.className = kind; }
+
+	async function save() {
+		const res = await fetch(`/api/episodes/${current.id}`, { method: 'PUT', body: JSON.stringify(current.data) });
+		const body = await res.json();
+		if (!res.ok) return setMsg('저장 못 했어요:\n' + body.errors.join('\n'), 'bad');
+		current.saved = JSON.stringify(current.data);
+		dirtyIds.delete(current.id);
+		const item = episodes.find((e) => e.id === current.id);
+		if (item) item.title = current.data.title.trim();
+		renderList();
+		setMsg('저장했어요. 인쇄용 PDF에 반영하려면 "PDF 다시 만들기"를 눌러 주세요.', 'ok');
+	}
+
+	$('#build').onclick = async () => {
+		const btn = $('#build');
+		btn.disabled = true;
+		$('#buildStatus').textContent = 'PDF 만드는 중… (1분쯤 걸려요)';
+		const res = await (await fetch('/api/build', { method: 'POST' })).json();
+		btn.disabled = false;
+		$('#buildStatus').textContent = res.ok ? '✅ PDF를 새로 만들었어요.' : '⚠️ 실패:\n' + res.log;
+	};
+
+	function fitPreview() {
+		const w = $('#previewWrap').clientWidth - 24;
+		const s = Math.min(1, w / 794);
+		const f = $('#preview');
+		f.style.transform = `scale(${s})`;
+		f.style.marginBottom = `${-(1 - s) * 2260}px`;
+		f.style.marginRight = `${-(1 - s) * 794}px`;
+	}
+	window.addEventListener('resize', fitPreview);
+	window.addEventListener('beforeunload', (e) => { if (isDirty()) e.preventDefault(); });
+
+	loadList().then(() => { fitPreview(); open(1); });
+</script>
+</body>
+</html>

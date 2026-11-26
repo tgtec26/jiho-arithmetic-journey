@@ -1,0 +1,36 @@
+// 어드민에서 고칠 수 있는 텍스트만 꺼내고 되돌려 넣는다. 숫자·그림 위치는 건드리지 않는다.
+
+/** 회차 → 편집용 텍스트 */
+export function textOf(ep) {
+	return {
+		id: ep.id,
+		title: ep.title,
+		unit: ep.story.unit,
+		fixed: ep.fixed,
+		other: ep.story.other,
+		panels: ep.panels.map((p) => p.bubbles.map((b) => b.text))
+	};
+}
+
+/**
+ * 편집한 텍스트를 회차에 반영한 새 객체 (원본은 그대로)
+ * @throws 말풍선 개수가 다르면
+ */
+export function applyTextEdits(ep, edits) {
+	const out = structuredClone(ep);
+	if (!Array.isArray(edits.panels) || edits.panels.length !== out.panels.length) {
+		throw new Error('컷 개수가 다름');
+	}
+	out.panels.forEach((panel, i) => {
+		const texts = edits.panels[i];
+		if (!Array.isArray(texts) || texts.length !== panel.bubbles.length) {
+			throw new Error(`${i + 1}컷 말풍선 개수가 다름`);
+		}
+		panel.bubbles.forEach((b, j) => {
+			b.text = String(texts[j]).trim();
+		});
+	});
+	out.title = String(edits.title ?? out.title).trim();
+	out.story.unit = String(edits.unit ?? out.story.unit).trim();
+	return out;
+}

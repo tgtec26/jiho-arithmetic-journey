@@ -11,7 +11,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"ws:test": "vitest run --config worksheets/vitest.config.js",
-		"ws:build": "node worksheets/build.js"
+		"ws:build": "node worksheets/build.js",
+		"ws:admin": "node worksheets/admin/server.js"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.10",
