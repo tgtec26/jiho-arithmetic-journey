@@ -362,12 +362,6 @@ body {
 	width: max-content;
 	max-width: 66%;
 }
-.bubble.narration {
-	width: max-content;
-	max-width: 94%;
-	border-radius: 1.5mm;
-	background: #fff;
-}
 .bubble.tail-l::after,
 .bubble.tail-r::after {
 	content: '';
@@ -385,24 +379,6 @@ body {
 }
 .bubble.tail-r::after {
 	right: calc(var(--tail) - 1.7mm);
-}
-.bubble.tail-bl::after,
-.bubble.tail-br::after {
-	content: '';
-	position: absolute;
-	bottom: -2.4mm;
-	width: 3.4mm;
-	height: 3.4mm;
-	background: #fff;
-	border-right: 0.4mm solid var(--ink);
-	border-bottom: 0.4mm solid var(--ink);
-	transform: rotate(45deg);
-}
-.bubble.tail-bl::after {
-	left: 6mm;
-}
-.bubble.tail-br::after {
-	right: 6mm;
 }
 
 /* ---------- 정답지 ---------- */

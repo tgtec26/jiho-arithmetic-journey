@@ -39,16 +39,22 @@ describe('validateEpisode', () => {
 		expect(validateEpisode(ep, stickerIds).length).toBeGreaterThan(0);
 	});
 
+	it('rejects a bubble without a speaker', () => {
+		const ep = clone(ep01);
+		delete ep.panels[0].bubbles[0].speaker;
+		expect(validateEpisode(ep, stickerIds).join(' ')).toContain('말하는');
+	});
+
 	it('rejects a speaker that is not in the same panel', () => {
 		const ep = clone(ep01);
 		ep.panels[0].bubbles[0].speaker = 'sarang-curious';
 		expect(validateEpisode(ep, stickerIds).join(' ')).toContain('말하는');
 	});
 
-	it('every bubble with a tail names its speaker', () => {
+	it('every bubble is spoken by someone in its panel (no narration boxes)', () => {
 		for (const ep of loadEpisodes()) {
 			for (const p of ep.panels) for (const b of p.bubbles) {
-				if (b.tail !== 'none') expect(b.speaker, `${ep.id}회 "${b.text}"`).toBeTruthy();
+				expect(b.speaker, `${ep.id}회 "${b.text}"`).toBeTruthy();
 			}
 		}
 	});

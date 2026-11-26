@@ -79,7 +79,7 @@
 					"h": 54
 				},
 				{
-					"id": "guest-soccer9",
+					"id": "guest-soccer9-sky",
 					"x": 27,
 					"y": 41,
 					"h": 56
@@ -94,11 +94,8 @@
 			],
 			"bubbles": [
 				{
-					"text": "축구 한 팀은 11명이에요.",
-					"x": 2,
-					"y": 3,
-					"w": 38,
-					"tail": "none"
+					"text": "축구 한 팀은 11명이야!",
+					"speaker": "guest-soccer7"
 				},
 				{
 					"text": "손흥민 선수랑 홀란 선수도 나와요!",

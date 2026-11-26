@@ -59,7 +59,8 @@ export function validateEpisode(ep, stickerIds) {
 		}
 		const ids = new Set((panel.stickers ?? []).map((s) => s.id));
 		for (const b of bubbles) {
-			if (b.speaker && !ids.has(b.speaker)) errors.push(`${tag} ${i + 1}컷: 말하는 캐릭터 ${b.speaker}가 이 컷에 없음`);
+			if (!b.speaker) errors.push(`${tag} ${i + 1}컷: 말하는 캐릭터가 정해지지 않음 "${b.text}"`);
+			else if (!ids.has(b.speaker)) errors.push(`${tag} ${i + 1}컷: 말하는 캐릭터 ${b.speaker}가 이 컷에 없음`);
 		}
 		for (const s of panel.stickers ?? []) {
 			if (!stickerIds.has(s.id)) errors.push(`${tag} ${i + 1}컷: 없는 스티커 ${s.id}`);

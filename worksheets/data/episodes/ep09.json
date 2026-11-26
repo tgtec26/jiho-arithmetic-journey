@@ -77,11 +77,8 @@
 			],
 			"bubbles": [
 				{
-					"text": "K리그 1부에는 12팀이 있어요.",
-					"x": 2,
-					"y": 3,
-					"w": 56,
-					"tail": "none"
+					"text": "K리그 1부에는 12팀이 있어!",
+					"speaker": "guest-soccer9"
 				},
 				{
 					"text": "우와!",

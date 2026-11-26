@@ -120,6 +120,11 @@
 		"prompt": "Generic cartoon tall soccer player in red kit with number 9 on shirt, long blond hair tied back, smiling, not resembling any real person"
 	},
 	{
+		"id": "guest-soccer9-sky",
+		"file": "assets/stickers/guest-soccer9-sky.png",
+		"prompt": "Same #9 soccer player as guest-soccer9 (long blond hair tied back) in a sky-blue kit with number 9, not resembling any real person"
+	},
+	{
 		"id": "guest-conductor",
 		"file": "assets/stickers/guest-conductor.png",
 		"prompt": "Friendly cartoon train conductor in navy uniform and cap"

@@ -33,7 +33,7 @@ describe('renderEpisode', () => {
 
 describe('renderComic', () => {
 	it('escapes bubble text', () => {
-		const panels = [{ stickers: [], bubbles: [{ text: '<b>안녕?', x: 0, y: 0, w: 50, tail: 'bl' }] }];
+		const panels = [{ stickers: [{ id: 'a', x: 10, y: 40, h: 50 }], bubbles: [{ text: '<b>안녕?', speaker: 'a' }] }];
 		const html = renderComic(panels, () => null);
 		expect(html).toContain('&lt;b&gt;안녕?');
 		expect(html).not.toContain('<b>안녕');
@@ -73,13 +73,6 @@ describe('speaker-anchored bubbles', () => {
 		expect(s).toContain('--tail:11.3mm');
 	});
 
-	it('keeps narration boxes (no speaker) at their spot, sized to the text on one line', () => {
-		const panels = [{ stickers: [], bubbles: [{ text: '이야기', x: 3, y: 3, w: 40, tail: 'none' }] }];
-		const html = renderComic(panels, () => null);
-		expect(html).toContain('bubble tail-none narration');
-		expect(style(html)).toBe('left:3%;top:3%');
-	});
-
 	it('narrows bubbles when two speakers share a panel', () => {
 		const panels = [
 			{
@@ -88,7 +81,9 @@ describe('speaker-anchored bubbles', () => {
 			}
 		];
 		const html = renderComic(panels, () => 'x.png', () => 0.6);
-		expect(html.split('max-width:46%').length - 1).toBe(2);
+		const widths = [...html.matchAll(/max-width:([\d.]+)%/g)].map((m) => Number(m[1]));
+		expect(widths).toHaveLength(2);
+		for (const w of widths) expect(w).toBeLessThanOrEqual(46);
 	});
 
 	it('pushes two long bubbles to the panel edges so they do not overlap', () => {
@@ -103,31 +98,29 @@ describe('speaker-anchored bubbles', () => {
 		expect(html).toContain('right:2%');
 	});
 
-	it('lifts a bubble above a taller character it would otherwise cover', () => {
+	it('narrows a bubble to keep clear of a taller neighbour while staying right above the speaker', () => {
 		const panels = [
 			{
 				stickers: [{ id: 'jiho-thinking', x: 8, y: 40, h: 58 }, { id: 'sarang-curious', x: 62, y: 58, h: 39 }],
-				bubbles: [{ text: '그럼 16강에서 뛰는 선수는 모두 몇 명일까?', speaker: 'sarang-curious' }]
+				bubbles: [{ text: '그럼 블록은 모두 몇 개가 필요할까?', speaker: 'sarang-curious' }]
 			}
 		];
 		const html = renderComic(panels, () => 'x.png', (id) => (id.startsWith('jiho') ? 0.45 : 0.8));
-		expect(html).toContain('bottom:64%'); // 지호 머리(40%) 위로
+		const style = html.match(/anchored" style="([^"]*)"/)[1];
+		expect(style).toContain('bottom:46%'); // 사랑이 머리(58%) 바로 위
+		const maxW = Number(style.match(/max-width:([\d.]+)%/)[1]);
+		expect(maxW).toBeLessThanOrEqual(55); // 지호(8~32%) 오른쪽에서 시작
 	});
 
-	it('never rises into the narration box at the top', () => {
+	it('lifts the bubble only when there is no room beside the neighbour', () => {
 		const panels = [
 			{
-				stickers: [{ id: 'guest-soccer9', x: 27, y: 20, h: 76 }, { id: 'jiho-pointing', x: 64, y: 46, h: 52 }],
-				bubbles: [
-					{ text: '축구 한 팀은 11명이에요.', x: 2, y: 3, tail: 'none' },
-					{ text: '손흥민 선수랑 홀란 선수도 나와요!', speaker: 'jiho-pointing' }
-				]
+				stickers: [{ id: 'dad-thinking', x: 30, y: 37, h: 60 }, { id: 'sarang-curious', x: 64, y: 58, h: 39 }],
+				bubbles: [{ text: '그럼 블록은 모두 몇 개가 필요할까?', speaker: 'sarang-curious' }]
 			}
 		];
-		const html = renderComic(panels, () => 'x.png', () => 0.5);
-		const bottom = Number(html.match(/anchored" style="[^"]*bottom:([\d.]+)%/)[1]);
-		// 해설 상자(위 3% + 한 줄 11.7%) + 간격 2% 아래에 두 줄 말풍선(19.3%)
-		expect(bottom).toBeLessThanOrEqual(64.1);
+		const html = renderComic(panels, () => 'x.png', (id) => (id.startsWith('dad') ? 1.0 : 0.8));
+		expect(html).toContain('bottom:67%'); // 아빠 머리(37%) 위로
 	});
 
 	it('leaves short bubbles next to their speakers', () => {
