@@ -222,3 +222,170 @@
 	border-bottom: 0.4mm solid var(--line);
 	margin: 0 1mm;
 }
+
+/* ---------- 페이지 (A4) ---------- */
+@page {
+	size: A4;
+	margin: 0;
+}
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+.page {
+	width: 210mm;
+	height: 297mm;
+	padding: 9mm;
+	overflow: hidden;
+	break-after: page;
+	display: flex;
+	flex-direction: column;
+	gap: 3mm;
+	font-family: var(--font-body);
+	color: var(--ink);
+	background: #fff;
+}
+.page:last-child {
+	break-after: auto;
+}
+.phead {
+	height: 10mm;
+	flex: none;
+	display: flex;
+	align-items: center;
+	gap: 4mm;
+	border-bottom: 0.4mm solid #ddd;
+}
+.phead .ep {
+	font-family: var(--font-title);
+	font-size: 15pt;
+	color: #fff;
+	background: var(--story);
+	border-radius: 3mm;
+	padding: 0.8mm 3mm;
+	white-space: nowrap;
+}
+.phead .icon {
+	margin-right: 1.5mm;
+}
+.phead .title {
+	font-family: var(--font-title);
+	font-size: 17pt;
+	flex: 1;
+	white-space: nowrap;
+}
+.phead .who {
+	font-size: 10pt;
+	color: #555;
+	white-space: nowrap;
+}
+.phead .who .line {
+	display: inline-block;
+	width: 20mm;
+	border-bottom: 0.3mm solid #888;
+	margin: 0 2mm 0 1mm;
+}
+.phead .stamp {
+	width: 15mm;
+	height: 15mm;
+	margin-top: -2mm;
+	border: 0.5mm dashed var(--story);
+	border-radius: 50%;
+	font-size: 6.5pt;
+	color: var(--story);
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	padding-bottom: 1.5mm;
+	text-align: center;
+	white-space: nowrap;
+}
+
+/* 문제 배치 */
+.problems {
+	display: grid;
+	grid-template-columns: 94mm 94mm;
+	column-gap: 4mm;
+	flex: none;
+}
+.back-problems {
+	row-gap: 4mm;
+}
+
+/* ---------- 4컷 만화 ---------- */
+.comic {
+	flex: 1;
+	min-height: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 3mm;
+}
+.panel {
+	position: relative;
+	border: 0.6mm solid var(--ink);
+	border-radius: 2mm;
+	overflow: hidden;
+	background: #fff;
+}
+.pnum {
+	position: absolute;
+	left: 1.5mm;
+	top: 1mm;
+	font-family: var(--font-title);
+	font-size: 10pt;
+	color: #999;
+	z-index: 3;
+}
+.sticker {
+	position: absolute;
+	height: auto;
+	mix-blend-mode: multiply;
+	z-index: 1;
+}
+.sticker.missing {
+	aspect-ratio: 1;
+	border: 0.4mm dashed #aaa;
+	color: #999;
+	font-size: 7pt;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	mix-blend-mode: normal;
+}
+.bubble {
+	position: absolute;
+	z-index: 2;
+	background: #fff;
+	border: 0.4mm solid var(--ink);
+	border-radius: 4mm;
+	padding: 1.8mm 2.6mm;
+	font-family: var(--font-body);
+	font-weight: 700;
+	font-size: 11.5pt;
+	line-height: 1.35;
+	word-break: keep-all;
+}
+.bubble.tail-bl::after,
+.bubble.tail-br::after {
+	content: '';
+	position: absolute;
+	bottom: -2.4mm;
+	width: 3.4mm;
+	height: 3.4mm;
+	background: #fff;
+	border-right: 0.4mm solid var(--ink);
+	border-bottom: 0.4mm solid var(--ink);
+	transform: rotate(45deg);
+}
+.bubble.tail-bl::after {
+	left: 6mm;
+}
+.bubble.tail-br::after {
+	right: 6mm;
+}
