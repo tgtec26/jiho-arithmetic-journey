@@ -1,0 +1,114 @@
+{
+	"id": 10,
+	"topic": "train",
+	"icon": "🚂",
+	"title": "기찻길 만들기",
+	"fixed": 21,
+	"story": {
+		"other": 13,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "prop-rail-track",
+					"x": 40,
+					"y": 66,
+					"w": 56
+				},
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 장난감 기찻길을 만들 거예요!",
+					"x": 3,
+					"y": 3,
+					"w": 66,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "prop-rail-track",
+					"x": 30,
+					"y": 68,
+					"w": 66
+				},
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 38,
+					"h": 58
+				}
+			],
+			"bubbles": [
+				{
+					"text": "한 줄에 레일을 21개씩 이어 보자.",
+					"x": 3,
+					"y": 3,
+					"w": 62,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "prop-train",
+					"x": 48,
+					"y": 62,
+					"w": 48
+				},
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				}
+			],
+			"bubbles": [
+				{
+					"text": "기찻길을 13줄이나 만들었어요!",
+					"x": 3,
+					"y": 3,
+					"w": 58,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 레일은 모두 몇 개 썼을까?",
+					"x": 28,
+					"y": 4,
+					"w": 68,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

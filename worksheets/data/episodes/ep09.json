@@ -1,0 +1,127 @@
+{
+	"id": 9,
+	"topic": "soccer",
+	"icon": "⚽",
+	"title": "K리그",
+	"fixed": 25,
+	"story": {
+		"other": 12,
+		"unit": "명"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-kicking",
+					"x": 4,
+					"y": 44,
+					"h": 52
+				},
+				{
+					"id": "prop-goal",
+					"x": 58,
+					"y": 50,
+					"w": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 오늘은 K리그 축구 보러 가요!",
+					"x": 3,
+					"y": 3,
+					"w": 64,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-trophy",
+					"x": 64,
+					"y": 52,
+					"w": 26
+				}
+			],
+			"bubbles": [
+				{
+					"text": "한 팀에는 선수가 25명씩 있단다.",
+					"x": 3,
+					"y": 3,
+					"w": 62,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-soccer7",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "guest-soccer9",
+					"x": 30,
+					"y": 32,
+					"h": 64
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 64,
+					"y": 56,
+					"h": 41
+				}
+			],
+			"bubbles": [
+				{
+					"text": "K리그 1부에는 12팀이 있어요.",
+					"x": 2,
+					"y": 3,
+					"w": 56,
+					"tail": "none"
+				},
+				{
+					"text": "우와!",
+					"x": 70,
+					"y": 38,
+					"w": 22,
+					"tail": "br"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 12팀 선수는 모두 몇 명일까?",
+					"x": 28,
+					"y": 4,
+					"w": 68,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

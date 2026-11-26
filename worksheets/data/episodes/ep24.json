@@ -1,0 +1,126 @@
+{
+	"id": 24,
+	"topic": "gamdori",
+	"icon": "🧸",
+	"title": "곱셈 졸업 파티",
+	"fixed": 27,
+	"story": {
+		"other": 36,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "prop-party-banner",
+					"x": 10,
+					"y": 24,
+					"w": 80
+				},
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 46,
+					"h": 51
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 40,
+					"y": 58,
+					"h": 39
+				},
+				{
+					"id": "sarang-jumping",
+					"x": 66,
+					"y": 64,
+					"h": 32
+				}
+			],
+			"bubbles": [
+				{
+					"text": "곱셈 여행을 다 마쳤어요!",
+					"x": 3,
+					"y": 3,
+					"w": 50,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thumbsup",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-medal",
+					"x": 64,
+					"y": 46,
+					"w": 24
+				}
+			],
+			"bubbles": [
+				{
+					"text": "축하해! 친구 27명을 파티에 초대하자.",
+					"x": 3,
+					"y": 3,
+					"w": 68,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-cookie-plate",
+					"x": 54,
+					"y": 58,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "친구마다 쿠키를 36개씩 줄 거예요!",
+					"x": 3,
+					"y": 3,
+					"w": 64,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 쿠키는 모두 몇 개 필요할까?",
+					"x": 3,
+					"y": 4,
+					"w": 64,
+					"tail": "bl"
+				}
+			]
+		}
+	]
+}

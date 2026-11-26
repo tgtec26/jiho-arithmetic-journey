@@ -1,0 +1,121 @@
+{
+	"id": 5,
+	"topic": "english",
+	"icon": "🔤",
+	"title": "영어 단어",
+	"fixed": 15,
+	"story": {
+		"other": 12,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-english-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-word-cards",
+					"x": 54,
+					"y": 48,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "Hello, 지호! 오늘도 영어 단어를 외워 볼까요?",
+					"x": 3,
+					"y": 3,
+					"w": 72,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-reading",
+					"x": 8,
+					"y": 50,
+					"h": 46
+				},
+				{
+					"id": "prop-calendar",
+					"x": 58,
+					"y": 44,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "하루에 단어를 15개씩 외우기로 했어요.",
+					"x": 3,
+					"y": 3,
+					"w": 70,
+					"tail": "none"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 8,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 60,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "12일 동안 매일 할 거예요!",
+					"x": 3,
+					"y": 3,
+					"w": 54,
+					"tail": "bl"
+				},
+				{
+					"text": "지호 최고!",
+					"x": 60,
+					"y": 36,
+					"w": 32,
+					"tail": "br"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 12일 동안 외우는 단어는 모두 몇 개일까?",
+					"x": 3,
+					"y": 4,
+					"w": 80,
+					"tail": "bl"
+				}
+			]
+		}
+	]
+}

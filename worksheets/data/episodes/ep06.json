@@ -1,0 +1,128 @@
+{
+	"id": 6,
+	"topic": "sarang",
+	"icon": "🐱",
+	"title": "사랑이 간식",
+	"fixed": 18,
+	"story": {
+		"other": 13,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "sarang-jumping",
+					"x": 48,
+					"y": 52,
+					"h": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "사랑이가 간식을 먹고 싶대요!",
+					"x": 3,
+					"y": 3,
+					"w": 56,
+					"tail": "bl"
+				},
+				{
+					"text": "야옹!",
+					"x": 70,
+					"y": 32,
+					"w": 22,
+					"tail": "br"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-cat-treats",
+					"x": 58,
+					"y": 50,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "간식 한 봉지에는 18개가 들어 있어.",
+					"x": 3,
+					"y": 3,
+					"w": 66,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-surprised",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "와, 집에 간식이 13봉지나 있어요!",
+					"x": 3,
+					"y": 3,
+					"w": 64,
+					"tail": "bl"
+				},
+				{
+					"text": "많다!",
+					"x": 66,
+					"y": 40,
+					"w": 22,
+					"tail": "br"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 60,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 간식은 모두 몇 개일까?",
+					"x": 28,
+					"y": 4,
+					"w": 68,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

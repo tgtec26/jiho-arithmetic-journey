@@ -1,0 +1,121 @@
+{
+	"id": 20,
+	"topic": "piano",
+	"icon": "🎹",
+	"title": "피아노 학원",
+	"fixed": 15,
+	"story": {
+		"other": 88,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-piano-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-piano",
+					"x": 54,
+					"y": 48,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "우리 학원에는 피아노가 15대 있어요.",
+					"x": 3,
+					"y": 3,
+					"w": 66,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 4,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-piano-keys",
+					"x": 34,
+					"y": 60,
+					"w": 62
+				}
+			],
+			"bubbles": [
+				{
+					"text": "피아노 한 대에는 건반이 88개예요.",
+					"x": 3,
+					"y": 3,
+					"w": 64,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-surprised",
+					"x": 60,
+					"y": 57,
+					"h": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "건반이 정말 많아요!",
+					"x": 3,
+					"y": 3,
+					"w": 44,
+					"tail": "bl"
+				},
+				{
+					"text": "88개나!",
+					"x": 64,
+					"y": 38,
+					"w": 26,
+					"tail": "br"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 학원 피아노 건반은 모두 몇 개일까?",
+					"x": 3,
+					"y": 4,
+					"w": 78,
+					"tail": "bl"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,114 @@
+{
+	"id": 22,
+	"topic": "car",
+	"icon": "🚗",
+	"title": "주차 타워",
+	"fixed": 37,
+	"story": {
+		"other": 19,
+		"unit": "대"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-parking-tower",
+					"x": 60,
+					"y": 30,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "저 높은 건물은 뭐예요?",
+					"x": 3,
+					"y": 3,
+					"w": 46,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-parking-tower",
+					"x": 62,
+					"y": 32,
+					"w": 30
+				}
+			],
+			"bubbles": [
+				{
+					"text": "주차 타워야. 한 층에 차가 37대 들어가.",
+					"x": 3,
+					"y": 3,
+					"w": 64,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-toy-car",
+					"x": 58,
+					"y": 64,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "주차 타워는 19층이래요!",
+					"x": 3,
+					"y": 3,
+					"w": 50,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 주차 타워에 차는 모두 몇 대 들어갈까?",
+					"x": 28,
+					"y": 4,
+					"w": 68,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

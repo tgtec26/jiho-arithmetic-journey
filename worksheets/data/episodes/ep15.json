@@ -1,0 +1,120 @@
+{
+	"id": 15,
+	"topic": "sarang",
+	"icon": "🐱",
+	"title": "사랑이 사료",
+	"fixed": 32,
+	"story": {
+		"other": 28,
+		"unit": "알"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-cat-bowl",
+					"x": 34,
+					"y": 76,
+					"w": 24
+				},
+				{
+					"id": "sarang-sitting",
+					"x": 60,
+					"y": 57,
+					"h": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "사랑이 밥 먹을 시간이에요!",
+					"x": 3,
+					"y": 3,
+					"w": 54,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-cat-food-bag",
+					"x": 62,
+					"y": 46,
+					"w": 30
+				}
+			],
+			"bubbles": [
+				{
+					"text": "사랑이는 하루에 사료를 32알 먹어.",
+					"x": 3,
+					"y": 3,
+					"w": 64,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-calendar",
+					"x": 60,
+					"y": 42,
+					"w": 32
+				}
+			],
+			"bubbles": [
+				{
+					"text": "이번 달은 28일 동안 먹어요!",
+					"x": 3,
+					"y": 3,
+					"w": 56,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 28일 동안 먹는 사료는 모두 몇 알일까?",
+					"x": 28,
+					"y": 4,
+					"w": 68,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

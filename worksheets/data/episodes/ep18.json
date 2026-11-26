@@ -1,0 +1,114 @@
+{
+	"id": 18,
+	"topic": "train",
+	"icon": "🚂",
+	"title": "고속 열차",
+	"fixed": 46,
+	"story": {
+		"other": 18,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "prop-bullet-train",
+					"x": 26,
+					"y": 60,
+					"w": 72
+				},
+				{
+					"id": "jiho-pointing",
+					"x": 4,
+					"y": 42,
+					"h": 54
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 고속 열차를 타러 왔어요!",
+					"x": 3,
+					"y": 3,
+					"w": 60,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-conductor",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-train-seats",
+					"x": 50,
+					"y": 48,
+					"w": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "열차 한 칸에는 좌석이 46개 있어요.",
+					"x": 3,
+					"y": 3,
+					"w": 66,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "prop-bullet-train",
+					"x": 34,
+					"y": 64,
+					"w": 62
+				},
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 38,
+					"h": 58
+				}
+			],
+			"bubbles": [
+				{
+					"text": "이 열차는 18칸으로 되어 있단다.",
+					"x": 3,
+					"y": 3,
+					"w": 62,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 열차의 좌석은 모두 몇 개일까?",
+					"x": 28,
+					"y": 4,
+					"w": 68,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

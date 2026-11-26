@@ -1,0 +1,120 @@
+{
+	"id": 21,
+	"topic": "english",
+	"icon": "🔤",
+	"title": "단어 카드",
+	"fixed": 45,
+	"story": {
+		"other": 23,
+		"unit": "장"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-english-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-card-box",
+					"x": 58,
+					"y": 52,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "단어 카드 상자를 나눠 줄게요!",
+					"x": 3,
+					"y": 3,
+					"w": 58,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-word-cards",
+					"x": 58,
+					"y": 46,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "한 상자에 카드가 45장씩 들어 있어요.",
+					"x": 3,
+					"y": 3,
+					"w": 70,
+					"tail": "none"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 38,
+					"y": 59,
+					"h": 38
+				},
+				{
+					"id": "prop-card-box",
+					"x": 66,
+					"y": 58,
+					"w": 30
+				}
+			],
+			"bubbles": [
+				{
+					"text": "학원에 카드 상자가 23개 왔대요!",
+					"x": 3,
+					"y": 3,
+					"w": 62,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-sitting",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 카드는 모두 몇 장일까?",
+					"x": 28,
+					"y": 4,
+					"w": 68,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

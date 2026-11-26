@@ -1,0 +1,114 @@
+{
+	"id": 19,
+	"topic": "coding",
+	"icon": "🤖",
+	"title": "레고 블록 통",
+	"fixed": 38,
+	"story": {
+		"other": 27,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-coding-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-lego-bucket",
+					"x": 58,
+					"y": 52,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "새 레고 블록 통이 도착했어요!",
+					"x": 3,
+					"y": 3,
+					"w": 58,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-lego-bucket",
+					"x": 62,
+					"y": 54,
+					"w": 30
+				}
+			],
+			"bubbles": [
+				{
+					"text": "한 통에 블록이 38개씩 들어 있대요.",
+					"x": 3,
+					"y": 3,
+					"w": 66,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-lego-blocks",
+					"x": 56,
+					"y": 56,
+					"w": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "블록 통이 27통이나 있어요!",
+					"x": 3,
+					"y": 3,
+					"w": 54,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "prop-lego-robot",
+					"x": 64,
+					"y": 54,
+					"w": 28
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 블록은 모두 몇 개일까?",
+					"x": 28,
+					"y": 4,
+					"w": 68,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

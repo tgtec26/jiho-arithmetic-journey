@@ -1,0 +1,120 @@
+{
+	"id": 7,
+	"topic": "car",
+	"icon": "🚗",
+	"title": "주차장",
+	"fixed": 17,
+	"story": {
+		"other": 12,
+		"unit": "대"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "dad-smiling",
+					"x": 4,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "jiho-pointing",
+					"x": 28,
+					"y": 41,
+					"h": 56
+				},
+				{
+					"id": "prop-car-blue",
+					"x": 62,
+					"y": 66,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 이 주차장 정말 커요!",
+					"x": 22,
+					"y": 3,
+					"w": 54,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "prop-parking-lot",
+					"x": 36,
+					"y": 44,
+					"w": 60
+				},
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				}
+			],
+			"bubbles": [
+				{
+					"text": "한 줄에 자동차가 17대씩 서 있구나.",
+					"x": 3,
+					"y": 3,
+					"w": 66,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-toy-car",
+					"x": 56,
+					"y": 64,
+					"w": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "줄은 모두 12줄이에요!",
+					"x": 3,
+					"y": 3,
+					"w": 50,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 주차장에 있는 자동차는 모두 몇 대일까?",
+					"x": 28,
+					"y": 4,
+					"w": 68,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

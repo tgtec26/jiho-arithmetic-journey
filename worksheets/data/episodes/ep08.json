@@ -1,0 +1,133 @@
+{
+	"id": 8,
+	"topic": "gamdori",
+	"icon": "🧸",
+	"title": "감돌이 생일",
+	"fixed": 14,
+	"story": {
+		"other": 16,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-birthday-cake",
+					"x": 34,
+					"y": 66,
+					"w": 28
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 62,
+					"y": 51,
+					"h": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 감돌이 생일이에요!",
+					"x": 3,
+					"y": 3,
+					"w": 50,
+					"tail": "bl"
+				},
+				{
+					"text": "고마워!",
+					"x": 64,
+					"y": 34,
+					"w": 26,
+					"tail": "br"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "prop-chairs-row",
+					"x": 36,
+					"y": 60,
+					"w": 60
+				},
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				}
+			],
+			"bubbles": [
+				{
+					"text": "의자를 한 줄에 14개씩 놓자.",
+					"x": 3,
+					"y": 3,
+					"w": 56,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "prop-balloons",
+					"x": 68,
+					"y": 30,
+					"w": 26
+				},
+				{
+					"id": "jiho-cheering",
+					"x": 8,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "sarang-jumping",
+					"x": 40,
+					"y": 60,
+					"h": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "의자를 16줄 놓았어요!",
+					"x": 3,
+					"y": 3,
+					"w": 46,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 51,
+					"h": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 의자는 모두 몇 개일까?",
+					"x": 34,
+					"y": 4,
+					"w": 62,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

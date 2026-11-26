@@ -1,0 +1,120 @@
+{
+	"id": 16,
+	"topic": "gamdori",
+	"icon": "🧸",
+	"title": "곰 인형 공장",
+	"fixed": 24,
+	"story": {
+		"other": 35,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 58,
+					"y": 51,
+					"h": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "감돌이가 태어난 곰 인형 공장에 왔어요!",
+					"x": 3,
+					"y": 3,
+					"w": 72,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-teddy-box",
+					"x": 56,
+					"y": 50,
+					"w": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "한 상자에 곰 인형이 24개씩 들어가.",
+					"x": 3,
+					"y": 3,
+					"w": 66,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-teddy-box",
+					"x": 38,
+					"y": 62,
+					"w": 30
+				},
+				{
+					"id": "prop-teddy-box",
+					"x": 66,
+					"y": 62,
+					"w": 30
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘 35상자를 만들었대요!",
+					"x": 3,
+					"y": 3,
+					"w": 52,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 51,
+					"h": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 오늘 만든 곰 인형은 모두 몇 개일까?",
+					"x": 28,
+					"y": 4,
+					"w": 68,
+					"tail": "br"
+				}
+			]
+		}
+	]
+}

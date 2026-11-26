@@ -1,0 +1,120 @@
+{
+	"id": 12,
+	"topic": "piano",
+	"icon": "🎹",
+	"title": "매일 피아노",
+	"fixed": 27,
+	"story": {
+		"other": 14,
+		"unit": "분"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-piano",
+					"x": 52,
+					"y": 46,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "피아노 대회가 2주 남았어요!",
+					"x": 3,
+					"y": 3,
+					"w": 54,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-clock",
+					"x": 64,
+					"y": 42,
+					"w": 28
+				}
+			],
+			"bubbles": [
+				{
+					"text": "하루에 27분씩 연습하면 어떨까?",
+					"x": 3,
+					"y": 3,
+					"w": 60,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "gamdori-sitting",
+					"x": 40,
+					"y": 62,
+					"h": 35
+				},
+				{
+					"id": "sarang-happy",
+					"x": 68,
+					"y": 62,
+					"h": 35
+				}
+			],
+			"bubbles": [
+				{
+					"text": "좋아요! 14일 동안 매일 할게요!",
+					"x": 3,
+					"y": 3,
+					"w": 62,
+					"tail": "bl"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-stopwatch",
+					"x": 64,
+					"y": 56,
+					"w": 26
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그럼 14일 동안 연습하는 시간은 모두 몇 분일까?",
+					"x": 3,
+					"y": 4,
+					"w": 82,
+					"tail": "bl"
+				}
+			]
+		}
+	]
+}
