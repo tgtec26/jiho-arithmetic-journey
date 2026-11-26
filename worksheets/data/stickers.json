@@ -1,0 +1,177 @@
+[
+	{
+		"id": "jiho-happy",
+		"file": "assets/stickers/jiho-happy.png",
+		"prompt": "Jiho smiling happily, standing, arms relaxed"
+	},
+	{
+		"id": "jiho-surprised",
+		"file": "assets/stickers/jiho-surprised.png",
+		"prompt": "Jiho surprised, mouth open in an O, hands up"
+	},
+	{
+		"id": "jiho-thinking",
+		"file": "assets/stickers/jiho-thinking.png",
+		"prompt": "Jiho thinking, finger on chin, looking up, small question feeling"
+	},
+	{
+		"id": "jiho-pointing",
+		"file": "assets/stickers/jiho-pointing.png",
+		"prompt": "Jiho excitedly pointing forward with one arm"
+	},
+	{
+		"id": "jiho-cheering",
+		"file": "assets/stickers/jiho-cheering.png",
+		"prompt": "Jiho cheering with both fists raised, jumping a little"
+	},
+	{
+		"id": "jiho-kicking",
+		"file": "assets/stickers/jiho-kicking.png",
+		"prompt": "Jiho kicking a soccer ball, dynamic pose (ball included)"
+	},
+	{
+		"id": "jiho-reading",
+		"file": "assets/stickers/jiho-reading.png",
+		"prompt": "Jiho sitting and reading an open book"
+	},
+	{
+		"id": "dad-smiling",
+		"file": "assets/stickers/dad-smiling.png",
+		"prompt": "Dad smiling warmly, standing"
+	},
+	{
+		"id": "dad-explaining",
+		"file": "assets/stickers/dad-explaining.png",
+		"prompt": "Dad explaining kindly, one hand open, other hand pointing"
+	},
+	{
+		"id": "dad-thinking",
+		"file": "assets/stickers/dad-thinking.png",
+		"prompt": "Dad thinking, hand on chin"
+	},
+	{
+		"id": "dad-surprised",
+		"file": "assets/stickers/dad-surprised.png",
+		"prompt": "Dad surprised, eyebrows up, smiling"
+	},
+	{
+		"id": "dad-thumbsup",
+		"file": "assets/stickers/dad-thumbsup.png",
+		"prompt": "Dad giving a thumbs up"
+	},
+	{
+		"id": "gamdori-waving",
+		"file": "assets/stickers/gamdori-waving.png",
+		"prompt": "Gamdori teddy bear waving one paw"
+	},
+	{
+		"id": "gamdori-surprised",
+		"file": "assets/stickers/gamdori-surprised.png",
+		"prompt": "Gamdori teddy bear surprised, paws on cheeks"
+	},
+	{
+		"id": "gamdori-sitting",
+		"file": "assets/stickers/gamdori-sitting.png",
+		"prompt": "Gamdori teddy bear sitting, legs forward"
+	},
+	{
+		"id": "gamdori-cheering",
+		"file": "assets/stickers/gamdori-cheering.png",
+		"prompt": "Gamdori teddy bear cheering with both paws up"
+	},
+	{
+		"id": "gamdori-thinking",
+		"file": "assets/stickers/gamdori-thinking.png",
+		"prompt": "Gamdori teddy bear thinking, paw on chin"
+	},
+	{
+		"id": "sarang-sitting",
+		"file": "assets/stickers/sarang-sitting.png",
+		"prompt": "Sarang plush cat sitting upright"
+	},
+	{
+		"id": "sarang-curious",
+		"file": "assets/stickers/sarang-curious.png",
+		"prompt": "Sarang plush cat tilting head curiously"
+	},
+	{
+		"id": "sarang-jumping",
+		"file": "assets/stickers/sarang-jumping.png",
+		"prompt": "Sarang plush cat jumping playfully"
+	},
+	{
+		"id": "sarang-happy",
+		"file": "assets/stickers/sarang-happy.png",
+		"prompt": "Sarang plush cat smiling with eyes closed happily"
+	},
+	{
+		"id": "sarang-sleepy",
+		"file": "assets/stickers/sarang-sleepy.png",
+		"prompt": "Sarang plush cat curled up sleepy"
+	},
+	{
+		"id": "guest-soccer7",
+		"file": "assets/stickers/guest-soccer7.png",
+		"prompt": "Generic cartoon soccer player in red national-team kit with number 7 on shirt, short black hair, smiling, not resembling any real person"
+	},
+	{
+		"id": "guest-soccer9",
+		"file": "assets/stickers/guest-soccer9.png",
+		"prompt": "Generic cartoon tall soccer player in red kit with number 9 on shirt, long blond hair tied back, smiling, not resembling any real person"
+	},
+	{
+		"id": "guest-conductor",
+		"file": "assets/stickers/guest-conductor.png",
+		"prompt": "Friendly cartoon train conductor in navy uniform and cap"
+	},
+	{
+		"id": "guest-english-teacher",
+		"file": "assets/stickers/guest-english-teacher.png",
+		"prompt": "Friendly cartoon English teacher holding an ABC flash card (no readable text)"
+	},
+	{
+		"id": "guest-piano-teacher",
+		"file": "assets/stickers/guest-piano-teacher.png",
+		"prompt": "Friendly cartoon piano teacher, kind smile, holding sheet music"
+	},
+	{
+		"id": "guest-coding-teacher",
+		"file": "assets/stickers/guest-coding-teacher.png",
+		"prompt": "Friendly cartoon LEGO coding teacher holding a small robot"
+	},
+	{
+		"id": "prop-tv",
+		"file": "assets/stickers/prop-tv.png",
+		"prompt": "Living room TV showing a green soccer field"
+	},
+	{
+		"id": "prop-flags",
+		"file": "assets/stickers/prop-flags.png",
+		"prompt": "Row of many small colorful national flags on a string (no real country flags, simple color stripes)"
+	},
+	{
+		"id": "prop-soccerball",
+		"file": "assets/stickers/prop-soccerball.png",
+		"prompt": "Classic black and white soccer ball"
+	},
+	{
+		"id": "prop-goal",
+		"file": "assets/stickers/prop-goal.png",
+		"prompt": "Soccer goal with net"
+	},
+	{
+		"id": "prop-train",
+		"file": "assets/stickers/prop-train.png",
+		"prompt": "Cute toy train with an engine and several colorful passenger cars"
+	},
+	{
+		"id": "prop-lego-robot",
+		"file": "assets/stickers/prop-lego-robot.png",
+		"prompt": "Small robot built from colorful LEGO-style bricks with wheels"
+	},
+	{
+		"id": "prop-lego-blocks",
+		"file": "assets/stickers/prop-lego-blocks.png",
+		"prompt": "Pile of colorful LEGO-style bricks"
+	}
+]
