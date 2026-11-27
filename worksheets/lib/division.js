@@ -30,6 +30,15 @@ export function divSortKey(n, d) {
 	return [r.remainder > 0 ? 1 : 0, r.carry ? 1 : 0, n];
 }
 
+/** 같은 나누는 수 d로 나누는 두 수를 쉬운 순서로 비교 (Array.sort용) */
+export function divCompare(d) {
+	return (x, y) => {
+		const a = divSortKey(x, d);
+		const b = divSortKey(y, d);
+		return a[0] - b[0] || a[1] - b[1] || a[2] - b[2];
+	};
+}
+
 /**
  * @param {1|2|3} stage
  * @param {number} position 1 = 이야기 문제, 2~8 = 변형 문제
@@ -62,13 +71,10 @@ function spreadShift(list, k, phase) {
 /**
  * 나누는 수에 짝지을 변형 문제 7개 (②~⑧ 순서)
  * @param {number} seed 회차 번호: 같은 나누는 수를 쓰는 회차끼리 다른 문제가 나오게 한다
+ * @param {number[]} avoid 같은 나누는 수를 쓰는 다른 회차가 이미 쓴 수(여러 번 쓴 수는 여러 번): 덜 쓴 수부터 고른다
  */
-export function pickDivPractice(d, storyN, stage, seed = 0) {
-	const byKey = (x, y) => {
-		const a = divSortKey(x, d);
-		const b = divSortKey(y, d);
-		return a[0] - b[0] || a[1] - b[1] || a[2] - b[2];
-	};
+export function pickDivPractice(d, storyN, stage, seed = 0, avoid = []) {
+	const byKey = divCompare(d);
 	const candidates = [];
 	for (let n = 10 * d; n <= 99; n++) {
 		if (n !== storyN && checkDivProblem(stage, n, d, 8).length === 0) candidates.push(n);
@@ -87,8 +93,19 @@ export function pickDivPractice(d, storyN, stage, seed = 0) {
 						[candidates.filter((n) => info(n).onesQ > 0 && info(n).remainder > 0), 4]
 					];
 	const phase = (seed * 0.618034) % 1;
-	const picks = quotas.flatMap(([list, k]) => spreadShift(list, k, phase));
+	// 안 쓴 수부터, 그다음 덜 쓴 수부터 고른다
+	const uses = (n) => avoid.filter((a) => a === n).length;
+	const take = (list, k) => {
+		const got = [];
+		const levels = [...new Set(list.map(uses))].sort((a, b) => a - b);
+		for (const level of levels) {
+			const group = list.filter((n) => uses(n) === level);
+			got.push(...spreadShift(group, Math.min(k - got.length, group.length), phase));
+		}
+		return got;
+	};
+	const picks = quotas.flatMap(([list, k]) => take(list, k));
 	const rest = candidates.filter((n) => !picks.includes(n));
-	picks.push(...spreadShift(rest, 7 - picks.length, phase));
+	picks.push(...take(rest, 7 - picks.length));
 	return picks.sort(byKey);
 }

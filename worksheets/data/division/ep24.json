@@ -9,7 +9,15 @@
 		"unit": "개",
 		"restUnit": "개"
 	},
-	"practice": null,
+	"practice": [
+		75,
+		95,
+		54,
+		66,
+		76,
+		88,
+		98
+	],
 	"panels": [
 		{
 			"stickers": [
@@ -88,7 +96,7 @@
 			],
 			"bubbles": [
 				{
-					"text": "파티에 친구가 5명 와요!",
+					"text": "친구 5명에게 쿠키를 나눠 줄 거예요!",
 					"speaker": "jiho-happy"
 				}
 			]

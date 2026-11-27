@@ -9,7 +9,15 @@
 		"unit": "대",
 		"restUnit": "대"
 	},
-	"practice": null,
+	"practice": [
+		77,
+		91,
+		73,
+		81,
+		86,
+		92,
+		96
+	],
 	"panels": [
 		{
 			"stickers": [
@@ -94,7 +102,7 @@
 			],
 			"bubbles": [
 				{
-					"text": "층마다 똑같이 세우면 한 층에 몇 대, 몇 대 남을까?",
+					"text": "층마다 똑같이 세우면 한 층에 몇 대이고, 몇 대가 남을까?",
 					"speaker": "gamdori-thinking"
 				}
 			]

@@ -8,7 +8,15 @@
 		"dividend": 39,
 		"unit": "마디"
 	},
-	"practice": null,
+	"practice": [
+		33,
+		63,
+		69,
+		96,
+		99,
+		54,
+		81
+	],
 	"panels": [
 		{
 			"stickers": [

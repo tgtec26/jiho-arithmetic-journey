@@ -2,7 +2,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 import { checkProblem, pickPractice, stageOf } from './numbers.js';
-import { analyzeDiv, checkDivProblem, pickDivPractice } from './division.js';
+import { analyzeDiv, checkDivProblem, divCompare, pickDivPractice } from './division.js';
 
 export const ROOT = fileURLToPath(new URL('..', import.meta.url));
 export const EPISODE_DIR = join(ROOT, 'data', 'episodes');
@@ -88,7 +88,12 @@ export function validateDivEpisode(ep, stickerIds) {
 	if (analyzeDiv(n, ep.divisor).remainder > 0 && !ep.story.restUnit) {
 		errors.push(`${tag}: 나머지가 있는 이야기는 남는 것의 단위(restUnit)가 필요함`);
 	}
-	errors.push(...practiceErrors(tag, divPracticeOf(ep), n, (m, pos) => checkDivProblem(stage, m, ep.divisor, pos)));
+	const practice = divPracticeOf(ep);
+	errors.push(...practiceErrors(tag, practice, n, (m, pos) => checkDivProblem(stage, m, ep.divisor, pos)));
+	const sorted = [...practice].sort(divCompare(ep.divisor));
+	if (sorted.some((m, i) => m !== practice[i])) {
+		errors.push(`${tag}: 변형 문제 순서는 쉬운 것부터(내림 없음 → 내림 → 나머지, 작은 수부터)`);
+	}
 	errors.push(...validatePanels(ep, stickerIds, tag));
 	return errors;
 }

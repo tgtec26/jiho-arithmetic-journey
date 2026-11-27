@@ -8,7 +8,15 @@
 		"dividend": 84,
 		"unit": "장"
 	},
-	"practice": null,
+	"practice": [
+		72,
+		90,
+		63,
+		70,
+		80,
+		87,
+		95
+	],
 	"panels": [
 		{
 			"stickers": [
@@ -27,7 +35,7 @@
 			],
 			"bubbles": [
 				{
-					"text": "2026 월드컵이 곧 시작해요!",
+					"text": "아빠, 월드컵 경기를 다시 봐요!",
 					"speaker": "jiho-cheering"
 				}
 			]
@@ -71,7 +79,7 @@
 			],
 			"bubbles": [
 				{
-					"text": "축구 교실 친구 6명이랑 나눌래요!",
+					"text": "축구 교실 친구 6명에게 나눠 줄래요!",
 					"speaker": "jiho-happy"
 				},
 				{
@@ -97,7 +105,7 @@
 			],
 			"bubbles": [
 				{
-					"text": "6명이 똑같이 나누면 한 명에 몇 장일까?",
+					"text": "6명에게 똑같이 나누어 주면 한 명에 몇 장일까?",
 					"speaker": "sarang-curious"
 				}
 			]

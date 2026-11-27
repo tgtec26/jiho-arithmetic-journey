@@ -9,7 +9,15 @@
 		"unit": "묶음",
 		"restUnit": "장"
 	},
-	"practice": null,
+	"practice": [
+		78,
+		96,
+		65,
+		74,
+		83,
+		92,
+		99
+	],
 	"panels": [
 		{
 			"stickers": [

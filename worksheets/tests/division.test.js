@@ -65,6 +65,15 @@ describe('division episode table', () => {
 		}
 	});
 
+	it('avoids numbers an earlier episode with the same divisor already used', () => {
+		const ep7 = [52, ...pickDivPractice(4, 52, 2, 7)];
+		const ep13 = pickDivPractice(4, 96, 2, 13, ep7);
+		expect(ep13.filter((n) => ep7.includes(n)).length).toBeLessThanOrEqual(3);
+		ep13.forEach((m, i) => expect(checkDivProblem(2, m, 4, i + 2)).toEqual([]));
+		const keys = ep13.map((m) => divSortKey(m, 4));
+		for (let i = 1; i < keys.length; i++) expect(lessKey(keys[i - 1], keys[i])).toBe(true);
+	});
+
 	it('gives episodes with the same divisor different practice sets', () => {
 		const seen = new Map();
 		for (const [id, d, n] of DIV_EPISODE_TABLE) {

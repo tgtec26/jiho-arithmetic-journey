@@ -8,7 +8,15 @@
 		"dividend": 72,
 		"unit": "개"
 	},
-	"practice": null,
+	"practice": [
+		26,
+		66,
+		32,
+		36,
+		52,
+		74,
+		94
+	],
 	"panels": [
 		{
 			"stickers": [

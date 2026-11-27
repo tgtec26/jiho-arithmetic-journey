@@ -9,7 +9,15 @@
 		"unit": "줄",
 		"restUnit": "명"
 	},
-	"practice": null,
+	"practice": [
+		50,
+		55,
+		65,
+		57,
+		68,
+		79,
+		91
+	],
 	"panels": [
 		{
 			"stickers": [

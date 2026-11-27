@@ -8,7 +8,15 @@
 		"dividend": 91,
 		"unit": "대"
 	},
-	"practice": null,
+	"practice": [
+		84,
+		98,
+		75,
+		82,
+		87,
+		93,
+		97
+	],
 	"panels": [
 		{
 			"stickers": [

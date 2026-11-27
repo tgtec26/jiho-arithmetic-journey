@@ -9,7 +9,15 @@
 		"unit": "장",
 		"restUnit": "장"
 	},
-	"practice": null,
+	"practice": [
+		88,
+		96,
+		82,
+		89,
+		92,
+		94,
+		98
+	],
 	"panels": [
 		{
 			"stickers": [
@@ -72,7 +80,7 @@
 			],
 			"bubbles": [
 				{
-					"text": "연주회에 나온 친구는 8명이에요!",
+					"text": "나까지 8명이 연주했어요!",
 					"speaker": "jiho-surprised"
 				},
 				{

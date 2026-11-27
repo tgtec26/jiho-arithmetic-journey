@@ -8,7 +8,15 @@
 		"dividend": 58,
 		"unit": "장"
 	},
-	"practice": null,
+	"practice": [
+		46,
+		86,
+		34,
+		54,
+		74,
+		78,
+		96
+	],
 	"panels": [
 		{
 			"stickers": [

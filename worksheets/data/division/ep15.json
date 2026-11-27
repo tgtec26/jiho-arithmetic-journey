@@ -9,7 +9,15 @@
 		"unit": "번",
 		"restUnit": "알"
 	},
-	"practice": null,
+	"practice": [
+		90,
+		42,
+		72,
+		37,
+		40,
+		56,
+		79
+	],
 	"panels": [
 		{
 			"stickers": [

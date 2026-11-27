@@ -9,7 +9,15 @@
 		"unit": "개",
 		"restUnit": "개"
 	},
-	"practice": null,
+	"practice": [
+		76,
+		96,
+		83,
+		50,
+		62,
+		77,
+		98
+	],
 	"panels": [
 		{
 			"stickers": [
