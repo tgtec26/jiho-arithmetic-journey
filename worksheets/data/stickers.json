@@ -348,5 +348,30 @@
 		"id": "prop-medal",
 		"file": "assets/stickers/prop-medal.png",
 		"prompt": "Gold medal with a red ribbon, star in the center, no text"
+	},
+	{
+		"id": "prop-ball-basket",
+		"file": "assets/stickers/prop-ball-basket.png",
+		"prompt": "Big basket heaped with about ten soccer balls"
+	},
+	{
+		"id": "prop-baskets",
+		"file": "assets/stickers/prop-baskets.png",
+		"prompt": "Three identical empty baskets with handles in a row"
+	},
+	{
+		"id": "prop-gift-bags",
+		"file": "assets/stickers/prop-gift-bags.png",
+		"prompt": "Three small paper gift bags with ribbons, different pastel colors"
+	},
+	{
+		"id": "prop-sticker-sheet",
+		"file": "assets/stickers/prop-sticker-sheet.png",
+		"prompt": "Sheet of colorful star, soccer ball, car and heart stickers in rows"
+	},
+	{
+		"id": "prop-buttons",
+		"file": "assets/stickers/prop-buttons.png",
+		"prompt": "Small pile of colorful round four-hole buttons"
 	}
 ]

@@ -1,0 +1,129 @@
+{
+	"id": 1,
+	"topic": "soccer",
+	"icon": "⚽",
+	"title": "축구공 나누기",
+	"divisor": 2,
+	"story": {
+		"dividend": 26,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "prop-goal",
+					"x": 54,
+					"y": 36,
+					"w": 42
+				},
+				{
+					"id": "dad-smiling",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "jiho-cheering",
+					"x": 27,
+					"y": 42,
+					"h": 55
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠! 축구 교실에 공이 정말 많아요!",
+					"speaker": "jiho-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "prop-ball-basket",
+					"x": 34,
+					"y": 50,
+					"w": 30
+				},
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 45,
+					"h": 52
+				},
+				{
+					"id": "gamdori-surprised",
+					"x": 66,
+					"y": 61,
+					"h": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "세어 보니 공이 모두 26개구나.",
+					"speaker": "dad-explaining"
+				},
+				{
+					"text": "우와, 26개나!",
+					"speaker": "gamdori-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-soccer7",
+					"x": 4,
+					"y": 43,
+					"h": 54
+				},
+				{
+					"id": "guest-soccer9-sky",
+					"x": 27,
+					"y": 41,
+					"h": 56
+				},
+				{
+					"id": "jiho-pointing",
+					"x": 64,
+					"y": 49,
+					"h": 49,
+					"flip": true
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 두 팀으로 나눠서 연습하자!",
+					"speaker": "guest-soccer7"
+				},
+				{
+					"text": "손흥민 팀이랑 홀란 팀이다!",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 10,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 60,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "공을 두 팀이 똑같이 나누면 한 팀에 몇 개일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

@@ -2,9 +2,11 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 import { checkProblem, pickPractice, stageOf } from './numbers.js';
+import { analyzeDiv, checkDivProblem, pickDivPractice } from './division.js';
 
 export const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const EPISODE_DIR = join(ROOT, 'data', 'episodes');
+export const EPISODE_DIR = join(ROOT, 'data', 'episodes');
+export const DIVISION_DIR = join(ROOT, 'data', 'division');
 const STICKER_FILE = join(ROOT, 'data', 'stickers.json');
 
 export const MAX_BUBBLE_CHARS = 40;
@@ -27,28 +29,73 @@ export function practiceOf(ep) {
 	return ep.practice ?? pickPractice(ep.fixed, ep.story.other, stageOf(ep.id));
 }
 
+/** 나눗셈 변형 문제 7개 (②~⑧) */
+export function divPracticeOf(ep) {
+	return ep.practice ?? pickDivPractice(ep.divisor, ep.story.dividend, stageOf(ep.id), ep.id);
+}
+
+/** 두 세트 공통: id·제목·단위 */
+function headerErrors(ep, tag) {
+	const errors = [];
+	if (!Number.isInteger(ep.id) || ep.id < 1 || ep.id > 24) errors.push(`${tag}: id는 1~24`);
+	if (!ep.title) errors.push(`${tag}: 제목 없음`);
+	if (!ep.story?.unit) errors.push(`${tag}: 이야기 문제 단위 없음`);
+	return errors;
+}
+
+/** 두 세트 공통: 변형 문제 7개 목록 */
+function practiceErrors(tag, practice, storyValue, check) {
+	const errors = [];
+	if (practice.length !== 7) errors.push(`${tag}: 변형 문제는 7개여야 함`);
+	if (new Set(practice).size !== practice.length) errors.push(`${tag}: 변형 문제 중복`);
+	if (practice.includes(storyValue)) errors.push(`${tag}: 변형 문제에 이야기 수 ${storyValue}가 있음`);
+	practice.forEach((v, i) => errors.push(...check(v, i + 2).map((e) => `${tag}: ${e}`)));
+	return errors;
+}
+
 /**
  * @param {any} ep
  * @param {Set<string>} stickerIds
  * @returns {string[]} 오류 목록(빈 배열 = 통과)
  */
 export function validateEpisode(ep, stickerIds) {
-	const errors = [];
 	const tag = `${ep.id}회`;
-	if (!Number.isInteger(ep.id) || ep.id < 1 || ep.id > 24) errors.push(`${tag}: id는 1~24`);
-	if (!ep.title) errors.push(`${tag}: 제목 없음`);
-	if (!ep.story?.unit) errors.push(`${tag}: 이야기 문제 단위 없음`);
+	const errors = headerErrors(ep, tag);
 	if (errors.length) return errors;
 
 	const stage = stageOf(ep.id);
 	errors.push(...checkProblem(stage, ep.fixed, ep.story.other, 1).map((e) => `${tag}: ${e}`));
+	errors.push(...practiceErrors(tag, practiceOf(ep), ep.story.other, (b, pos) => checkProblem(stage, ep.fixed, b, pos)));
+	errors.push(...validatePanels(ep, stickerIds, tag));
+	return errors;
+}
 
-	const practice = practiceOf(ep);
-	if (practice.length !== 7) errors.push(`${tag}: 변형 문제는 7개여야 함`);
-	if (new Set(practice).size !== practice.length) errors.push(`${tag}: 변형 문제 중복`);
-	if (practice.includes(ep.story.other)) errors.push(`${tag}: 변형 문제에 이야기 수 ${ep.story.other}가 있음`);
-	practice.forEach((b, i) => errors.push(...checkProblem(stage, ep.fixed, b, i + 2).map((e) => `${tag}: ${e}`)));
+/**
+ * 나눗셈 회차 검사
+ * @param {any} ep
+ * @param {Set<string>} stickerIds
+ * @returns {string[]} 오류 목록(빈 배열 = 통과)
+ */
+export function validateDivEpisode(ep, stickerIds) {
+	const tag = `${ep.id}회`;
+	const errors = headerErrors(ep, tag);
+	if (errors.length) return errors;
 
+	const stage = stageOf(ep.id);
+	const n = ep.story.dividend;
+	errors.push(...checkDivProblem(stage, n, ep.divisor, 1).map((e) => `${tag}: ${e}`));
+	if (errors.length) return errors;
+	if (analyzeDiv(n, ep.divisor).remainder > 0 && !ep.story.restUnit) {
+		errors.push(`${tag}: 나머지가 있는 이야기는 남는 것의 단위(restUnit)가 필요함`);
+	}
+	errors.push(...practiceErrors(tag, divPracticeOf(ep), n, (m, pos) => checkDivProblem(stage, m, ep.divisor, pos)));
+	errors.push(...validatePanels(ep, stickerIds, tag));
+	return errors;
+}
+
+/** 두 세트 공통: 4컷 만화 (컷 수, 말풍선 수·길이·화자, 스티커, 마지막 질문) */
+export function validatePanels(ep, stickerIds, tag) {
+	const errors = [];
 	const panels = ep.panels ?? [];
 	if (panels.length !== 4) errors.push(`${tag}: 컷은 4개여야 함 (${panels.length}개)`);
 	panels.forEach((panel, i) => {

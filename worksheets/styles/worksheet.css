@@ -9,6 +9,7 @@
 	--tens: #2f80ed;
 	--tens-tint: #ecf3fd;
 	--story: #e8a33b;
+	--div-set: #4a7fc1;
 	--font-title: 'BM Dohyeon', 'Spoqa Han Sans Neo', sans-serif;
 	--font-body: 'Spoqa Han Sans Neo', 'Nanum Gothic', sans-serif;
 }
@@ -419,6 +420,15 @@ body {
 	padding-bottom: 1.5mm;
 	text-align: center;
 	white-space: nowrap;
+}
+
+/* 나눗셈 세트는 머리줄 색으로 구별 */
+.page.div-set .phead .ep {
+	background: var(--div-set);
+}
+.page.div-set .phead .stamp {
+	border-color: var(--div-set);
+	color: var(--div-set);
 }
 
 /* 문제 배치 */
