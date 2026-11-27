@@ -18,7 +18,8 @@
     { mode: 'itx' as GameMode, icon: '🚆' },
     { mode: 'fraction' as GameMode, icon: '🍕' },
     { mode: 'motor' as GameMode, icon: '⚙️' },
-    { mode: 'lego' as GameMode, icon: '🧱' }
+    { mode: 'lego' as GameMode, icon: '🧱' },
+    { mode: 'think' as GameMode, icon: '🏘️' }
   ];
 
   let showHistory = $state(false);

@@ -15,6 +15,14 @@ export function screenToBoard(dx: number, dy: number, tiltDeg: number, turnDeg: 
 	return { x: xs * Math.cos(t) + ys * Math.sin(t), y: -xs * Math.sin(t) + ys * Math.cos(t) };
 }
 
+/** 판 위 점 (x, y, 높이 z) → 화면 위치 (판 가운데 기준, 확대 전) */
+export function boardToScreen(x: number, y: number, z: number, tiltDeg: number, turnDeg: number) {
+	const t = rad(turnDeg);
+	const a = rad(tiltDeg);
+	const yr = x * Math.sin(t) + y * Math.cos(t);
+	return { x: x * Math.cos(t) - y * Math.sin(t), y: yr * Math.cos(a) - z * Math.sin(a) };
+}
+
 /** 1280×780 무대를 창에 맞추는 배율 (키우지 않음) */
 export function fitScale(w: number, h: number) {
 	return Math.min(1, w / STAGE_W, h / STAGE_H);

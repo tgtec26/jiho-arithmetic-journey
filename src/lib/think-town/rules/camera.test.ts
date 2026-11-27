@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { screenToBoard, fitScale } from './camera';
+import { screenToBoard, boardToScreen, fitScale } from './camera';
 
 describe('screenToBoard', () => {
 	it('기울기만 있으면 화면 세로가 cos만큼 줄어 보인 것을 되돌린다', () => {
@@ -31,5 +31,20 @@ describe('fitScale', () => {
 		expect(fitScale(1280, 752)).toBeCloseTo(752 / 780);
 		expect(fitScale(1920, 1080)).toBe(1);
 		expect(fitScale(640, 800)).toBeCloseTo(0.5);
+	});
+});
+
+describe('boardToScreen', () => {
+	it('바닥 점은 screenToBoard로 되돌아온다', () => {
+		const p = boardToScreen(40, -25, 0, 58, -34);
+		const back = screenToBoard(p.x, p.y, 58, -34, 1);
+		expect(back.x).toBeCloseTo(40);
+		expect(back.y).toBeCloseTo(-25);
+	});
+	it('높이 z만큼 화면에서 sin(기울기)배 위로 올라간다', () => {
+		const ground = boardToScreen(10, 10, 0, 60, -20);
+		const up = boardToScreen(10, 10, 30, 60, -20);
+		expect(up.x).toBeCloseTo(ground.x);
+		expect(ground.y - up.y).toBeCloseTo(30 * Math.sin(Math.PI / 3));
 	});
 });

@@ -18,6 +18,7 @@
   import FractionGame from '$lib/components/games/FractionGame.svelte';
   import MotorGame from '$lib/components/games/MotorGame.svelte';
   import LegoGame from '$lib/components/games/LegoGame.svelte';
+  import ThinkTown from '$lib/think-town/ThinkTown.svelte';
 
   // Computed values for current game view
   const isMenu = $derived(gameStore.currentMode === 'menu');
@@ -56,6 +57,8 @@
     <div class="mt-4">
       <Menu />
     </div>
+  {:else if gameStore.currentMode === 'think'}
+    <ThinkTown />
   {:else if isCompleted}
     <div class="flex-grow flex items-center justify-center pt-4">
       <ResultScreen />

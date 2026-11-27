@@ -13,6 +13,7 @@ export type GameMode =
   | 'fraction'
   | 'motor'
   | 'lego'
+  | 'think'
   | 'menu';
 
 export interface Question {
