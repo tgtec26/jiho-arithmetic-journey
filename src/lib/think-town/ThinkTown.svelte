@@ -4,6 +4,7 @@
 	import { gameStore } from '$lib/stores/gameStore.svelte';
 	import Stage from './diorama/Stage.svelte';
 	import TownMap from './TownMap.svelte';
+	import PlaceRun from './PlaceRun.svelte';
 	import { townStore } from './progress.svelte';
 	import { sound } from './sound.svelte';
 	import { PLACE_IDS, STAGES, stampCount, type PlaceId } from './rules/progress';
@@ -24,6 +25,10 @@
 	<div class="town" onpointerdowncapture={firstTouch} role="presentation">
 		{#if view === 'map'}
 			<TownMap onEnter={(id) => (view = id)} />
+		{:else}
+			{#key view}
+				<PlaceRun place={view} onExit={() => (view = 'map')} />
+			{/key}
 		{/if}
 
 		<div class="hud">

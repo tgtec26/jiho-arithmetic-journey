@@ -4,6 +4,8 @@ import { defineConfig } from 'vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
 
 export default defineConfig({
+	// 생각 마을이 학습지 퍼즐 규칙($think)을 가져다 쓴다
+	server: { fs: { allow: ['worksheets/lib/think'] } },
 	plugins: [
 		tailwindcss(),
 		sveltekit(),
