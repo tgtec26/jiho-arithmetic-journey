@@ -1,0 +1,222 @@
+{
+	"id": 4,
+	"topic": "train",
+	"icon": "🎫",
+	"title": "기차표 사는 줄",
+	"activity": "logic",
+	"puzzles": [
+		{
+			"kind": "lineup",
+			"items": [
+				"지호",
+				"아빠",
+				"감돌이"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "지호",
+					"b": "아빠"
+				},
+				{
+					"type": "before",
+					"a": "지호",
+					"b": "감돌이"
+				}
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"●★▲.",
+				"■▲★●",
+				".■.★",
+				"★●■."
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"버스",
+				"트럭",
+				"택시"
+			],
+			"clues": [
+				{
+					"type": "last",
+					"a": "트럭"
+				},
+				{
+					"type": "behind",
+					"a": "버스",
+					"b": "택시"
+				}
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"곰",
+				"고양이",
+				"토끼"
+			],
+			"clues": [
+				{
+					"type": "middle",
+					"a": "토끼"
+				},
+				{
+					"type": "behind",
+					"a": "고양이",
+					"b": "토끼"
+				}
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"빨간 칸",
+				"파란 칸",
+				"노란 칸"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "노란 칸",
+					"b": "파란 칸"
+				},
+				{
+					"type": "middle",
+					"a": "파란 칸"
+				}
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"★▲.●",
+				"■●★▲",
+				"▲★●.",
+				"●■.."
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"★.●■",
+				".●▲.",
+				"●.★▲",
+				"▲★.●"
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				".●▲■",
+				"▲■★●",
+				".▲●★",
+				".★.."
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "dad-smiling",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "jiho-happy",
+					"x": 27,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "prop-bullet-train",
+					"x": 54,
+					"y": 58,
+					"w": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 기차 타러 역에 왔어요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-ticket-booth",
+					"x": 54,
+					"y": 40,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "표를 사려면 매표소 앞에 줄을 서야 해.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 62,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "누가 맨 앞에 설까?",
+					"speaker": "jiho-pointing"
+				},
+				{
+					"text": "나도 줄 설래!",
+					"speaker": "gamdori-waving"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "단서를 보고 줄 선 순서를 맞혀 볼까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

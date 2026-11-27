@@ -62,7 +62,7 @@ export function renderParkingProblem({ puzzle, position, round }) {
 <section class="problem think-problem parking${isStory ? ' story' : ''}" data-pos="${position}">
   <div class="ptitle"><span class="num">${circled(position)}</span> 빨간 차를 꺼내요${isStory ? ' <span class="star">⭐ 이야기 문제</span>' : ''}</div>
   <div class="pbody">${renderParkingBoard(puzzle.board, { hint })}</div>
-  <div class="answer">몇 번 움직였니? <span class="blank"></span>번 <span class="min">(가장 적게: ${puzzle.minMoves}번)</span></div>
+  <div class="answer">움직인 횟수 <span class="blank"></span>번 <span class="min">(가장 적게: ${puzzle.minMoves}번)</span></div>
 </section>`;
 }
 

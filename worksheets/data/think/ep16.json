@@ -1,0 +1,252 @@
+{
+	"id": 16,
+	"topic": "car",
+	"icon": "🚌",
+	"title": "한 줄로 선 차들",
+	"activity": "logic",
+	"puzzles": [
+		{
+			"kind": "lineup",
+			"items": [
+				"버스",
+				"트럭",
+				"택시",
+				"빨간 차"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "버스",
+					"b": "택시"
+				},
+				{
+					"type": "before",
+					"a": "트럭",
+					"b": "택시"
+				},
+				{
+					"type": "behind",
+					"a": "트럭",
+					"b": "빨간 차"
+				}
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"▲.■.",
+				".■.▲",
+				"■.▲●",
+				".▲.■"
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"고양이",
+				"토끼",
+				"강아지",
+				"다람쥐"
+			],
+			"clues": [
+				{
+					"type": "apart",
+					"a": "고양이",
+					"b": "다람쥐"
+				},
+				{
+					"type": "apart",
+					"a": "고양이",
+					"b": "토끼"
+				},
+				{
+					"type": "last",
+					"a": "다람쥐"
+				}
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"아빠",
+				"감돌이",
+				"사랑이",
+				"선생님"
+			],
+			"clues": [
+				{
+					"type": "before",
+					"a": "사랑이",
+					"b": "선생님"
+				},
+				{
+					"type": "behind",
+					"a": "감돌이",
+					"b": "아빠"
+				},
+				{
+					"type": "apart",
+					"a": "사랑이",
+					"b": "아빠"
+				},
+				{
+					"type": "apart",
+					"a": "사랑이",
+					"b": "선생님"
+				}
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"파란 칸",
+				"노란 칸",
+				"초록 칸",
+				"하얀 칸"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "하얀 칸",
+					"b": "파란 칸"
+				},
+				{
+					"type": "before",
+					"a": "노란 칸",
+					"b": "초록 칸"
+				},
+				{
+					"type": "apart",
+					"a": "노란 칸",
+					"b": "파란 칸"
+				},
+				{
+					"type": "apart",
+					"a": "노란 칸",
+					"b": "초록 칸"
+				}
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				".▲★■",
+				"★■.▲",
+				"..▲●",
+				"..■."
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"....",
+				".▲■★",
+				"■★.▲",
+				"▲..■"
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"■...",
+				"●▲■.",
+				".■▲.",
+				"..★■"
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-parking-lot",
+					"x": 54,
+					"y": 46,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 차들이 한 줄로 서 있어요!",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-car-blue",
+					"x": 54,
+					"y": 54,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "버스, 트럭, 택시, 빨간 차가 있구나.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 62,
+					"y": 55,
+					"h": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "단서로 순서를 맞혀 볼게요!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "나도!",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "네 대의 차는 어떤 순서로 서 있을까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

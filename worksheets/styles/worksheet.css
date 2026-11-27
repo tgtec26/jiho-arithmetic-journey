@@ -911,3 +911,9 @@ body {
 	-webkit-print-color-adjust: exact;
 	print-color-adjust: exact;
 }
+.think-problem .answer {
+	font-size: 12pt;
+}
+.think-problem .answer .blank {
+	width: 16mm;
+}

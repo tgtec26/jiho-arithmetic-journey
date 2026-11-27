@@ -1,0 +1,197 @@
+{
+	"id": 5,
+	"topic": "car",
+	"icon": "🏎️",
+	"title": "장난감 주차장",
+	"activity": "parking",
+	"puzzles": [
+		{
+			"board": [
+				"...AAA",
+				"......",
+				"RRB...",
+				"CCBDD.",
+				"E....F",
+				"E....F"
+			],
+			"minMoves": 2
+		},
+		{
+			"board": [
+				"....A.",
+				"....A.",
+				".RR.A.",
+				"......",
+				"......",
+				"......"
+			],
+			"minMoves": 2
+		},
+		{
+			"board": [
+				"......",
+				"......",
+				".RRA..",
+				"...A..",
+				"..BBCC",
+				"....DD"
+			],
+			"minMoves": 2
+		},
+		{
+			"board": [
+				"......",
+				".....A",
+				"RR..BA",
+				"....B.",
+				"......",
+				"......"
+			],
+			"minMoves": 3
+		},
+		{
+			"board": [
+				".A...B",
+				"CADD.B",
+				"CARR.B",
+				"EE..FF",
+				".GH...",
+				".GH..."
+			],
+			"minMoves": 3
+		},
+		{
+			"board": [
+				"ABB...",
+				"A...C.",
+				"..RRC.",
+				"D...C.",
+				"D.EEE.",
+				"......"
+			],
+			"minMoves": 3
+		},
+		{
+			"board": [
+				".AAB..",
+				"...B..",
+				"CRRB..",
+				"CD.EEF",
+				"CD...F",
+				".D...."
+			],
+			"minMoves": 4
+		},
+		{
+			"board": [
+				"......",
+				"...AA.",
+				".RRBCD",
+				"...BCD",
+				"......",
+				"...EE."
+			],
+			"minMoves": 4
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 40,
+					"y": 54,
+					"h": 43
+				},
+				{
+					"id": "prop-parking-tower",
+					"x": 68,
+					"y": 34,
+					"w": 28
+				}
+			],
+			"bubbles": [
+				{
+					"text": "감돌이야, 장난감 주차장 놀이 하자!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "좋아!",
+					"speaker": "gamdori-waving"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-toy-car",
+					"x": 54,
+					"y": 54,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "빨간 차가 다른 차들 사이에 갇혔어!",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-red-car",
+					"x": 52,
+					"y": 52,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "차를 하나씩 밀어서 길을 만들어 보렴.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 62,
+					"y": 55,
+					"h": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "가장 적게 몇 번 움직이면 빨간 차가 나갈까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,179 @@
+{
+	"id": 6,
+	"topic": "cat",
+	"icon": "🧱",
+	"title": "사랑이의 블록 집",
+	"activity": "blocks",
+	"puzzles": [
+		{
+			"heights": [
+				"11",
+				"11"
+			],
+			"ask": [
+				"count"
+			]
+		},
+		{
+			"heights": [
+				"30",
+				"02"
+			],
+			"ask": [
+				"count",
+				"front"
+			]
+		},
+		{
+			"heights": [
+				"212",
+				"001"
+			],
+			"ask": [
+				"front"
+			]
+		},
+		{
+			"heights": [
+				"02",
+				"30",
+				"01"
+			],
+			"ask": [
+				"count",
+				"top"
+			]
+		},
+		{
+			"heights": [
+				"020",
+				"301"
+			],
+			"ask": [
+				"top"
+			]
+		},
+		{
+			"heights": [
+				"001",
+				"131"
+			],
+			"ask": [
+				"front"
+			]
+		},
+		{
+			"heights": [
+				"30",
+				"03"
+			],
+			"ask": [
+				"front"
+			]
+		},
+		{
+			"heights": [
+				"21",
+				"12"
+			],
+			"ask": [
+				"count",
+				"top"
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "sarang-jumping",
+					"x": 8,
+					"y": 50,
+					"h": 42
+				},
+				{
+					"id": "prop-cube-blocks",
+					"x": 50,
+					"y": 46,
+					"w": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "야옹! 나도 블록 집을 지었어!",
+					"speaker": "sarang-jumping"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-surprised",
+					"x": 62,
+					"y": 56,
+					"h": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "앞에서 보면 어떤 모양일까?",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "궁금해!",
+					"speaker": "gamdori-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-cube-blocks",
+					"x": 54,
+					"y": 48,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "앞에서, 위에서 보면 모양이 달라 보인단다.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "내 블록 집은 블록이 모두 몇 개일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

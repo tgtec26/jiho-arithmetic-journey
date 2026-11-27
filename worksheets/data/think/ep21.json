@@ -1,0 +1,197 @@
+{
+	"id": 21,
+	"topic": "soccer",
+	"icon": "🚘",
+	"title": "꽉 막힌 축구장 주차장",
+	"activity": "parking",
+	"puzzles": [
+		{
+			"board": [
+				"AABBB.",
+				"...C.D",
+				".RRCED",
+				"F.GGE.",
+				"F..HH.",
+				"...II."
+			],
+			"minMoves": 6
+		},
+		{
+			"board": [
+				"....A.",
+				"....A.",
+				".RRBA.",
+				"CC.B..",
+				"...BDD",
+				"....EE"
+			],
+			"minMoves": 6
+		},
+		{
+			"board": [
+				"ABCCDD",
+				"ABEE.F",
+				".BRRGF",
+				"H.IIG.",
+				"HJJKKK",
+				"...LLL"
+			],
+			"minMoves": 7
+		},
+		{
+			"board": [
+				"....AA",
+				"..BBCD",
+				"RR..CD",
+				"EEF.C.",
+				"..F.GG",
+				".HHII."
+			],
+			"minMoves": 8
+		},
+		{
+			"board": [
+				"ABBCC.",
+				"ADEEEF",
+				".DRRGF",
+				"H...GF",
+				"HIJ.KK",
+				".IJ..."
+			],
+			"minMoves": 9
+		},
+		{
+			"board": [
+				"AABC.D",
+				".EBCFD",
+				"GERRFD",
+				"GHHHII",
+				"JJ..KK",
+				".LLLMM"
+			],
+			"minMoves": 9
+		},
+		{
+			"board": [
+				"ABB...",
+				"ACCDD.",
+				"EFRRGH",
+				"EFIIGH",
+				"JFKL.H",
+				"J.KLMM"
+			],
+			"minMoves": 10
+		},
+		{
+			"board": [
+				"A.BBCC",
+				"ADDEE.",
+				"F.RRGH",
+				"FII.GH",
+				"JJ..KL",
+				"MM..KL"
+			],
+			"minMoves": 11
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "dad-thumbsup",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-trophy",
+					"x": 40,
+					"y": 50,
+					"w": 20
+				},
+				{
+					"id": "jiho-cheering",
+					"x": 62,
+					"y": 42,
+					"h": 55
+				}
+			],
+			"bubbles": [
+				{
+					"text": "우리 팀이 이겼어요!",
+					"speaker": "jiho-cheering"
+				},
+				{
+					"text": "멋진 경기였어!",
+					"speaker": "dad-thumbsup"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-surprised",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-parking-lot",
+					"x": 54,
+					"y": 46,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그런데 경기장 주차장이 꽉 막혔네.",
+					"speaker": "dad-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-red-car",
+					"x": 52,
+					"y": 52,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "차를 하나씩 차례대로 움직이면 돼요!",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 62,
+					"y": 55,
+					"h": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "이번엔 아주 어려워! 가장 적게 몇 번일까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,184 @@
+{
+	"id": 18,
+	"topic": "cat",
+	"icon": "🐱",
+	"title": "사랑이 고양이 타워",
+	"activity": "blocks",
+	"puzzles": [
+		{
+			"heights": [
+				"002",
+				"131"
+			],
+			"ask": [
+				"count"
+			]
+		},
+		{
+			"heights": [
+				"32",
+				"11",
+				"01"
+			],
+			"ask": [
+				"count",
+				"top"
+			]
+		},
+		{
+			"heights": [
+				"300",
+				"131"
+			],
+			"ask": [
+				"count",
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"303",
+				"111"
+			],
+			"ask": [
+				"count",
+				"front"
+			]
+		},
+		{
+			"heights": [
+				"321",
+				"111"
+			],
+			"ask": [
+				"front"
+			]
+		},
+		{
+			"heights": [
+				"013",
+				"300",
+				"021"
+			],
+			"ask": [
+				"count",
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"303",
+				"013"
+			],
+			"ask": [
+				"count",
+				"front"
+			]
+		},
+		{
+			"heights": [
+				"32",
+				"03",
+				"02"
+			],
+			"ask": [
+				"count",
+				"front"
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "sarang-jumping",
+					"x": 56,
+					"y": 50,
+					"h": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "사랑이가 올라갈 고양이 타워를 쌓자!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "야옹!",
+					"speaker": "sarang-jumping"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-cube-blocks",
+					"x": 54,
+					"y": 48,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "위에서 본 모양에 층수를 써 볼까?",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "층수를 다 더하면 블록 수예요!",
+					"speaker": "jiho-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 62,
+					"y": 55,
+					"h": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "고양이 타워 블록은 모두 몇 개일까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

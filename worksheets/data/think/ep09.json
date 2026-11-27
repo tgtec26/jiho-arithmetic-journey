@@ -1,0 +1,201 @@
+{
+	"id": 9,
+	"topic": "car",
+	"icon": "🚙",
+	"title": "주차 타워 탈출",
+	"activity": "parking",
+	"puzzles": [
+		{
+			"board": [
+				"ABB.C.",
+				"A.DDCE",
+				"..RR.E",
+				"FF...E",
+				"...GGG",
+				"......"
+			],
+			"minMoves": 3
+		},
+		{
+			"board": [
+				"A.B...",
+				"A.BCD.",
+				".RRCD.",
+				"E.....",
+				"E.....",
+				"......"
+			],
+			"minMoves": 3
+		},
+		{
+			"board": [
+				"......",
+				"....A.",
+				".RR.AB",
+				"....AB",
+				"......",
+				"...CC."
+			],
+			"minMoves": 4
+		},
+		{
+			"board": [
+				"....AA",
+				"....B.",
+				".RRCB.",
+				"...C..",
+				"DD.CEE",
+				"......"
+			],
+			"minMoves": 4
+		},
+		{
+			"board": [
+				".A..B.",
+				".ACDBE",
+				"RRCD.E",
+				"...D.E",
+				"......",
+				"...FF."
+			],
+			"minMoves": 5
+		},
+		{
+			"board": [
+				"..ABB.",
+				"..ACDD",
+				"RRAC..",
+				".EEFF.",
+				"......",
+				"......"
+			],
+			"minMoves": 5
+		},
+		{
+			"board": [
+				"AABBB.",
+				"CDD.E.",
+				"CFRREG",
+				"CF.HHG",
+				".IIJJ.",
+				"KKK.LL"
+			],
+			"minMoves": 6
+		},
+		{
+			"board": [
+				"..A.B.",
+				"..ACB.",
+				"RRAC..",
+				".DD...",
+				".EE.FF",
+				"GGHH.."
+			],
+			"minMoves": 6
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "dad-smiling",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-parking-tower",
+					"x": 38,
+					"y": 34,
+					"w": 24
+				},
+				{
+					"id": "jiho-happy",
+					"x": 64,
+					"y": 42,
+					"h": 55
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 영어 학원 끝났어요!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "차는 주차 타워에 있단다.",
+					"speaker": "dad-smiling"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-surprised",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-red-car",
+					"x": 52,
+					"y": 52,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "이런, 빨간 차 앞을 트럭이 막고 있네.",
+					"speaker": "dad-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 62,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "트럭이 비키면 길이 생겨요!",
+					"speaker": "jiho-pointing"
+				},
+				{
+					"text": "와, 똑똑해!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "차들을 몇 번 움직여야 빨간 차가 나갈까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

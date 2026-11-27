@@ -1,0 +1,273 @@
+{
+	"id": 24,
+	"topic": "soccer",
+	"icon": "⚽",
+	"title": "선수 입장 순서",
+	"activity": "logic",
+	"puzzles": [
+		{
+			"kind": "lineup",
+			"items": [
+				"지호",
+				"아빠",
+				"감돌이",
+				"사랑이",
+				"선생님"
+			],
+			"clues": [
+				{
+					"type": "middle",
+					"a": "감돌이"
+				},
+				{
+					"type": "apart",
+					"a": "지호",
+					"b": "감돌이"
+				},
+				{
+					"type": "behind",
+					"a": "선생님",
+					"b": "사랑이"
+				},
+				{
+					"type": "apart",
+					"a": "감돌이",
+					"b": "사랑이"
+				}
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"★...",
+				".●★▲",
+				".★.■",
+				"..▲."
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"곰",
+				"고양이",
+				"토끼",
+				"강아지",
+				"다람쥐"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "토끼",
+					"b": "강아지"
+				},
+				{
+					"type": "middle",
+					"a": "토끼"
+				},
+				{
+					"type": "before",
+					"a": "곰",
+					"b": "토끼"
+				},
+				{
+					"type": "behind",
+					"a": "고양이",
+					"b": "토끼"
+				}
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"버스",
+				"트럭",
+				"택시",
+				"빨간 차",
+				"자전거"
+			],
+			"clues": [
+				{
+					"type": "apart",
+					"a": "택시",
+					"b": "자전거"
+				},
+				{
+					"type": "before",
+					"a": "택시",
+					"b": "트럭"
+				},
+				{
+					"type": "behind",
+					"a": "버스",
+					"b": "빨간 차"
+				},
+				{
+					"type": "behind",
+					"a": "빨간 차",
+					"b": "트럭"
+				},
+				{
+					"type": "first",
+					"a": "택시"
+				}
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"빨간 칸",
+				"파란 칸",
+				"노란 칸",
+				"초록 칸",
+				"하얀 칸"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "노란 칸",
+					"b": "하얀 칸"
+				},
+				{
+					"type": "behind",
+					"a": "빨간 칸",
+					"b": "초록 칸"
+				},
+				{
+					"type": "last",
+					"a": "파란 칸"
+				},
+				{
+					"type": "behind",
+					"a": "초록 칸",
+					"b": "노란 칸"
+				},
+				{
+					"type": "before",
+					"a": "노란 칸",
+					"b": "파란 칸"
+				}
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"★.●.",
+				".●..",
+				"●.★.",
+				"..▲●"
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"▲.★.",
+				"■...",
+				"★■.●",
+				"...."
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"..★●",
+				"●..▲",
+				"....",
+				".▲.★"
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "guest-soccer7",
+					"x": 52,
+					"y": 41,
+					"h": 56
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 내가 선수 입장 도우미예요!",
+					"speaker": "jiho-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-flags",
+					"x": 54,
+					"y": 40,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "다섯 명이 한 줄로 입장한단다.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-soccer9-sky",
+					"x": 6,
+					"y": 41,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 62,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "순서 단서는 이 쪽지에 있어요.",
+					"speaker": "guest-soccer9-sky"
+				},
+				{
+					"text": "두근두근!",
+					"speaker": "gamdori-waving"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "다섯 명은 어떤 순서로 입장할까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

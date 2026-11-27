@@ -1,0 +1,187 @@
+{
+	"id": 13,
+	"topic": "car",
+	"icon": "🏁",
+	"title": "경주차 출발 준비",
+	"activity": "parking",
+	"puzzles": [
+		{
+			"board": [
+				".AA.B.",
+				"..CCBD",
+				"RRE..D",
+				"F.E...",
+				"F.GGG.",
+				"F....."
+			],
+			"minMoves": 4
+		},
+		{
+			"board": [
+				"AA.B..",
+				"...B.C",
+				"DERRFC",
+				"DEGGF.",
+				"H...F.",
+				"H..II."
+			],
+			"minMoves": 4
+		},
+		{
+			"board": [
+				"......",
+				"A..BBB",
+				"ARRCDE",
+				"..FCDE",
+				"..FCGG",
+				"......"
+			],
+			"minMoves": 5
+		},
+		{
+			"board": [
+				"AA.B..",
+				".CCB..",
+				".RRB..",
+				"...DD.",
+				"..EE..",
+				"..FF.."
+			],
+			"minMoves": 5
+		},
+		{
+			"board": [
+				".AA.B.",
+				".CCCBD",
+				"..RRBD",
+				".EEF.G",
+				"HHIF.G",
+				"JJI.KK"
+			],
+			"minMoves": 6
+		},
+		{
+			"board": [
+				"......",
+				"AB..C.",
+				"ABRRCD",
+				".B..CD",
+				".EFG.D",
+				".EFGHH"
+			],
+			"minMoves": 6
+		},
+		{
+			"board": [
+				"AABCCC",
+				"..BDDE",
+				"FRR.GE",
+				"FHH.G.",
+				".I.JJK",
+				".I.LLK"
+			],
+			"minMoves": 7
+		},
+		{
+			"board": [
+				"AABBC.",
+				".DDECF",
+				"RR.ECF",
+				"G.HH..",
+				"G...II",
+				"G..JJJ"
+			],
+			"minMoves": 7
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "prop-race-car",
+					"x": 46,
+					"y": 56,
+					"w": 48
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 자동차 경주 보러 왔어요!",
+					"speaker": "jiho-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-parking-lot",
+					"x": 54,
+					"y": 46,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "경주차들이 대기 구역에 빽빽하게 서 있구나.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-checkered-flag",
+					"x": 60,
+					"y": 36,
+					"w": 30
+				}
+			],
+			"bubbles": [
+				{
+					"text": "빨간 경주차가 출발선에 못 나가요!",
+					"speaker": "jiho-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 62,
+					"y": 55,
+					"h": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "빨간 차가 나가려면 가장 적게 몇 번 움직일까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

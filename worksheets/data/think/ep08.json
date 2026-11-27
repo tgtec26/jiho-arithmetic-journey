@@ -1,0 +1,231 @@
+{
+	"id": 8,
+	"topic": "train",
+	"icon": "🎢",
+	"title": "꼬마 기차 놀이기구",
+	"activity": "logic",
+	"puzzles": [
+		{
+			"kind": "lineup",
+			"items": [
+				"지호",
+				"감돌이",
+				"사랑이"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "지호",
+					"b": "감돌이"
+				},
+				{
+					"type": "last",
+					"a": "사랑이"
+				}
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"●▲★.",
+				"★.●.",
+				"▲●■★",
+				"■.▲."
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"토끼",
+				"강아지",
+				"다람쥐"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "토끼",
+					"b": "강아지"
+				},
+				{
+					"type": "before",
+					"a": "다람쥐",
+					"b": "강아지"
+				}
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"택시",
+				"자전거",
+				"버스"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "택시",
+					"b": "자전거"
+				},
+				{
+					"type": "behind",
+					"a": "자전거",
+					"b": "버스"
+				},
+				{
+					"type": "before",
+					"a": "택시",
+					"b": "버스"
+				}
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"노란 칸",
+				"초록 칸",
+				"빨간 칸"
+			],
+			"clues": [
+				{
+					"type": "last",
+					"a": "초록 칸"
+				},
+				{
+					"type": "behind",
+					"a": "노란 칸",
+					"b": "초록 칸"
+				},
+				{
+					"type": "behind",
+					"a": "빨간 칸",
+					"b": "노란 칸"
+				}
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				".■.●",
+				".★■▲",
+				".▲●★",
+				"★.▲■"
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"■●★.",
+				".★●.",
+				"★▲■●",
+				"●..."
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"★■..",
+				"▲●.■",
+				"■★●.",
+				"●.■."
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 56,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "놀이공원에 왔어요!",
+					"speaker": "jiho-cheering"
+				},
+				{
+					"text": "신난다!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-train",
+					"x": 42,
+					"y": 60,
+					"w": 56
+				}
+			],
+			"bubbles": [
+				{
+					"text": "꼬마 기차는 한 줄로 서서 탄단다.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "sarang-jumping",
+					"x": 58,
+					"y": 50,
+					"h": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "사랑이도 같이 서자!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "나도 탈래!",
+					"speaker": "sarang-jumping"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 62,
+					"y": 55,
+					"h": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "지호, 감돌이, 사랑이는 어떤 순서로 섰을까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

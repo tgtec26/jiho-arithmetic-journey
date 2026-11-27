@@ -1,0 +1,181 @@
+{
+	"id": 10,
+	"topic": "lego",
+	"icon": "🏰",
+	"title": "블록으로 쌓은 성",
+	"activity": "blocks",
+	"puzzles": [
+		{
+			"heights": [
+				"013",
+				"110"
+			],
+			"ask": [
+				"count"
+			]
+		},
+		{
+			"heights": [
+				"01",
+				"20",
+				"31"
+			],
+			"ask": [
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"220",
+				"111"
+			],
+			"ask": [
+				"count",
+				"front"
+			]
+		},
+		{
+			"heights": [
+				"202",
+				"111"
+			],
+			"ask": [
+				"count"
+			]
+		},
+		{
+			"heights": [
+				"030",
+				"301"
+			],
+			"ask": [
+				"front"
+			]
+		},
+		{
+			"heights": [
+				"300",
+				"201",
+				"011"
+			],
+			"ask": [
+				"count",
+				"top"
+			]
+		},
+		{
+			"heights": [
+				"123",
+				"101"
+			],
+			"ask": [
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"30",
+				"31",
+				"10"
+			],
+			"ask": [
+				"count",
+				"side"
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-coding-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-cube-blocks",
+					"x": 54,
+					"y": 48,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 블록으로 성을 쌓아 봐요.",
+					"speaker": "guest-coding-teacher"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-lego-bucket",
+					"x": 58,
+					"y": 50,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "옆에서 본 모양도 그려 볼래요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 62,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "숨은 블록을 잘 세어야 해.",
+					"speaker": "dad-thinking"
+				},
+				{
+					"text": "층마다 세자!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "지호가 쌓은 성에 블록은 모두 몇 개일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

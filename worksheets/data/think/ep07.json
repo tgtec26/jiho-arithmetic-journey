@@ -1,0 +1,297 @@
+{
+	"id": 7,
+	"topic": "food",
+	"icon": "🍦",
+	"title": "아이스크림 가게",
+	"activity": "counting",
+	"puzzles": [
+		{
+			"kind": "pairs",
+			"text": "과자 콘과 컵 중 하나, 맛 3가지 중 하나를 고르는 방법은 모두 몇 가지일까요?",
+			"left": [
+				{
+					"name": "과자 콘",
+					"color": "#f28c28"
+				},
+				{
+					"name": "컵",
+					"color": "#ffffff"
+				}
+			],
+			"right": [
+				{
+					"name": "딸기",
+					"color": "#f29bb5"
+				},
+				{
+					"name": "초코",
+					"color": "#8a5a3c"
+				},
+				{
+					"name": "바닐라",
+					"color": "#f3e3b5"
+				}
+			]
+		},
+		{
+			"kind": "order",
+			"text": "딸기, 초코, 바닐라를 한 줄로 쌓는 순서는 모두 몇 가지일까요?",
+			"items": [
+				{
+					"name": "딸기",
+					"color": "#f29bb5"
+				},
+				{
+					"name": "초코",
+					"color": "#8a5a3c"
+				},
+				{
+					"name": "바닐라",
+					"color": "#f3e3b5"
+				}
+			],
+			"pick": 3
+		},
+		{
+			"kind": "pairs",
+			"text": "티셔츠 2벌과 모자 3개 중에서 하나씩 고르는 방법은?",
+			"left": [
+				{
+					"name": "줄무늬 티",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "별무늬 티",
+					"color": "#f2c230"
+				}
+			],
+			"right": [
+				{
+					"name": "빨간 모자",
+					"color": "#e5533d"
+				},
+				{
+					"name": "초록 모자",
+					"color": "#4caf6a"
+				},
+				{
+					"name": "검은 모자",
+					"color": "#333333"
+				}
+			]
+		},
+		{
+			"kind": "order",
+			"text": "피아노 곡 3곡 중에서 첫 번째와 두 번째로 칠 곡을 고르는 방법은?",
+			"items": [
+				{
+					"name": "나비야",
+					"color": "#f2c230"
+				},
+				{
+					"name": "작은 별",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "학교 종",
+					"color": "#f28c28"
+				}
+			],
+			"pick": 2
+		},
+		{
+			"kind": "pairs",
+			"text": "빵 3가지와 속 2가지 중에서 하나씩 골라 샌드위치를 만드는 방법은?",
+			"left": [
+				{
+					"name": "식빵",
+					"color": "#f3e3b5"
+				},
+				{
+					"name": "호밀빵",
+					"color": "#8a5a3c"
+				},
+				{
+					"name": "모닝빵",
+					"color": "#f28c28"
+				}
+			],
+			"right": [
+				{
+					"name": "햄",
+					"color": "#f29bb5"
+				},
+				{
+					"name": "달걀",
+					"color": "#f2c230"
+				}
+			]
+		},
+		{
+			"kind": "order",
+			"text": "자동차 3대가 주차장에 한 줄로 서는 순서는 모두 몇 가지일까요?",
+			"items": [
+				{
+					"name": "빨간 차",
+					"color": "#e5533d"
+				},
+				{
+					"name": "파란 차",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "초록 차",
+					"color": "#4caf6a"
+				}
+			],
+			"pick": 3
+		},
+		{
+			"kind": "pairs",
+			"text": "고양이 장난감 2개와 간식 3가지 중에서 하나씩 고르는 방법은?",
+			"left": [
+				{
+					"name": "공",
+					"color": "#e5533d"
+				},
+				{
+					"name": "쥐 인형",
+					"color": "#9e9e9e"
+				}
+			],
+			"right": [
+				{
+					"name": "생선",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "닭고기",
+					"color": "#f3e3b5"
+				},
+				{
+					"name": "우유",
+					"color": "#ffffff"
+				}
+			]
+		},
+		{
+			"kind": "order",
+			"text": "블록 3개 중 2개를 골라 위아래로 쌓는 방법은 모두 몇 가지일까요?",
+			"items": [
+				{
+					"name": "빨간 블록",
+					"color": "#e5533d"
+				},
+				{
+					"name": "노란 블록",
+					"color": "#f2c230"
+				},
+				{
+					"name": "파란 블록",
+					"color": "#3d7be5"
+				}
+			],
+			"pick": 2
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "dad-smiling",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "jiho-cheering",
+					"x": 27,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "prop-ice-cream",
+					"x": 62,
+					"y": 44,
+					"w": 32
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 아이스크림 가게예요!",
+					"speaker": "jiho-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-ice-cream",
+					"x": 54,
+					"y": 44,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "맛은 딸기, 초코, 바닐라 3가지란다.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 62,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "과자 콘이랑 컵 중에 골라야 해요.",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "난 컵!",
+					"speaker": "gamdori-waving"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "콘과 맛을 하나씩 고르는 방법은 몇 가지일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,302 @@
+{
+	"id": 19,
+	"topic": "cat",
+	"icon": "📸",
+	"title": "사랑이 생일 사진",
+	"activity": "counting",
+	"puzzles": [
+		{
+			"kind": "order",
+			"text": "지호, 감돌이, 사랑이가 한 줄로 서서 생일 사진을 찍는 방법은 모두 몇 가지일까요?",
+			"items": [
+				{
+					"name": "지호",
+					"sticker": "jiho-happy"
+				},
+				{
+					"name": "감돌이",
+					"sticker": "gamdori-sitting"
+				},
+				{
+					"name": "사랑이",
+					"sticker": "sarang-sitting"
+				}
+			],
+			"pick": 3
+		},
+		{
+			"kind": "choose",
+			"text": "사랑이 장난감 4개 중에서 2개를 고르는 방법은?",
+			"items": [
+				{
+					"name": "공",
+					"color": "#e5533d"
+				},
+				{
+					"name": "쥐 인형",
+					"color": "#9e9e9e"
+				},
+				{
+					"name": "깃털",
+					"color": "#9b6bd1"
+				},
+				{
+					"name": "방울",
+					"color": "#f2c230"
+				}
+			],
+			"pick": 2
+		},
+		{
+			"kind": "paths",
+			"text": "집에서 수영장까지 가장 짧은 길은 모두 몇 가지일까요?",
+			"w": 2,
+			"h": 2,
+			"to": "수영장"
+		},
+		{
+			"kind": "pairs",
+			"text": "케이크 2가지와 음료 4가지 중에서 하나씩 고르는 방법은?",
+			"left": [
+				{
+					"name": "초코 케이크",
+					"color": "#8a5a3c"
+				},
+				{
+					"name": "딸기 케이크",
+					"color": "#f29bb5"
+				}
+			],
+			"right": [
+				{
+					"name": "우유",
+					"color": "#ffffff"
+				},
+				{
+					"name": "주스",
+					"color": "#f28c28"
+				},
+				{
+					"name": "물",
+					"color": "#9fe0c8"
+				},
+				{
+					"name": "코코아",
+					"color": "#8a5a3c"
+				}
+			]
+		},
+		{
+			"kind": "pairs",
+			"text": "셔츠 3벌과 바지 3벌 중에서 하나씩 골라 입는 방법은?",
+			"left": [
+				{
+					"name": "빨간 셔츠",
+					"color": "#e5533d"
+				},
+				{
+					"name": "파란 셔츠",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "노란 셔츠",
+					"color": "#f2c230"
+				}
+			],
+			"right": [
+				{
+					"name": "검은 바지",
+					"color": "#333333"
+				},
+				{
+					"name": "흰 바지",
+					"color": "#ffffff"
+				},
+				{
+					"name": "회색 바지",
+					"color": "#9e9e9e"
+				}
+			]
+		},
+		{
+			"kind": "choose",
+			"text": "다섯 명 중에서 두 명씩 짝을 지어 사진을 찍으면 사진은 모두 몇 장일까요?",
+			"items": [
+				{
+					"name": "지호",
+					"sticker": "jiho-happy"
+				},
+				{
+					"name": "아빠",
+					"sticker": "dad-smiling"
+				},
+				{
+					"name": "감돌이",
+					"sticker": "gamdori-sitting"
+				},
+				{
+					"name": "사랑이",
+					"sticker": "sarang-sitting"
+				},
+				{
+					"name": "선생님",
+					"color": "#f28c28"
+				}
+			],
+			"pick": 2
+		},
+		{
+			"kind": "order",
+			"text": "네 명이 달리기를 해요. 1등과 2등이 되는 경우는 모두 몇 가지일까요?",
+			"items": [
+				{
+					"name": "지호",
+					"sticker": "jiho-happy"
+				},
+				{
+					"name": "아빠",
+					"sticker": "dad-smiling"
+				},
+				{
+					"name": "감돌이",
+					"sticker": "gamdori-sitting"
+				},
+				{
+					"name": "사랑이",
+					"sticker": "sarang-sitting"
+				}
+			],
+			"pick": 2
+		},
+		{
+			"kind": "pairs",
+			"text": "빵 3가지와 잼 4가지 중에서 하나씩 고르는 방법은?",
+			"left": [
+				{
+					"name": "식빵",
+					"color": "#f3e3b5"
+				},
+				{
+					"name": "베이글",
+					"color": "#f28c28"
+				},
+				{
+					"name": "모닝빵",
+					"color": "#8a5a3c"
+				}
+			],
+			"right": [
+				{
+					"name": "딸기잼",
+					"color": "#e5533d"
+				},
+				{
+					"name": "포도잼",
+					"color": "#9b6bd1"
+				},
+				{
+					"name": "사과잼",
+					"color": "#f2c230"
+				},
+				{
+					"name": "땅콩잼",
+					"color": "#8a5a3c"
+				}
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "prop-birthday-cake",
+					"x": 54,
+					"y": 50,
+					"w": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 사랑이 생일이에요!",
+					"speaker": "jiho-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-smiling",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-balloons",
+					"x": 58,
+					"y": 30,
+					"w": 30
+				}
+			],
+			"bubbles": [
+				{
+					"text": "생일 기념으로 사진을 찍자.",
+					"speaker": "dad-smiling"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "gamdori-waving",
+					"x": 10,
+					"y": 54,
+					"h": 43
+				},
+				{
+					"id": "sarang-happy",
+					"x": 58,
+					"y": 59,
+					"h": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "셋이 한 줄로 서 볼까?",
+					"speaker": "gamdori-waving"
+				},
+				{
+					"text": "야옹, 좋아!",
+					"speaker": "sarang-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 4,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "jiho-thinking",
+					"x": 50,
+					"y": 40,
+					"h": 58
+				}
+			],
+			"bubbles": [
+				{
+					"text": "셋이 한 줄로 서는 방법은 모두 몇 가지일까?",
+					"speaker": "dad-thinking"
+				}
+			]
+		}
+	]
+}

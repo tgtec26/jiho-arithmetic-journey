@@ -1,0 +1,236 @@
+{
+	"id": 12,
+	"topic": "train",
+	"icon": "🚃",
+	"title": "기차 칸 순서 맞히기",
+	"activity": "logic",
+	"puzzles": [
+		{
+			"kind": "lineup",
+			"items": [
+				"빨간 칸",
+				"파란 칸",
+				"노란 칸",
+				"초록 칸"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "초록 칸",
+					"b": "파란 칸"
+				},
+				{
+					"type": "behind",
+					"a": "파란 칸",
+					"b": "빨간 칸"
+				},
+				{
+					"type": "first",
+					"a": "노란 칸"
+				}
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				".●■▲",
+				"■.★●",
+				"...★",
+				"●.▲■"
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"지호",
+				"아빠",
+				"감돌이",
+				"사랑이"
+			],
+			"clues": [
+				{
+					"type": "first",
+					"a": "아빠"
+				},
+				{
+					"type": "behind",
+					"a": "지호",
+					"b": "감돌이"
+				},
+				{
+					"type": "before",
+					"a": "사랑이",
+					"b": "감돌이"
+				}
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"곰",
+				"고양이",
+				"토끼",
+				"강아지"
+			],
+			"clues": [
+				{
+					"type": "last",
+					"a": "강아지"
+				},
+				{
+					"type": "behind",
+					"a": "토끼",
+					"b": "강아지"
+				},
+				{
+					"type": "behind",
+					"a": "고양이",
+					"b": "토끼"
+				}
+			]
+		},
+		{
+			"kind": "lineup",
+			"items": [
+				"버스",
+				"트럭",
+				"택시",
+				"빨간 차"
+			],
+			"clues": [
+				{
+					"type": "behind",
+					"a": "택시",
+					"b": "빨간 차"
+				},
+				{
+					"type": "behind",
+					"a": "빨간 차",
+					"b": "버스"
+				},
+				{
+					"type": "before",
+					"a": "택시",
+					"b": "트럭"
+				}
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				".★.■",
+				"●..★",
+				"★▲■●",
+				"..★▲"
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				"★..●",
+				"●.■★",
+				"■★.▲",
+				"...■"
+			]
+		},
+		{
+			"kind": "sudoku",
+			"grid": [
+				".▲.■",
+				"★.●▲",
+				"■★.●",
+				"▲..."
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-conductor",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-train",
+					"x": 42,
+					"y": 60,
+					"w": 56
+				}
+			],
+			"bubbles": [
+				{
+					"text": "기차 칸 4개를 순서대로 이어야 해요.",
+					"speaker": "guest-conductor"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-rail-track",
+					"x": 50,
+					"y": 62,
+					"w": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "빨간 칸, 파란 칸, 노란 칸, 초록 칸이에요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-conductor",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-puzzle-paper",
+					"x": 56,
+					"y": 46,
+					"w": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "단서 쪽지를 잘 읽어 보세요.",
+					"speaker": "guest-conductor"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "기차 칸은 어떤 순서로 이어졌을까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

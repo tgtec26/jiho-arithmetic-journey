@@ -1,0 +1,288 @@
+{
+	"id": 3,
+	"topic": "cat",
+	"icon": "🐱",
+	"title": "사랑이 간식 고르기",
+	"activity": "counting",
+	"puzzles": [
+		{
+			"kind": "pairs",
+			"text": "간식 2가지와 그릇 2개 중에서 하나씩 고르는 방법은 모두 몇 가지일까요?",
+			"left": [
+				{
+					"name": "생선 과자",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "닭고기 과자",
+					"color": "#f3e3b5"
+				}
+			],
+			"right": [
+				{
+					"name": "빨간 그릇",
+					"color": "#e5533d"
+				},
+				{
+					"name": "파란 그릇",
+					"color": "#3d7be5"
+				}
+			]
+		},
+		{
+			"kind": "pairs",
+			"text": "모자 2개와 장갑 2켤레 중에서 하나씩 고르는 방법은?",
+			"left": [
+				{
+					"name": "노란 모자",
+					"color": "#f2c230"
+				},
+				{
+					"name": "초록 모자",
+					"color": "#4caf6a"
+				}
+			],
+			"right": [
+				{
+					"name": "빨간 장갑",
+					"color": "#e5533d"
+				},
+				{
+					"name": "파란 장갑",
+					"color": "#3d7be5"
+				}
+			]
+		},
+		{
+			"kind": "pairs",
+			"text": "빵 2가지와 우유 2가지 중에서 하나씩 고르는 방법은?",
+			"left": [
+				{
+					"name": "식빵",
+					"color": "#f3e3b5"
+				},
+				{
+					"name": "크루아상",
+					"color": "#f28c28"
+				}
+			],
+			"right": [
+				{
+					"name": "흰 우유",
+					"color": "#ffffff"
+				},
+				{
+					"name": "초코 우유",
+					"color": "#8a5a3c"
+				}
+			]
+		},
+		{
+			"kind": "pairs",
+			"text": "콘 2가지와 맛 3가지 중에서 하나씩 고르는 방법은?",
+			"left": [
+				{
+					"name": "과자 콘",
+					"color": "#f28c28"
+				},
+				{
+					"name": "컵",
+					"color": "#ffffff"
+				}
+			],
+			"right": [
+				{
+					"name": "딸기",
+					"color": "#f29bb5"
+				},
+				{
+					"name": "초코",
+					"color": "#8a5a3c"
+				},
+				{
+					"name": "바닐라",
+					"color": "#f3e3b5"
+				}
+			]
+		},
+		{
+			"kind": "order",
+			"text": "기차 칸 3개를 한 줄로 잇는 순서는 모두 몇 가지일까요?",
+			"items": [
+				{
+					"name": "빨간 칸",
+					"color": "#e5533d"
+				},
+				{
+					"name": "파란 칸",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "노란 칸",
+					"color": "#f2c230"
+				}
+			],
+			"pick": 3
+		},
+		{
+			"kind": "order",
+			"text": "세 명이 달리기를 해요. 1등과 2등이 되는 경우는 모두 몇 가지일까요?",
+			"items": [
+				{
+					"name": "지호",
+					"sticker": "jiho-happy"
+				},
+				{
+					"name": "아빠",
+					"sticker": "dad-smiling"
+				},
+				{
+					"name": "감돌이",
+					"sticker": "gamdori-sitting"
+				}
+			],
+			"pick": 2
+		},
+		{
+			"kind": "pairs",
+			"text": "셔츠 3벌과 바지 2벌 중에서 하나씩 골라 입는 방법은?",
+			"left": [
+				{
+					"name": "빨간 셔츠",
+					"color": "#e5533d"
+				},
+				{
+					"name": "파란 셔츠",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "노란 셔츠",
+					"color": "#f2c230"
+				}
+			],
+			"right": [
+				{
+					"name": "검은 바지",
+					"color": "#333333"
+				},
+				{
+					"name": "흰 바지",
+					"color": "#ffffff"
+				}
+			]
+		},
+		{
+			"kind": "order",
+			"text": "셋이 한 줄로 서서 사진을 찍는 방법은 모두 몇 가지일까요?",
+			"items": [
+				{
+					"name": "지호",
+					"sticker": "jiho-happy"
+				},
+				{
+					"name": "감돌이",
+					"sticker": "gamdori-sitting"
+				},
+				{
+					"name": "사랑이",
+					"sticker": "sarang-sitting"
+				}
+			],
+			"pick": 3
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "sarang-jumping",
+					"x": 56,
+					"y": 50,
+					"h": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "사랑이 간식 시간이에요!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "야옹!",
+					"speaker": "sarang-jumping"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-cat-treats",
+					"x": 58,
+					"y": 50,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "간식은 생선 과자, 닭고기 과자 2가지야.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-cat-bowl",
+					"x": 58,
+					"y": 58,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "그릇도 빨간 그릇, 파란 그릇 2개예요.",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "간식과 그릇을 하나씩 고르는 방법은 몇 가지일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

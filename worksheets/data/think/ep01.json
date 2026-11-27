@@ -1,0 +1,197 @@
+{
+	"id": 1,
+	"topic": "car",
+	"icon": "🚗",
+	"title": "아빠 차를 꺼내요",
+	"activity": "parking",
+	"puzzles": [
+		{
+			"board": [
+				"......",
+				"......",
+				"RR..A.",
+				"....A.",
+				"......",
+				"......"
+			],
+			"minMoves": 2
+		},
+		{
+			"board": [
+				"...A..",
+				"...A.B",
+				"RR...B",
+				"......",
+				"......",
+				"...CCC"
+			],
+			"minMoves": 2
+		},
+		{
+			"board": [
+				"......",
+				"......",
+				".RR..A",
+				".....A",
+				".....A",
+				"......"
+			],
+			"minMoves": 2
+		},
+		{
+			"board": [
+				"......",
+				"..A...",
+				"RRA...",
+				"......",
+				"......",
+				"......"
+			],
+			"minMoves": 2
+		},
+		{
+			"board": [
+				"AA.BBB",
+				"CC.DDE",
+				"RR...E",
+				"F..GHH",
+				"F..GII",
+				"JJ.KK."
+			],
+			"minMoves": 3
+		},
+		{
+			"board": [
+				"...AA.",
+				"...BB.",
+				".RR.C.",
+				".DDDC.",
+				"....EE",
+				"....FF"
+			],
+			"minMoves": 3
+		},
+		{
+			"board": [
+				"AA....",
+				"BC..DE",
+				"BCRRDE",
+				"B.FGGH",
+				"IIFJJH",
+				"..KK.."
+			],
+			"minMoves": 3
+		},
+		{
+			"board": [
+				"......",
+				"...AAB",
+				"RRC..B",
+				"..C.D.",
+				"....D.",
+				"...EE."
+			],
+			"minMoves": 3
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "dad-smiling",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "jiho-happy",
+					"x": 27,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "prop-parking-lot",
+					"x": 56,
+					"y": 46,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 장 다 봤어요! 이제 집에 가요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-surprised",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-red-car",
+					"x": 52,
+					"y": 52,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "어? 차들이 막아서 빨간 차가 못 나가네.",
+					"speaker": "dad-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 62,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "차는 앞뒤로만 밀 수 있어. 옆으로는 못 가.",
+					"speaker": "dad-explaining"
+				},
+				{
+					"text": "밀어 보자!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "빨간 차를 출구로 꺼내려면 몇 번 움직여야 할까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

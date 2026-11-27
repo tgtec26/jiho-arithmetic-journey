@@ -1,0 +1,179 @@
+{
+	"id": 14,
+	"topic": "piano",
+	"icon": "🎹",
+	"title": "블록 음 계단",
+	"activity": "blocks",
+	"puzzles": [
+		{
+			"heights": [
+				"20",
+				"01",
+				"30"
+			],
+			"ask": [
+				"count"
+			]
+		},
+		{
+			"heights": [
+				"231",
+				"001"
+			],
+			"ask": [
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"310",
+				"021"
+			],
+			"ask": [
+				"count",
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"21",
+				"30",
+				"02"
+			],
+			"ask": [
+				"count",
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"303",
+				"120"
+			],
+			"ask": [
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"03",
+				"22",
+				"11"
+			],
+			"ask": [
+				"count",
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"23",
+				"01",
+				"21"
+			],
+			"ask": [
+				"count"
+			]
+		},
+		{
+			"heights": [
+				"11",
+				"01",
+				"33"
+			],
+			"ask": [
+				"side"
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-piano-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-piano",
+					"x": 54,
+					"y": 48,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 계단처럼 올라가는 음을 배워요.",
+					"speaker": "guest-piano-teacher"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-cube-blocks",
+					"x": 54,
+					"y": 48,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "블록으로 음 계단을 만들어 볼게요!",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-sitting",
+					"x": 62,
+					"y": 58,
+					"h": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "높은 음일수록 블록을 높이 쌓아 보자.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "음 계단을 만든 블록은 모두 몇 개일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

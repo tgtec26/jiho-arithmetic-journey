@@ -1,0 +1,272 @@
+{
+	"id": 23,
+	"topic": "soccer",
+	"icon": "🗺️",
+	"title": "축구장 가는 길",
+	"activity": "counting",
+	"puzzles": [
+		{
+			"kind": "paths",
+			"text": "집에서 축구장까지 가장 짧은 길은 모두 몇 가지일까요?",
+			"w": 2,
+			"h": 2,
+			"to": "축구장"
+		},
+		{
+			"kind": "order",
+			"text": "레고 로봇 3개를 한 줄로 세우는 방법은 모두 몇 가지일까요?",
+			"items": [
+				{
+					"name": "빨간 로봇",
+					"color": "#e5533d"
+				},
+				{
+					"name": "파란 로봇",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "초록 로봇",
+					"color": "#4caf6a"
+				}
+			],
+			"pick": 3
+		},
+		{
+			"kind": "choose",
+			"text": "축구팀 4개가 서로 한 번씩 경기하면 모두 몇 경기일까요?",
+			"items": [
+				{
+					"name": "사자 팀",
+					"color": "#f28c28"
+				},
+				{
+					"name": "호랑이 팀",
+					"color": "#f2c230"
+				},
+				{
+					"name": "독수리 팀",
+					"color": "#8a5a3c"
+				},
+				{
+					"name": "상어 팀",
+					"color": "#3d7be5"
+				}
+			],
+			"pick": 2
+		},
+		{
+			"kind": "pairs",
+			"text": "장갑 2켤레와 모자 4개 중에서 하나씩 고르는 방법은?",
+			"left": [
+				{
+					"name": "빨간 장갑",
+					"color": "#e5533d"
+				},
+				{
+					"name": "파란 장갑",
+					"color": "#3d7be5"
+				}
+			],
+			"right": [
+				{
+					"name": "노란 모자",
+					"color": "#f2c230"
+				},
+				{
+					"name": "초록 모자",
+					"color": "#4caf6a"
+				},
+				{
+					"name": "보라 모자",
+					"color": "#9b6bd1"
+				},
+				{
+					"name": "회색 모자",
+					"color": "#9e9e9e"
+				}
+			]
+		},
+		{
+			"kind": "pairs",
+			"text": "기차 3대 중 하나를 타고 역 3곳 중 하나에서 내리는 방법은?",
+			"left": [
+				{
+					"name": "빨간 기차",
+					"color": "#e5533d"
+				},
+				{
+					"name": "파란 기차",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "노란 기차",
+					"color": "#f2c230"
+				}
+			],
+			"right": [
+				{
+					"name": "바다역",
+					"color": "#9fe0c8"
+				},
+				{
+					"name": "숲역",
+					"color": "#4caf6a"
+				},
+				{
+					"name": "시장역",
+					"color": "#f28c28"
+				}
+			]
+		},
+		{
+			"kind": "paths",
+			"text": "가로 3칸, 세로 2칸 동네에서 집에서 학원까지 가장 짧은 길은?",
+			"w": 3,
+			"h": 2
+		},
+		{
+			"kind": "choose",
+			"text": "영어 단어 카드 5장 중에서 2장을 고르는 방법은?",
+			"items": [
+				{
+					"name": "cat",
+					"color": "#f28c28"
+				},
+				{
+					"name": "dog",
+					"color": "#8a5a3c"
+				},
+				{
+					"name": "sun",
+					"color": "#f2c230"
+				},
+				{
+					"name": "car",
+					"color": "#e5533d"
+				},
+				{
+					"name": "ball",
+					"color": "#3d7be5"
+				}
+			],
+			"pick": 2
+		},
+		{
+			"kind": "order",
+			"text": "피아노 대회에 네 명이 나왔어요. 1등과 2등이 되는 경우는 모두 몇 가지일까요?",
+			"items": [
+				{
+					"name": "지호",
+					"color": "#f28c28"
+				},
+				{
+					"name": "하준",
+					"color": "#3d7be5"
+				},
+				{
+					"name": "서연",
+					"color": "#f29bb5"
+				},
+				{
+					"name": "도윤",
+					"color": "#4caf6a"
+				}
+			],
+			"pick": 2
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "dad-smiling",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "jiho-kicking",
+					"x": 30,
+					"y": 42,
+					"h": 55
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 오늘은 축구장에 걸어가요!",
+					"speaker": "jiho-kicking"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-town-map",
+					"x": 52,
+					"y": 44,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "지도를 보렴. 길이 바둑판처럼 생겼지?",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 62,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오른쪽이나 위로만 가면 가장 짧아요!",
+					"speaker": "jiho-pointing"
+				},
+				{
+					"text": "그렇구나!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "집에서 축구장까지 가장 짧은 길은 몇 가지일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

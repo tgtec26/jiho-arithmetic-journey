@@ -72,6 +72,23 @@ describe('counting drawing', () => {
 		expect(renderCountingProblem({ puzzle: people, position: 2, round: 1, stickerSrc: (id) => `s/${id}.png` })).toContain('src="s/jiho-happy.png"');
 	});
 
+	it('keeps the box itself free of the inner layout classes (pairs, paths)', () => {
+		for (const puzzle of [shirts, { kind: 'paths', text: 't', w: 2, h: 2 }]) {
+			const html = renderCountingProblem({ puzzle, position: 2, round: 3, stickerSrc: noSticker });
+			const cls = html.match(/<section class="([^"]+)"/)[1].split(' ');
+			expect(cls).not.toContain('pairs');
+			expect(cls).not.toContain('paths');
+		}
+	});
+
+	it('labels the shortest-path goal with the place in the story', () => {
+		const park = renderCountingProblem({ puzzle: { kind: 'paths', text: '집에서 공원까지', w: 2, h: 2, to: '공원' }, position: 3, round: 3, stickerSrc: noSticker });
+		expect(park).toContain('>공원<');
+		expect(park).not.toContain('>학원<');
+		expect(renderCountingProblem({ puzzle: { kind: 'paths', text: 't', w: 2, h: 2 }, position: 3, round: 3, stickerSrc: noSticker })).toContain('>학원<');
+		expect(checkCountingPuzzle({ kind: 'paths', text: 't', w: 2, h: 2, to: '축구장' }, 3)).toEqual([]);
+	});
+
 	it('writes the total, with the list when it is short', () => {
 		expect(countingAnswerText(shirts)).toBe('6가지 (빨-검, 빨-흰, 파-검, 파-흰, 노-검, 노-흰)');
 		expect(countingAnswerText({ kind: 'paths', text: 't', w: 3, h: 2 })).toBe('10가지');

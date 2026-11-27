@@ -1,0 +1,187 @@
+{
+	"id": 22,
+	"topic": "lego",
+	"icon": "🏙️",
+	"title": "블록 도시 만들기",
+	"activity": "blocks",
+	"puzzles": [
+		{
+			"heights": [
+				"03",
+				"30",
+				"11"
+			],
+			"ask": [
+				"count"
+			]
+		},
+		{
+			"heights": [
+				"31",
+				"30",
+				"31"
+			],
+			"ask": [
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"322",
+				"202"
+			],
+			"ask": [
+				"count",
+				"top"
+			]
+		},
+		{
+			"heights": [
+				"23",
+				"21",
+				"12"
+			],
+			"ask": [
+				"count",
+				"topNumbers"
+			]
+		},
+		{
+			"heights": [
+				"300",
+				"332"
+			],
+			"ask": [
+				"count",
+				"topNumbers"
+			]
+		},
+		{
+			"heights": [
+				"332",
+				"220"
+			],
+			"ask": [
+				"side"
+			]
+		},
+		{
+			"heights": [
+				"311",
+				"331"
+			],
+			"ask": [
+				"count"
+			]
+		},
+		{
+			"heights": [
+				"332",
+				"022"
+			],
+			"ask": [
+				"top"
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 40,
+					"y": 54,
+					"h": 43
+				},
+				{
+					"id": "prop-cube-blocks",
+					"x": 64,
+					"y": 50,
+					"w": 32
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 블록으로 큰 도시를 만들 거예요!",
+					"speaker": "jiho-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-smiling",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-town-map",
+					"x": 52,
+					"y": 44,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "지도처럼 위에서 본 모양도 그려 보자.",
+					"speaker": "dad-smiling"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 6,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 62,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "앞, 옆, 위에서 다 다르게 보여요.",
+					"speaker": "jiho-thinking"
+				},
+				{
+					"text": "신기해!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "블록 도시의 블록은 모두 몇 개일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

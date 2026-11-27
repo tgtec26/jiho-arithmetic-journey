@@ -1,0 +1,176 @@
+{
+	"id": 2,
+	"topic": "bear",
+	"icon": "🧱",
+	"title": "감돌이의 블록 탑",
+	"activity": "blocks",
+	"puzzles": [
+		{
+			"heights": [
+				"01",
+				"11"
+			],
+			"ask": [
+				"count"
+			]
+		},
+		{
+			"heights": [
+				"01",
+				"21"
+			],
+			"ask": [
+				"top"
+			]
+		},
+		{
+			"heights": [
+				"01",
+				"12"
+			],
+			"ask": [
+				"count",
+				"top"
+			]
+		},
+		{
+			"heights": [
+				"20",
+				"02"
+			],
+			"ask": [
+				"top"
+			]
+		},
+		{
+			"heights": [
+				"02",
+				"20"
+			],
+			"ask": [
+				"count"
+			]
+		},
+		{
+			"heights": [
+				"13",
+				"01"
+			],
+			"ask": [
+				"count",
+				"top"
+			]
+		},
+		{
+			"heights": [
+				"22",
+				"01"
+			],
+			"ask": [
+				"count",
+				"top"
+			]
+		},
+		{
+			"heights": [
+				"12",
+				"10",
+				"01"
+			],
+			"ask": [
+				"count",
+				"top"
+			]
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "gamdori-cheering",
+					"x": 8,
+					"y": 50,
+					"h": 46
+				},
+				{
+					"id": "prop-cube-blocks",
+					"x": 50,
+					"y": 46,
+					"w": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "내가 블록으로 탑을 쌓았어!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-cube-blocks",
+					"x": 52,
+					"y": 46,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "우와, 뒤에 숨은 블록도 있겠다!",
+					"speaker": "jiho-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-sitting",
+					"x": 62,
+					"y": 58,
+					"h": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "블록은 공중에 뜰 수 없으니 아래에도 있지.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "감돌이 탑에 블록은 모두 몇 개일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

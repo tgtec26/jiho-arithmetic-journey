@@ -1,0 +1,187 @@
+{
+	"id": 17,
+	"topic": "lego",
+	"icon": "🤖",
+	"title": "로봇 주차 요원",
+	"activity": "parking",
+	"puzzles": [
+		{
+			"board": [
+				".AAABB",
+				"CDEEFG",
+				"CDRRFG",
+				".HHII.",
+				"......",
+				"...JJJ"
+			],
+			"minMoves": 5
+		},
+		{
+			"board": [
+				".A.BBC",
+				".ADDEC",
+				"FRRGEC",
+				"FHIGJ.",
+				".HI.J.",
+				".KKLL."
+			],
+			"minMoves": 5
+		},
+		{
+			"board": [
+				"AA.BCC",
+				"DDDBEF",
+				"GRRHEF",
+				"G..HE.",
+				"I..JJ.",
+				"I.KKK."
+			],
+			"minMoves": 6
+		},
+		{
+			"board": [
+				"..AA..",
+				"...BB.",
+				"RRCDEF",
+				"..CDEF",
+				"G.H..I",
+				"G.H..I"
+			],
+			"minMoves": 6
+		},
+		{
+			"board": [
+				"A.B.CC",
+				"A.B...",
+				"A.RRDE",
+				".FFGDE",
+				"...GHH",
+				".IIGJJ"
+			],
+			"minMoves": 7
+		},
+		{
+			"board": [
+				"ABBCCC",
+				"AD..EE",
+				"FDRRGH",
+				"F.IIGH",
+				".J.K.L",
+				".J.K.L"
+			],
+			"minMoves": 8
+		},
+		{
+			"board": [
+				"ABBCC.",
+				"ADDDEE",
+				"FGRR.H",
+				"FG..IH",
+				".JJ.IK",
+				"LLMM.K"
+			],
+			"minMoves": 8
+		},
+		{
+			"board": [
+				"AB.C.D",
+				"AB.CED",
+				"RRFGEH",
+				"I.FGJH",
+				"IK.GJH",
+				"IK.LLL"
+			],
+			"minMoves": 9
+		}
+	],
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-coding-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-lego-blocks",
+					"x": 56,
+					"y": 56,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 레고로 주차장 퍼즐을 만들어요.",
+					"speaker": "guest-coding-teacher"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-lego-robot",
+					"x": 58,
+					"y": 48,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "로봇이 차를 하나씩 밀어 주는 거예요?",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-coding-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-red-car",
+					"x": 52,
+					"y": 52,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "맞아요. 명령은 짧을수록 좋아요.",
+					"speaker": "guest-coding-teacher"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "빨간 차를 꺼내는 가장 짧은 명령은 몇 번일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}
