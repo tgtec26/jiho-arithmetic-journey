@@ -1,4 +1,7 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { ROOT } from '../lib/episodes.js';
 import { checkCountingPuzzle, countingAnswer, listCases, slotsFor } from '../lib/think/counting.js';
 import { countingAnswerText, renderCountingProblem } from '../lib/think/render-counting.js';
 
@@ -79,6 +82,14 @@ describe('counting drawing', () => {
 			expect(cls).not.toContain('pairs');
 			expect(cls).not.toContain('paths');
 		}
+	});
+
+	it('keeps the big path grid at full size next to the practice grids', () => {
+		const css = readFileSync(join(ROOT, 'styles', 'worksheet.css'), 'utf8');
+		const rule = css.slice(css.indexOf('.paths .big-grid {'), css.indexOf('}', css.indexOf('.paths .big-grid {')));
+		expect(rule).toContain('flex: none');
+		const html = renderCountingProblem({ puzzle: { kind: 'paths', text: 't', w: 3, h: 2 }, position: 2, round: 3, stickerSrc: noSticker });
+		expect(html).toContain('class="big-grid" width="27mm" height="21mm"'); // 6mm 칸 + 여백 4.5mm
 	});
 
 	it('labels the shortest-path goal with the place in the story', () => {

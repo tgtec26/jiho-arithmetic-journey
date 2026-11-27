@@ -32,6 +32,14 @@ describe('hiddenTops', () => {
 	});
 });
 
+describe('phantom towers', () => {
+	it('rejects a drawing where a tower in an empty cell would be completely hidden', () => {
+		// 뒤 줄 [0,1], 앞 줄 [1,2]: 뒤 왼쪽 빈칸에 1층 탑을 놓으면 앞 오른쪽 2층 블록에 가려 보이지 않는다
+		expect(checkBlocksPuzzle({ heights: ['01', '12'], ask: ['count'] }, 1).join(' ')).toContain('숨');
+		expect(checkBlocksPuzzle({ heights: ['21', '10'], ask: ['count'] }, 1)).toEqual([]);
+	});
+});
+
 describe('checkBlocksPuzzle', () => {
 	it('accepts a round-1 puzzle and rejects what the round does not allow', () => {
 		expect(checkBlocksPuzzle({ heights: ['21', '10'], ask: ['count'] }, 1)).toEqual([]);

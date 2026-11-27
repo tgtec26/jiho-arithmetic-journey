@@ -81,6 +81,24 @@ export function hiddenTops(h) {
 	return hidden;
 }
 
+/**
+ * 빈칸에 1층 탑을 놓으면 그 탑이 가려지는 자리: 그런 자리가 있으면 그림만 보고는
+ * "거기 탑이 있는지"를 알 수 없어 블록 수가 하나로 정해지지 않는다.
+ * @returns {[number, number][]}
+ */
+export function phantomCells(h) {
+	const out = [];
+	h.forEach((row, r) =>
+		row.forEach((v, c) => {
+			if (v !== 0) return;
+			const t = h.map((rr) => [...rr]);
+			t[r][c] = 1;
+			if (hiddenTops(t).some(([hr, hc]) => hr === r && hc === c)) out.push([r, c]);
+		})
+	);
+	return out;
+}
+
 /** @returns {string[]} */
 export function checkBlocksPuzzle(p, round) {
 	const rows = p.heights;
@@ -101,6 +119,7 @@ export function checkBlocksPuzzle(p, round) {
 	if (ask.length < 1 || ask.length > 2 || new Set(ask).size !== ask.length) errors.push('묻는 것은 1~2개');
 	for (const a of ask) if (!ASKS_BY_ROUND[round].includes(a)) errors.push(`라운드 ${round}에서 물을 수 없음: ${a}`);
 	if (hiddenTops(h).length) errors.push('그림에서 보이지 않는 탑이 있음');
+	else if (phantomCells(h).length) errors.push('빈칸에 탑을 놓아도 숨어서 안 보이는 자리가 있음 (개수가 하나로 안 정해짐)');
 	return errors;
 }
 

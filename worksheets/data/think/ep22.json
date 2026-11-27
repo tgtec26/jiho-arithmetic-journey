@@ -7,12 +7,23 @@
 	"puzzles": [
 		{
 			"heights": [
-				"03",
-				"30",
-				"11"
+				"332",
+				"001"
 			],
 			"ask": [
+				"topNumbers",
 				"count"
+			]
+		},
+		{
+			"heights": [
+				"30",
+				"21",
+				"30"
+			],
+			"ask": [
+				"count",
+				"side"
 			]
 		},
 		{
@@ -40,16 +51,6 @@
 				"23",
 				"21",
 				"12"
-			],
-			"ask": [
-				"count",
-				"topNumbers"
-			]
-		},
-		{
-			"heights": [
-				"300",
-				"332"
 			],
 			"ask": [
 				"count",

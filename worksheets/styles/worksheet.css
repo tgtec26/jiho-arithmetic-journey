@@ -775,6 +775,9 @@ body {
 	stroke: #999;
 	stroke-width: 0.35;
 }
+.paths .big-grid {
+	flex: none;
+}
 .paths .big-grid line {
 	stroke: #777;
 	stroke-width: 0.5;

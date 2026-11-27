@@ -17,9 +17,9 @@ function grid(w, h, cell, cls, labels = false, to = '학원') {
 	const lines = [];
 	for (let i = 0; i <= w; i++) lines.push(`<line x1="${i * cell}" y1="0" x2="${i * cell}" y2="${h * cell}"/>`);
 	for (let j = 0; j <= h; j++) lines.push(`<line x1="0" y1="${j * cell}" x2="${w * cell}" y2="${j * cell}"/>`);
-	const pad = labels ? 7 : 1.5;
+	const pad = labels ? 4.5 : 1.5;
 	const marks = labels
-		? `<circle cx="0" cy="${h * cell}" r="1.4"/><circle cx="${w * cell}" cy="0" r="1.4"/><text x="-1" y="${h * cell + 5}">집</text><text x="${w * cell + 1.5}" y="-2.5" text-anchor="end">${escapeHtml(to)}</text>`
+		? `<circle cx="0" cy="${h * cell}" r="1.4"/><circle cx="${w * cell}" cy="0" r="1.4"/><text x="-1" y="${h * cell + 3.8}">집</text><text x="${w * cell + 1.5}" y="-1.4" text-anchor="end">${escapeHtml(to)}</text>`
 		: `<circle cx="0" cy="${h * cell}" r="0.8"/><circle cx="${w * cell}" cy="0" r="0.8"/>`;
 	const W = w * cell + pad * 2;
 	const H = h * cell + pad * 2;
@@ -43,7 +43,7 @@ function body(p, round, stickerSrc) {
 		const n = slotsFor(p, round);
 		const minis = Array.from({ length: n }, () => grid(p.w, p.h, 3.4, 'mini-grid')).join('');
 		const note = round >= 3 ? `<div class="note">남는 격자가 있어도 돼요</div>` : '';
-		return `<div class="paths">${grid(p.w, p.h, 8, 'big-grid', true, p.to)}<div class="minis">${minis}</div></div>${note}`;
+		return `<div class="paths">${grid(p.w, p.h, 6, 'big-grid', true, p.to)}<div class="minis">${minis}</div></div>${note}`;
 	}
 	const legend = `<div class="legend">${p.items.map((it) => chip(it, stickerSrc)).join('')}</div>`;
 	return legend + listing(slotsFor(p, round), p.pick, round);

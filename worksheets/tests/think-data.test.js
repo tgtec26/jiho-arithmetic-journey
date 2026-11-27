@@ -33,5 +33,6 @@ describe('thinking puzzle episodes 1–24', () => {
 		expect(story(16).items).toEqual(['버스', '트럭', '택시', '빨간 차']);
 		expect(story(24).items).toHaveLength(5);
 		for (const id of [2, 6, 10, 14, 18, 22]) expect(story(id).ask).toContain('count'); // "블록은 모두 몇 개일까?"
+		for (const id of [18, 22]) expect(story(id).ask).toContain('topNumbers'); // 만화: "위에서 본 모양에 층수를 써 볼까?"
 	});
 });

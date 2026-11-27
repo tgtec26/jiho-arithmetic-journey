@@ -150,7 +150,8 @@ function puzzlesOf(ep) {
 			used.blocks.add(p.heights.join('/'));
 			return p;
 		}).sort((a, b) => blockCount(parseHeights(a.heights)) - blockCount(parseHeights(b.heights)));
-		list[0] = { ...list[0], ask: ['count'] }; // ① 만화: "블록은 모두 몇 개일까?"
+		// ① 만화: "블록은 모두 몇 개일까?" (라운드 5·6 만화는 "위에서 본 모양에 층수를 써 볼까?"도 말함)
+		list[0] = { ...list[0], ask: round >= 5 ? ['topNumbers', 'count'] : ['count'] };
 		return list;
 	}
 	if (ep.activity === 'counting') return structuredClone(COUNTING_PLAN[ep.id]);
