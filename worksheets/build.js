@@ -1,5 +1,5 @@
-// 학습지 빌드: node worksheets/build.js [--set=mul|div] [--only=1,2,3] [--strict]
-// HTML → 크롬 헤드리스 PDF → 페이지 수 검사. 곱셈(mul, 기본)은 out/html·out/pdf, 나눗셈(div)은 그 아래 division/.
+// 학습지 빌드: node worksheets/build.js [--set=mul|div|think] [--only=1,2,3] [--strict]
+// HTML → 크롬 헤드리스 PDF → 페이지 수 검사. 곱셈(mul, 기본)은 out/html·out/pdf, 나눗셈(div)은 그 아래 division/, 생각 퍼즐(think)은 think/.
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -53,7 +53,11 @@ for (const ep of episodes) {
 writeFileSync(join(OUT_HTML, 'all.html'), wrapDocument(bodies.join(''), CSS, set.docTitle));
 docs.push({ name: 'all', pages: 2 * episodes.length });
 writeFileSync(join(OUT_HTML, 'answers.html'), wrapDocument(set.renderAnswers(episodes), CSS, `${set.name} 정답 (아빠용)`));
-docs.push({ name: 'answers', pages: Math.ceil(episodes.length / 6) });
+docs.push({ name: 'answers', pages: Math.ceil(episodes.length / (set.answersPerPage ?? 6)) });
+for (const extra of set.extraDocs ?? []) {
+	writeFileSync(join(OUT_HTML, `${extra.name}.html`), wrapDocument(extra.render(episodes), CSS, extra.title));
+	docs.push({ name: extra.name, pages: extra.pages });
+}
 
 if (missing.size) {
 	const msg = `스티커 파일 없음 (${missing.size}개): ${[...missing].sort().join(', ')}`;

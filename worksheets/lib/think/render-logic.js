@@ -23,7 +23,7 @@ export function renderLineupProblem({ puzzle, position, round }) {
   ${title(position, '줄 세우기')}
   <ul class="clues">${puzzle.clues.map((c) => `<li>${escapeHtml(clueText(c))}</li>`).join('')}</ul>
   <div class="queue"><span class="qend">◀ 앞</span>${slots}<span class="qend">뒤</span></div>
-  <div class="names">줄 선 순서대로 이름을 써요: ${puzzle.items.map(escapeHtml).join(', ')}</div>
+  <div class="names">줄 선 순서대로 이름(첫 글자도 돼요)을 써요: ${puzzle.items.map(escapeHtml).join(', ')}</div>
 </section>`;
 }
 
@@ -43,7 +43,7 @@ export function renderSudokuProblem({ puzzle, position }) {
 
 /** 정답지: 줄 순서 또는 채운 작은 스도쿠 */
 export function logicAnswer(puzzle) {
-	if (puzzle.kind === 'lineup') return lineupSolutions(puzzle)[0].join(' → ');
+	if (puzzle.kind === 'lineup') return lineupSolutions(puzzle)[0].map(escapeHtml).join(' → ');
 	const [solved] = sudokuSolutions(puzzle.grid, 1);
 	return `<table class="mini sudoku-mini">${solved.map((row) => `<tr>${[...row].map((ch) => `<td>${ch}</td>`).join('')}</tr>`).join('')}</table>`;
 }

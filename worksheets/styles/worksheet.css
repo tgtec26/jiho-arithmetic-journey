@@ -10,6 +10,7 @@
 	--tens-tint: #ecf3fd;
 	--story: #e8a33b;
 	--div-set: #4a7fc1;
+	--think-set: #3f9a5c;
 	--font-title: 'BM Dohyeon', 'Spoqa Han Sans Neo', sans-serif;
 	--font-body: 'Spoqa Han Sans Neo', 'Nanum Gothic', sans-serif;
 }
@@ -533,4 +534,380 @@ body {
 	color: #999;
 	font-size: 8.5pt;
 	margin-left: 1.5mm;
+}
+
+/* ---------- 생각 퍼즐 세트 (머리줄 초록) ---------- */
+.page.think-set .phead .ep {
+	background: var(--think-set);
+}
+.page.think-set .phead .stamp {
+	border-color: var(--think-set);
+	color: var(--think-set);
+}
+.think-problem .pbody {
+	justify-content: center;
+	padding-top: 0.5mm;
+	min-height: 0;
+}
+.think-problem .answer .min {
+	font-family: var(--font-body);
+	font-size: 9.5pt;
+	color: #888;
+}
+.think-problem .note {
+	font-size: 8.5pt;
+	color: #999;
+	margin-top: 1mm;
+}
+.think-problem .hint {
+	color: var(--hint);
+}
+
+/* 주차장 탈출 (판 칸 10mm = 차 조각 10mm) */
+.parking-board {
+	margin-right: 8mm;
+}
+.parking-board .grid line {
+	stroke: #d4d4d4;
+	stroke-width: 0.3;
+}
+.parking-board .wall {
+	fill: none;
+	stroke: #555;
+	stroke-width: 1.2;
+}
+.parking-board .exit text {
+	font-size: 3.2px;
+	fill: #555;
+}
+.parking-board .exit polygon {
+	fill: #e0473a;
+}
+.parking-board .car rect {
+	fill: none;
+	stroke: #a8a8a8;
+	stroke-width: 0.5;
+}
+.parking-board .car.red rect {
+	stroke: #e0473a;
+	stroke-width: 0.8;
+}
+.parking-board .car text {
+	font-size: 3px;
+	fill: #a8a8a8;
+}
+.parking-board .car.red text {
+	fill: #e0473a;
+}
+.parking-board .hint-arrow line {
+	stroke: #bbb;
+	stroke-width: 0.8;
+}
+.parking-board .hint-arrow polygon {
+	fill: #bbb;
+}
+
+/* 쌓기나무 */
+.blocks .pbody {
+	justify-content: space-between;
+	align-items: center;
+}
+.iso-blocks .f-top {
+	fill: #fbeacb;
+}
+.iso-blocks .f-front {
+	fill: #f0cf94;
+}
+.iso-blocks .f-right {
+	fill: #dcb375;
+}
+.iso-blocks .cube polygon {
+	stroke: #8a6a3a;
+	stroke-width: 0.25;
+	stroke-linejoin: round;
+}
+.iso-blocks .floor polygon {
+	fill: none;
+	stroke: #ccc;
+	stroke-width: 0.2;
+}
+.iso-blocks .dir line {
+	stroke: #777;
+	stroke-width: 0.35;
+}
+.iso-blocks .dir text {
+	font-size: 3.4px;
+	text-anchor: middle;
+	font-family: var(--font-title);
+	fill: #555;
+}
+.blocks .asks {
+	width: 40mm;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2mm;
+	font-size: 10.5pt;
+}
+.blocks .asks .blank,
+.lineup .blank {
+	display: inline-block;
+	width: 12mm;
+	border-bottom: 0.4mm solid var(--line);
+}
+.blocks .floors {
+	font-size: 9pt;
+	color: #666;
+}
+.blocks .floors .blank.sm {
+	width: 6mm;
+}
+.blocks .view {
+	display: flex;
+	align-items: flex-end;
+	gap: 1.5mm;
+}
+.vgrid {
+	border-collapse: collapse;
+}
+.vgrid td {
+	width: 7mm;
+	height: 7mm;
+	border: 0.3mm solid #999;
+	padding: 0;
+}
+.vlabel {
+	font-size: 7.5pt;
+	color: #999;
+}
+
+/* 경우의 수 */
+.counting .qtext,
+.lineup .clues,
+.sudoku .rule {
+	font-size: 11pt;
+	line-height: 1.4;
+	margin: 0.5mm 0 1mm;
+}
+.counting .pbody {
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+.chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 1mm;
+	font-size: 10.5pt;
+	margin-right: 2.5mm;
+	white-space: nowrap;
+}
+.chip .dot {
+	display: inline-block;
+	width: 3.8mm;
+	height: 3.8mm;
+	border-radius: 50%;
+	border: 0.25mm solid #888;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+.chip img {
+	height: 7mm;
+}
+.legend {
+	margin-bottom: 1.5mm;
+}
+.slots {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.6mm 3.5mm;
+}
+.slot-row {
+	display: flex;
+	gap: 0.8mm;
+}
+.slot-row .slot {
+	width: 8mm;
+	height: 7mm;
+	border: 0.3mm solid #999;
+	border-radius: 1mm;
+}
+.counting .free {
+	flex: 1;
+	min-height: 28mm;
+	border: 0.3mm dashed #ccc;
+	border-radius: 2mm;
+}
+.pairs {
+	display: flex;
+	justify-content: center;
+	gap: 22mm;
+	margin-top: 2mm;
+}
+.pairs .pcol {
+	display: flex;
+	flex-direction: column;
+	gap: 3.5mm;
+}
+.pairs .pcol.l {
+	align-items: flex-end;
+}
+.pairs .prow {
+	display: flex;
+	align-items: center;
+}
+.pairs .pcol.r .chip {
+	margin: 0 0 0 0;
+}
+.pairs .link {
+	display: inline-block;
+	width: 2.4mm;
+	height: 2.4mm;
+	border-radius: 50%;
+	background: var(--ink);
+	margin: 0 2mm;
+}
+.paths {
+	display: flex;
+	gap: 3mm;
+	align-items: flex-start;
+}
+.paths svg line {
+	stroke: #999;
+	stroke-width: 0.35;
+}
+.paths .big-grid line {
+	stroke: #777;
+	stroke-width: 0.5;
+}
+.paths svg circle {
+	fill: var(--ink);
+}
+.paths svg text {
+	font-size: 3.4px;
+	fill: #555;
+}
+.paths .minis {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.2mm;
+	align-content: flex-start;
+}
+
+/* 논리 퍼즐 */
+.lineup .clues {
+	padding-left: 5mm;
+}
+.lineup .queue {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5mm;
+	margin: 2mm 0 1.5mm;
+}
+.lineup .qend {
+	font-family: var(--font-title);
+	font-size: 10pt;
+	color: #777;
+	white-space: nowrap;
+}
+.lineup .slot {
+	width: 12.5mm;
+	height: 11mm;
+	border: 0.4mm solid #888;
+	border-radius: 1.5mm;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 9pt;
+}
+.lineup .names {
+	font-size: 9pt;
+	color: #777;
+	text-align: center;
+}
+.sudoku-grid {
+	border-collapse: collapse;
+	border: 0.8mm solid var(--ink);
+}
+.sudoku-grid td {
+	width: 13mm;
+	height: 13mm;
+	border: 0.3mm solid #aaa;
+	text-align: center;
+	font-size: 17pt;
+	padding: 0;
+}
+.sudoku-grid tr:nth-child(2) td {
+	border-bottom: 0.8mm solid var(--ink);
+}
+.sudoku-grid td:nth-child(2) {
+	border-right: 0.8mm solid var(--ink);
+}
+
+/* 생각 퍼즐 정답지 */
+.ans-note {
+	font-size: 10pt;
+	color: var(--think-set);
+	margin: 1.5mm 0 0;
+}
+.answers.think-set .ans {
+	display: flex;
+	align-items: center;
+	gap: 1.2mm;
+	flex-wrap: wrap;
+}
+.mini-view {
+	display: inline-flex;
+	align-items: flex-end;
+	gap: 0.6mm;
+}
+.mini-view small {
+	font-size: 7pt;
+	color: #999;
+}
+.mini {
+	border-collapse: collapse;
+	display: inline-table;
+}
+.mini td {
+	width: 2.8mm;
+	height: 2.8mm;
+	border: 0.2mm solid #bbb;
+	padding: 0;
+	font-size: 6pt;
+	text-align: center;
+	line-height: 1;
+}
+.mini td.on {
+	background: #cfcfcf;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+.sudoku-mini td {
+	width: 3.4mm;
+	height: 3.4mm;
+	font-size: 6.5pt;
+}
+
+/* 차 조각 장 */
+.page.pieces .note {
+	font-size: 10.5pt;
+	margin: 3mm 0;
+	line-height: 1.5;
+}
+.piece-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4mm;
+	align-content: flex-start;
+}
+.piece .cut {
+	fill: none;
+	stroke: #888;
+	stroke-width: 0.2;
+	stroke-dasharray: 1 0.8;
+}
+.piece {
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
 }

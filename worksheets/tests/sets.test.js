@@ -18,6 +18,13 @@ describe('setOf', () => {
 		expect(div.name).toBe('나눗셈');
 	});
 
+	it('finds the thinking puzzle set with its pieces sheet', () => {
+		const think = setOf('think');
+		expect(think).toMatchObject({ outSub: 'think', name: '생각 퍼즐', answersPerPage: 4 });
+		expect(think.dir).toBe(join(ROOT, 'data', 'think'));
+		expect(think.extraDocs.map((d) => [d.name, d.pages])).toEqual([['pieces', 1]]);
+	});
+
 	it('refuses an unknown set', () => {
 		expect(() => setOf('x')).toThrow();
 	});
