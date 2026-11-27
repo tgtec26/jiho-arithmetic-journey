@@ -373,5 +373,40 @@
 		"id": "prop-buttons",
 		"file": "assets/stickers/prop-buttons.png",
 		"prompt": "Small pile of colorful round four-hole buttons"
+	},
+	{
+		"id": "prop-red-car",
+		"file": "assets/stickers/prop-red-car.png",
+		"prompt": "Cute small red family car, side view"
+	},
+	{
+		"id": "prop-ticket-booth",
+		"file": "assets/stickers/prop-ticket-booth.png",
+		"prompt": "Train station ticket booth window, no text"
+	},
+	{
+		"id": "prop-ice-cream",
+		"file": "assets/stickers/prop-ice-cream.png",
+		"prompt": "Three ice cream cones: strawberry, chocolate, vanilla"
+	},
+	{
+		"id": "prop-uniforms",
+		"file": "assets/stickers/prop-uniforms.png",
+		"prompt": "Soccer shirts (red, blue, yellow) and shorts (black, white) on hangers, no numbers"
+	},
+	{
+		"id": "prop-cube-blocks",
+		"file": "assets/stickers/prop-cube-blocks.png",
+		"prompt": "Pile of plain wooden cube blocks with a small three-level tower"
+	},
+	{
+		"id": "prop-town-map",
+		"file": "assets/stickers/prop-town-map.png",
+		"prompt": "Simple grid town map with a small house and a small academy building, no text"
+	},
+	{
+		"id": "prop-puzzle-paper",
+		"file": "assets/stickers/prop-puzzle-paper.png",
+		"prompt": "Sheet of paper with a 4x4 puzzle grid of circle, triangle, square and star shapes, with a pencil"
 	}
 ]
