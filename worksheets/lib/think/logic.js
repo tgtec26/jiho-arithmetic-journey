@@ -40,7 +40,7 @@ export function clueText(c) {
 	}
 }
 
-function fits(order, c) {
+export function fits(order, c) {
 	const pos = (x) => order.indexOf(x);
 	const n = order.length;
 	switch (c.type) {

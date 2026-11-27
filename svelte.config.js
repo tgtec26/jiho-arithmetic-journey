@@ -13,7 +13,11 @@ const config = {
                         return isExternalLibrary ? undefined : true;
                 }
         },
-        kit: { adapter: adapter({ fallback: 'index.html' }) }
+        kit: {
+                adapter: adapter({ fallback: 'index.html' }),
+                // 학습지 퍼즐 규칙(순수 모듈)을 앱에서 그대로 쓴다
+                alias: { $think: 'worksheets/lib/think' }
+        }
 };
 
 export default config;
