@@ -1,0 +1,13 @@
+{
+	"bgmVolume": 0.35,
+	"sfxVolume": 0.8,
+	"bgm": "/think-town/audio/fp_bgm_carousel_morning.m4a",
+	"sfx": {
+		"correct": "/think-town/audio/correct.mp3",
+		"error": "/think-town/audio/error.mp3",
+		"success": "/think-town/audio/success.mp3",
+		"stamp": "/think-town/audio/683031_thump.mp3",
+		"drop": "/think-town/audio/urea_release_bubble_pop.mp3",
+		"bump": "/think-town/audio/urea_bump_cartoon_boing.mp3"
+	}
+}
