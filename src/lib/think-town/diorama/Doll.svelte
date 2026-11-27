@@ -8,14 +8,32 @@
 		z = 0,
 		sticker,
 		height,
-		cls = ''
-	}: { x: number; y: number; z?: number; sticker: string; height: number; cls?: string } = $props();
+		cls = '',
+		hidden = false,
+		onpointerdown
+	}: {
+		x: number;
+		y: number;
+		z?: number;
+		sticker: string;
+		height: number;
+		cls?: string;
+		hidden?: boolean;
+		onpointerdown?: (e: PointerEvent) => void;
+	} = $props();
 	const board = getBoard();
 </script>
 
 <div class="shadow" style="left:{x - height * 0.22}px;top:{y - height * 0.07}px;width:{height * 0.44}px;height:{height * 0.14}px;transform:translateZ({z + 0.5}px)"></div>
-<div class="doll {cls}" style="transform:translate3d({x}px,{y}px,{z}px) rotateZ({-board.turn}deg) rotateX({-board.tilt}deg)">
-	<img src="/think-town/stickers/{sticker}.png" alt="" draggable="false" style="height:{height}px" />
+<div class="doll {cls}" class:hidden style="transform:translate3d({x}px,{y}px,{z}px) rotateZ({-board.turn}deg) rotateX({-board.tilt}deg)">
+	<img
+		src="/think-town/stickers/{sticker}.png"
+		alt=""
+		draggable="false"
+		class:grab={!!onpointerdown}
+		style="height:{height}px"
+		{onpointerdown}
+	/>
 </div>
 
 <style>
@@ -39,5 +57,12 @@
 		transform: translateX(-50%);
 		max-width: none;
 		pointer-events: none;
+	}
+	.doll img.grab {
+		pointer-events: auto;
+		cursor: grab;
+	}
+	.doll.hidden {
+		visibility: hidden;
 	}
 </style>

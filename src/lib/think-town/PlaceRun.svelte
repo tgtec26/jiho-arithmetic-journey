@@ -2,6 +2,7 @@
 <script lang="ts">
 	import P from './data/puzzles.json';
 	import ParkingPlace from './places/ParkingPlace.svelte';
+	import TicketPlace from './places/TicketPlace.svelte';
 	import { townStore } from './progress.svelte';
 	import { sound } from './sound.svelte';
 	import { finish, nextBoard, nextPanel, solve, startRun, PANELS, type Run } from './rules/run';
@@ -10,11 +11,16 @@
 	let { place, onExit }: { place: PlaceId; onExit: () => void } = $props();
 
 	type ParkingPuzzle = { board: string[]; minMoves: number };
+	type LineupPuzzle = (typeof P.lineup)[number][number];
 
 	// svelte-ignore state_referenced_locally
 	const stage = townStore.stage(place);
+	// 주차장은 한 번 안에서 쉬운 판부터
 	// svelte-ignore state_referenced_locally
-	const items: ParkingPuzzle[] = townStore.takeFor(place, P.parking).sort((a, b) => a.minMoves - b.minMoves);
+	const parking: ParkingPuzzle[] = place === 'parking' ? townStore.takeFor(place, P.parking).sort((a, b) => a.minMoves - b.minMoves) : [];
+	// svelte-ignore state_referenced_locally
+	const lineup: LineupPuzzle[] = place === 'ticket' ? townStore.takeFor(place, P.lineup) : [];
+	const items = parking.length ? parking : lineup;
 
 	const skipStory = (r: Run) => Array.from({ length: PANELS }).reduce<Run>((acc) => nextPanel(acc), r);
 	let run = $state<Run>(skipStory(startRun(items.length)));
@@ -49,7 +55,11 @@
 
 {#if run.phase === 'board'}
 	{#key run.board}
-		<ParkingPlace bind:this={placeRef} puzzle={items[run.board]} {onSolved} />
+		{#if place === 'parking'}
+			<ParkingPlace bind:this={placeRef} puzzle={parking[run.board]} {onSolved} />
+		{:else if place === 'ticket'}
+			<TicketPlace bind:this={placeRef} puzzle={lineup[run.board]} {onSolved} />
+		{/if}
 	{/key}
 {/if}
 
