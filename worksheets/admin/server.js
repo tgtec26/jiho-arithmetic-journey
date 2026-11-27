@@ -4,19 +4,20 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ROOT, loadEpisodes, loadStickers, validateEpisode } from '../lib/episodes.js';
-import { renderEpisode, wrapDocument } from '../lib/render-page.js';
+import { ROOT, loadEpisodes, loadStickers } from '../lib/episodes.js';
+import { wrapDocument } from '../lib/render-page.js';
+import { setOf } from '../lib/sets.js';
 import { applyTextEdits, textOf } from './edit.js';
 import { makeStickerLookup } from '../lib/stickers.js';
 
-const DEFAULT_EPISODE_DIR = join(ROOT, 'data', 'episodes');
 const PORT = 5180;
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.png': 'image/png', '.pdf': 'application/pdf', '.js': 'text/javascript' };
 
-/** 전체 PDF 다시 만들기 (build.js --strict) */
-function runBuild() {
+/** 한 세트의 PDF 다시 만들기 (build.js --strict --set=…) */
+function runBuild(setKey) {
 	return new Promise((resolve) => {
-		execFile('node', [join(ROOT, 'build.js'), '--strict'], { maxBuffer: 10 * 1024 * 1024 }, (err, stdout, stderr) => {
+		const args = [join(ROOT, 'build.js'), '--strict', `--set=${setKey}`];
+		execFile('node', args, { maxBuffer: 10 * 1024 * 1024 }, (err, stdout, stderr) => {
 			const log = `${stdout}${stderr}`.trim().split('\n').slice(-8).join('\n');
 			resolve({ ok: !err, log });
 		});
@@ -44,18 +45,28 @@ function serveStatic(res, urlPath) {
 	send(res, 200, readFileSync(file), TYPES[extname(file)] ?? 'application/octet-stream');
 }
 
-export function createAdminServer({ episodeDir = DEFAULT_EPISODE_DIR, build = runBuild } = {}) {
+/**
+ * @param {{ dirs?: { mul?: string, div?: string }, build?: (setKey: string) => Promise<{ ok: boolean, log: string }> }} [opts]
+ *   dirs: 세트별 회차 폴더(기본은 세트의 data 폴더), API는 ?set=div 로 세트를 고른다(없으면 곱셈)
+ */
+export function createAdminServer({ dirs = {}, build = runBuild } = {}) {
 	const stickerIds = new Set(loadStickers().map((s) => s.id));
 	const lookup = makeStickerLookup('/');
-	const find = (id) => loadEpisodes(episodeDir).find((e) => e.id === id);
 	let building = false;
 
 	return createServer(async (req, res) => {
 		try {
 			const url = new URL(req.url, 'http://localhost');
 			const path = url.pathname;
+			let set;
+			try {
+				set = setOf(url.searchParams.get('set') ?? 'mul');
+			} catch (e) {
+				return send(res, 400, { errors: [e.message] });
+			}
+			const episodeDir = dirs[set.key] ?? set.dir;
 			const m = path.match(/^\/api\/(episodes|preview)\/(\d+)$/);
-			const ep = m ? find(Number(m[2])) : null;
+			const ep = m ? loadEpisodes(episodeDir).find((e) => e.id === Number(m[2])) : null;
 			if (m && !ep) return send(res, 404, { error: '없는 회차' });
 
 			if (req.method === 'GET' && path === '/') {
@@ -72,7 +83,7 @@ export function createAdminServer({ episodeDir = DEFAULT_EPISODE_DIR, build = ru
 				} catch (e) {
 					return send(res, 400, { errors: [e.message] });
 				}
-				const errors = validateEpisode(next, stickerIds);
+				const errors = set.validate(next, stickerIds);
 				if (errors.length) return send(res, 400, { errors });
 				writeFileSync(join(episodeDir, `ep${String(ep.id).padStart(2, '0')}.json`), JSON.stringify(next, null, '\t') + '\n');
 				return send(res, 200, { ok: true });
@@ -84,13 +95,14 @@ export function createAdminServer({ episodeDir = DEFAULT_EPISODE_DIR, build = ru
 				} catch {
 					next = ep;
 				}
-				return send(res, 200, wrapDocument(renderEpisode(next, lookup.src, lookup.aspect), '/styles/worksheet.css'), TYPES['.html']);
+				const body = set.renderEpisode(next, lookup.src, lookup.aspect);
+				return send(res, 200, wrapDocument(body, '/styles/worksheet.css', set.docTitle), TYPES['.html']);
 			}
 			if (req.method === 'POST' && path === '/api/build') {
 				if (building) return send(res, 409, { ok: false, log: '이미 만드는 중' });
 				building = true;
 				try {
-					return send(res, 200, await build());
+					return send(res, 200, await build(set.key));
 				} finally {
 					building = false;
 				}

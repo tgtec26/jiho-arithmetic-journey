@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>학습지 어드민 · 지호의 곱셈 이야기</title>
+<title>학습지 어드민 · 지호의 이야기 학습지</title>
 <style>
 	:root { --line: #e3e3e3; --ink: #222; --muted: #777; --accent: #e8a33b; --bad: #d64545; --ok: #2e8b57; }
 	* { box-sizing: border-box; }
@@ -14,6 +14,9 @@
 	button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
 	button:disabled { opacity: .5; cursor: default; }
 	#buildStatus { font-size: 12px; color: var(--muted); white-space: pre-wrap; max-width: 280px; }
+	.sets { display: flex; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; }
+	.sets button { border: none; border-radius: 0; padding: 6px 14px; }
+	.sets button.on { background: var(--ink); color: #fff; font-weight: 700; }
 	main { flex: 1; display: grid; grid-template-columns: 190px 1fr 1fr; min-height: 0; }
 	nav { overflow: auto; border-right: 1px solid var(--line); background: #fff; }
 	nav button { display: block; width: 100%; text-align: left; border: none; border-bottom: 1px solid #f0f0f0; border-radius: 0; padding: 9px 12px; font-size: 14px; }
@@ -40,9 +43,10 @@
 </head>
 <body>
 <header>
-	<h1>🧸 지호의 곱셈 이야기 · 학습지 어드민</h1>
-	<a href="/out/pdf/all.pdf" target="_blank">24회 묶음 PDF</a>
-	<a href="/out/pdf/answers.pdf" target="_blank">정답지 PDF</a>
+	<h1>🧸 지호의 이야기 학습지 · 어드민</h1>
+	<div class="sets"><button data-set="mul" class="on">곱셈</button><button data-set="div">나눗셈</button></div>
+	<a id="allPdf" href="/out/pdf/all.pdf" target="_blank">24회 묶음 PDF</a>
+	<a id="answersPdf" href="/out/pdf/answers.pdf" target="_blank">정답지 PDF</a>
 	<button id="build" class="primary">PDF 다시 만들기</button>
 	<span id="buildStatus"></span>
 </header>
@@ -54,6 +58,9 @@
 <script>
 	const MAX = 40;
 	const $ = (s) => document.querySelector(s);
+	const SET_NAMES = { mul: '곱셈', div: '나눗셈' };
+	const PDF_DIR = { mul: '/out/pdf', div: '/out/pdf/division' };
+	let set = 'mul';
 	let episodes = [];
 	let current = null; // { id, saved(JSON 문자열), data }
 	const dirtyIds = new Set();
@@ -62,7 +69,7 @@
 	const isDirty = () => current && JSON.stringify(current.data) !== current.saved;
 
 	async function loadList() {
-		episodes = await (await fetch('/api/episodes')).json();
+		episodes = await (await fetch(`/api/episodes?set=${set}`)).json();
 		renderList();
 	}
 	function renderList() {
@@ -74,7 +81,7 @@
 	async function open(id) {
 		if (isDirty() && !confirm('저장하지 않은 수정이 있어요. 버리고 다른 회차로 갈까요?')) return;
 		if (current) dirtyIds.delete(current.id);
-		const data = await (await fetch(`/api/episodes/${id}`)).json();
+		const data = await (await fetch(`/api/episodes/${id}?set=${set}`)).json();
 		current = { id, saved: JSON.stringify(data), data };
 		renderEditor();
 		renderList();
@@ -89,13 +96,15 @@
 				<div class="meta"><span>말풍선 ${j + 1}</span><span class="count" data-p="${i}" data-b="${j}"></span></div></div>`).join('')}
 			</div>`).join('');
 		$('#editor').innerHTML = `
-			<div class="info">${d.id}회 · 이야기 문제 <b>${d.fixed} × ${d.other}</b> (숫자와 그림 위치는 여기서 바꾸지 않아요)</div>
+			<div class="info">${SET_NAMES[set]} ${d.id}회 · 이야기 문제 <b>${esc(d.problem)}</b> (숫자와 그림 위치는 여기서 바꾸지 않아요)</div>
 			<label class="field">제목<input id="title" value="${esc(d.title)}"></label>
 			<label class="field">이야기 문제 답의 단위 (예: 명, 개)<input id="unit" value="${esc(d.unit)}"></label>
+			${'restUnit' in d ? `<label class="field">남는 것의 단위 (예: 개, 알)<input id="restUnit" value="${esc(d.restUnit)}"></label>` : ''}
 			${panels}
 			<div class="actions"><button id="save" class="primary">저장</button><button id="revert">되돌리기</button><span id="msg"></span></div>`;
 		$('#title').oninput = (e) => { d.title = e.target.value; changed(); };
 		$('#unit').oninput = (e) => { d.unit = e.target.value; changed(); };
+		if ($('#restUnit')) $('#restUnit').oninput = (e) => { d.restUnit = e.target.value; changed(); };
 		$('#editor').querySelectorAll('textarea').forEach((ta) => ta.oninput = () => {
 			d.panels[ta.dataset.p][ta.dataset.b] = ta.value.replace(/\n/g, ' ');
 			changed();
@@ -124,14 +133,14 @@
 	}
 
 	async function refreshPreview() {
-		const html = await (await fetch(`/api/preview/${current.id}`, { method: 'POST', body: JSON.stringify(current.data) })).text();
+		const html = await (await fetch(`/api/preview/${current.id}?set=${set}`, { method: 'POST', body: JSON.stringify(current.data) })).text();
 		$('#preview').srcdoc = html;
 	}
 
 	function setMsg(text, kind = '') { const m = $('#msg'); if (!m) return; m.textContent = text; m.className = kind; }
 
 	async function save() {
-		const res = await fetch(`/api/episodes/${current.id}`, { method: 'PUT', body: JSON.stringify(current.data) });
+		const res = await fetch(`/api/episodes/${current.id}?set=${set}`, { method: 'PUT', body: JSON.stringify(current.data) });
 		const body = await res.json();
 		if (!res.ok) return setMsg('저장 못 했어요:\n' + body.errors.join('\n'), 'bad');
 		current.saved = JSON.stringify(current.data);
@@ -145,11 +154,27 @@
 	$('#build').onclick = async () => {
 		const btn = $('#build');
 		btn.disabled = true;
-		$('#buildStatus').textContent = 'PDF 만드는 중… (1분쯤 걸려요)';
-		const res = await (await fetch('/api/build', { method: 'POST' })).json();
+		const name = SET_NAMES[set];
+		$('#buildStatus').textContent = `${name} PDF 만드는 중… (1분쯤 걸려요)`;
+		const res = await (await fetch(`/api/build?set=${set}`, { method: 'POST' })).json();
 		btn.disabled = false;
-		$('#buildStatus').textContent = res.ok ? '✅ PDF를 새로 만들었어요.' : '⚠️ 실패:\n' + res.log;
+		$('#buildStatus').textContent = res.ok ? `✅ ${name} PDF를 새로 만들었어요.` : '⚠️ 실패:\n' + res.log;
 	};
+
+	async function switchSet(next) {
+		if (next === set) return;
+		if (isDirty() && !confirm('저장하지 않은 수정이 있어요. 버리고 다른 세트로 갈까요?')) return;
+		set = next;
+		current = null;
+		dirtyIds.clear();
+		document.querySelectorAll('.sets button').forEach((b) => b.classList.toggle('on', b.dataset.set === set));
+		$('#allPdf').href = `${PDF_DIR[set]}/all.pdf`;
+		$('#answersPdf').href = `${PDF_DIR[set]}/answers.pdf`;
+		$('#buildStatus').textContent = '';
+		await loadList();
+		await open(episodes[0]?.id ?? 1);
+	}
+	document.querySelectorAll('.sets button').forEach((b) => b.onclick = () => switchSet(b.dataset.set));
 
 	function fitPreview() {
 		const w = $('#previewWrap').clientWidth - 24;

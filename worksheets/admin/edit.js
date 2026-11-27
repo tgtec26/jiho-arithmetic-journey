@@ -6,8 +6,8 @@ export function textOf(ep) {
 		id: ep.id,
 		title: ep.title,
 		unit: ep.story.unit,
-		fixed: ep.fixed,
-		other: ep.story.other,
+		...(ep.story.restUnit !== undefined ? { restUnit: ep.story.restUnit } : {}),
+		problem: ep.divisor ? `${ep.story.dividend} ÷ ${ep.divisor}` : `${ep.fixed} × ${ep.story.other}`,
 		panels: ep.panels.map((p) => p.bubbles.map((b) => b.text))
 	};
 }
@@ -32,5 +32,6 @@ export function applyTextEdits(ep, edits) {
 	});
 	out.title = String(edits.title ?? out.title).trim();
 	out.story.unit = String(edits.unit ?? out.story.unit).trim();
+	if (out.story.restUnit !== undefined) out.story.restUnit = String(edits.restUnit ?? out.story.restUnit).trim();
 	return out;
 }
