@@ -46,8 +46,8 @@ function serveStatic(res, urlPath) {
 }
 
 /**
- * @param {{ dirs?: { mul?: string, div?: string }, build?: (setKey: string) => Promise<{ ok: boolean, log: string }> }} [opts]
- *   dirs: 세트별 회차 폴더(기본은 세트의 data 폴더), API는 ?set=div 로 세트를 고른다(없으면 곱셈)
+ * @param {{ dirs?: { mul?: string, div?: string, think?: string }, build?: (setKey: string) => Promise<{ ok: boolean, log: string }> }} [opts]
+ *   dirs: 세트별 회차 폴더(기본은 세트의 data 폴더), API는 ?set=div·?set=think 로 세트를 고른다(없으면 곱셈)
  */
 export function createAdminServer({ dirs = {}, build = runBuild } = {}) {
 	const stickerIds = new Set(loadStickers().map((s) => s.id));

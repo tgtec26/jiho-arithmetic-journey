@@ -44,7 +44,7 @@
 <body>
 <header>
 	<h1>🧸 지호의 이야기 학습지 · 어드민</h1>
-	<div class="sets"><button data-set="mul" class="on">곱셈</button><button data-set="div">나눗셈</button></div>
+	<div class="sets"><button data-set="mul" class="on">곱셈</button><button data-set="div">나눗셈</button><button data-set="think">생각 퍼즐</button></div>
 	<a id="allPdf" href="/out/pdf/all.pdf" target="_blank">24회 묶음 PDF</a>
 	<a id="answersPdf" href="/out/pdf/answers.pdf" target="_blank">정답지 PDF</a>
 	<button id="build" class="primary">PDF 다시 만들기</button>
@@ -58,8 +58,8 @@
 <script>
 	const MAX = 40;
 	const $ = (s) => document.querySelector(s);
-	const SET_NAMES = { mul: '곱셈', div: '나눗셈' };
-	const PDF_DIR = { mul: '/out/pdf', div: '/out/pdf/division' };
+	const SET_NAMES = { mul: '곱셈', div: '나눗셈', think: '생각 퍼즐' };
+	const PDF_DIR = { mul: '/out/pdf', div: '/out/pdf/division', think: '/out/pdf/think' };
 	let set = 'mul';
 	let episodes = [];
 	let current = null; // { id, saved(JSON 문자열), data }
@@ -96,14 +96,14 @@
 				<div class="meta"><span>말풍선 ${j + 1}</span><span class="count" data-p="${i}" data-b="${j}"></span></div></div>`).join('')}
 			</div>`).join('');
 		$('#editor').innerHTML = `
-			<div class="info">${SET_NAMES[set]} ${d.id}회 · 이야기 문제 <b>${esc(d.problem)}</b> (숫자와 그림 위치는 여기서 바꾸지 않아요)</div>
+			<div class="info">${SET_NAMES[set]} ${d.id}회 · ${'unit' in d ? '이야기 문제' : '활동'} <b>${esc(d.problem)}</b> (${'unit' in d ? '숫자와' : '퍼즐과'} 그림 위치는 여기서 바꾸지 않아요)</div>
 			<label class="field">제목<input id="title" value="${esc(d.title)}"></label>
-			<label class="field">이야기 문제 답의 단위 (예: 명, 개)<input id="unit" value="${esc(d.unit)}"></label>
+			${'unit' in d ? `<label class="field">이야기 문제 답의 단위 (예: 명, 개)<input id="unit" value="${esc(d.unit)}"></label>` : ''}
 			${'restUnit' in d ? `<label class="field">남는 것의 단위 (예: 개, 알)<input id="restUnit" value="${esc(d.restUnit)}"></label>` : ''}
 			${panels}
 			<div class="actions"><button id="save" class="primary">저장</button><button id="revert">되돌리기</button><span id="msg"></span></div>`;
 		$('#title').oninput = (e) => { d.title = e.target.value; changed(); };
-		$('#unit').oninput = (e) => { d.unit = e.target.value; changed(); };
+		if ($('#unit')) $('#unit').oninput = (e) => { d.unit = e.target.value; changed(); };
 		if ($('#restUnit')) $('#restUnit').oninput = (e) => { d.restUnit = e.target.value; changed(); };
 		$('#editor').querySelectorAll('textarea').forEach((ta) => ta.oninput = () => {
 			d.panels[ta.dataset.p][ta.dataset.b] = ta.value.replace(/\n/g, ' ');

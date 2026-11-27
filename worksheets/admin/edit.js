@@ -1,13 +1,20 @@
 // 어드민에서 고칠 수 있는 텍스트만 꺼내고 되돌려 넣는다. 숫자·그림 위치는 건드리지 않는다.
+import { ACTIVITY_NAMES } from '../lib/think/common.js';
+
+/** 회차 안내 줄에 보일 문제 요약 */
+function problemOf(ep) {
+	if (ep.activity) return ACTIVITY_NAMES[ep.activity];
+	return ep.divisor ? `${ep.story.dividend} ÷ ${ep.divisor}` : `${ep.fixed} × ${ep.story.other}`;
+}
 
 /** 회차 → 편집용 텍스트 */
 export function textOf(ep) {
 	return {
 		id: ep.id,
 		title: ep.title,
-		unit: ep.story.unit,
-		...(ep.story.restUnit !== undefined ? { restUnit: ep.story.restUnit } : {}),
-		problem: ep.divisor ? `${ep.story.dividend} ÷ ${ep.divisor}` : `${ep.fixed} × ${ep.story.other}`,
+		...(ep.story ? { unit: ep.story.unit } : {}),
+		...(ep.story?.restUnit !== undefined ? { restUnit: ep.story.restUnit } : {}),
+		problem: problemOf(ep),
 		panels: ep.panels.map((p) => p.bubbles.map((b) => b.text))
 	};
 }
@@ -31,7 +38,9 @@ export function applyTextEdits(ep, edits) {
 		});
 	});
 	out.title = String(edits.title ?? out.title).trim();
-	out.story.unit = String(edits.unit ?? out.story.unit).trim();
-	if (out.story.restUnit !== undefined) out.story.restUnit = String(edits.restUnit ?? out.story.restUnit).trim();
+	if (out.story) {
+		out.story.unit = String(edits.unit ?? out.story.unit).trim();
+		if (out.story.restUnit !== undefined) out.story.restUnit = String(edits.restUnit ?? out.story.restUnit).trim();
+	}
 	return out;
 }
