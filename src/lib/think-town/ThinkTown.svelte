@@ -11,14 +11,21 @@
 
 	let view = $state<'map' | PlaceId>('map');
 	let unlocked = false;
+	let alive = true;
 
+	// 첫 터치에서 소리를 풀고, 음원을 다 읽었을 때 아직 마을에 있으면 배경음
 	function firstTouch() {
 		if (unlocked) return;
 		unlocked = true;
-		sound.unlock();
+		sound.unlock().then(() => {
+			if (alive) sound.startBgm();
+		});
 	}
 
-	onDestroy(() => sound.stopBgm());
+	onDestroy(() => {
+		alive = false;
+		sound.stopBgm();
+	});
 </script>
 
 <Stage>

@@ -41,13 +41,15 @@ class Sound {
 		});
 	}
 
-	/** 첫 사용자 입력에서 부른다 */
+	/** 첫 사용자 입력에서 부른다. 음원만 읽는다(배경음은 부른 쪽이 startBgm). 실패하면 다음에 다시 시도 */
 	unlock(): Promise<void> {
 		if (typeof window === 'undefined') return Promise.resolve();
 		this.#ctx ??= new AudioContext();
 		if (this.#ctx.state === 'suspended') this.#ctx.resume().catch(() => {});
-		this.#loading ??= this.#load();
-		return this.#loading.then(() => this.startBgm());
+		this.#loading ??= this.#load().catch(() => {
+			this.#loading = null;
+		});
+		return this.#loading ?? Promise.resolve();
 	}
 
 	async #load() {

@@ -37,7 +37,8 @@
 	let solved = $state(false);
 	let hinted = $state<{ id: string; dir: string } | null>(null);
 
-	let drag = $state<{ i: number; x0: number; y0: number; p0: number; pos: number; range: Range; bumped: boolean } | null>(null);
+	// id = 잡은 손가락(다른 손가락이 화면을 만져도 이 차는 안 움직임)
+	let drag = $state<{ id: number; i: number; x0: number; y0: number; p0: number; pos: number; range: Range; bumped: boolean } | null>(null);
 
 	const colorOf = (car: Car) => (car.id === 'R' ? '#e0473a' : COLORS[LETTERS.indexOf(car.id) % COLORS.length]);
 	const shownPos = (car: Car, i: number) => (drag && drag.i === i ? drag.pos : posOf(car));
@@ -45,11 +46,11 @@
 	function down(e: PointerEvent, i: number) {
 		if (solved || drag) return;
 		e.preventDefault();
-		drag = { i, x0: e.clientX, y0: e.clientY, p0: posOf(cars[i]), pos: posOf(cars[i]), range: slideRange(cars, i), bumped: false };
+		drag = { id: e.pointerId, i, x0: e.clientX, y0: e.clientY, p0: posOf(cars[i]), pos: posOf(cars[i]), range: slideRange(cars, i), bumped: false };
 	}
 
 	function move(e: PointerEvent) {
-		if (!drag) return;
+		if (!drag || e.pointerId !== drag.id) return;
 		const d = screenToBoard(e.clientX - drag.x0, e.clientY - drag.y0, CAM.tilt, CAM.turn, stageInfo.scale * CAM.zoom);
 		const raw = drag.p0 + (cars[drag.i].horizontal ? d.x : d.y) / CELL;
 		const pos = clampSlide(drag.range, raw);
@@ -58,8 +59,8 @@
 		drag = { ...drag, pos, bumped: out };
 	}
 
-	function up() {
-		if (!drag) return;
+	function up(e: PointerEvent) {
+		if (!drag || e.pointerId !== drag.id) return;
 		const { i, p0, pos, range } = drag;
 		const to = snapSlide(range, pos);
 		drag = null;
@@ -71,8 +72,8 @@
 		if (isSolved(cars)) win();
 	}
 
-	function cancel() {
-		drag = null;
+	function cancel(e: PointerEvent) {
+		if (drag && e.pointerId === drag.id) drag = null;
 	}
 
 	function win() {

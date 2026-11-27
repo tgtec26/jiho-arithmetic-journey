@@ -28,7 +28,8 @@
 	let solved = $state(false);
 	let walking = $state(false);
 	let overlay = $state<HTMLDivElement>();
-	let drag = $state<{ name: string; x: number; y: number } | null>(null);
+	// id = 잡은 손가락, (x, y) = 손가락, (dx, dy) = 손가락에서 인형 발까지(잡은 순간 그대로 유지)
+	let drag = $state<{ id: number; name: string; x: number; y: number; dx: number; dy: number } | null>(null);
 	let landed = $state<string | null>(null);
 
 	const slotPos = (i: number) => ({ x: SLOT_X0 + i * SLOT_GAP, y: SLOT_Y });
@@ -42,21 +43,31 @@
 		return { x: (e.clientX - r.left) / stageInfo.scale, y: (e.clientY - r.top) / stageInfo.scale };
 	}
 
+	function feetOf(name: string) {
+		const at = slots.indexOf(name);
+		const p = at >= 0 ? slotPos(at) : benchPos(waiting.indexOf(name));
+		return projectOnStage(CAM, p.x, p.y, at >= 0 ? 0 : 20);
+	}
+
 	function down(e: PointerEvent, name: string) {
 		if (solved || drag) return;
 		e.preventDefault();
-		drag = { name, ...toStage(e) };
+		const f = toStage(e);
+		const feet = feetOf(name);
+		drag = { id: e.pointerId, name, ...f, dx: feet.x - f.x, dy: feet.y - f.y };
 	}
 
 	function move(e: PointerEvent) {
-		if (drag) drag = { ...drag, ...toStage(e) };
+		if (drag && e.pointerId === drag.id) drag = { ...drag, ...toStage(e) };
 	}
 
-	function up() {
-		if (!drag) return;
-		const { name, x, y } = drag;
+	function up(e: PointerEvent) {
+		if (!drag || e.pointerId !== drag.id) return;
+		const name = drag.name;
+		const x = drag.x + drag.dx;
+		const y = drag.y + drag.dy;
 		drag = null;
-		// 손가락 위치 = 인형 발 위치. 가장 가까운 칸(90px 안)에 세우고, 멀면 의자로
+		// 인형 발 위치에서 가장 가까운 칸(90px 안)에 세우고, 멀면 의자로
 		let best = -1;
 		let bestD = 90;
 		slots.forEach((_, i) => {
@@ -95,7 +106,7 @@
 	}
 </script>
 
-<svelte:window onpointermove={move} onpointerup={up} onpointercancel={() => (drag = null)} />
+<svelte:window onpointermove={move} onpointerup={up} onpointercancel={(e) => drag && e.pointerId === drag.id && (drag = null)} />
 
 <div class="overlay" bind:this={overlay}></div>
 
@@ -141,7 +152,7 @@
 {/each}
 
 {#if drag}
-	<img class="ghost" src="/think-town/stickers/{CAST[drag.name]}.png" alt="" style="left:{drag.x}px;top:{drag.y}px;height:{DOLL_H * CAM.zoom}px" />
+	<img class="ghost" src="/think-town/stickers/{CAST[drag.name]}.png" alt="" style="left:{drag.x + drag.dx}px;top:{drag.y + drag.dy}px;height:{DOLL_H * CAM.zoom}px" />
 {/if}
 
 <div class="clues">
@@ -255,7 +266,7 @@
 		background: #fff;
 		border-radius: 20px;
 		padding: 14px 18px;
-		font-size: 25px;
+		font-size: 28px;
 		font-weight: 800;
 		line-height: 1.3;
 		word-break: keep-all;
