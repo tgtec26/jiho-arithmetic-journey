@@ -1,11 +1,17 @@
-<!-- 장소 한 번 하기: (이야기) → 퍼즐 판 n개 → (대화 카드) → 도장 -->
+<!-- 장소 한 번 하기: 이야기 3컷 → 퍼즐 판 n개 → 대화 카드 → 도장 피날레 -->
 <script lang="ts">
 	import P from './data/puzzles.json';
+	import { STORIES, TALK } from './data/stories';
+	import { placeOf } from './data/places';
 	import ParkingPlace from './places/ParkingPlace.svelte';
 	import TicketPlace from './places/TicketPlace.svelte';
+	import StoryScene from './StoryScene.svelte';
+	import TalkCard from './TalkCard.svelte';
+	import Finale from './Finale.svelte';
+	import LongPressButton from './LongPressButton.svelte';
 	import { townStore } from './progress.svelte';
 	import { sound } from './sound.svelte';
-	import { finish, nextBoard, nextPanel, solve, startRun, PANELS, type Run } from './rules/run';
+	import { finish, giveTalkStar, nextBoard, nextPanel, solve, startRun, type Run } from './rules/run';
 	import type { PlaceId } from './rules/progress';
 
 	let { place, onExit }: { place: PlaceId; onExit: () => void } = $props();
@@ -14,16 +20,19 @@
 	type LineupPuzzle = (typeof P.lineup)[number][number];
 
 	// svelte-ignore state_referenced_locally
+	const info = placeOf(place);
+	// svelte-ignore state_referenced_locally
 	const stage = townStore.stage(place);
 	// 주차장은 한 번 안에서 쉬운 판부터
 	// svelte-ignore state_referenced_locally
 	const parking: ParkingPuzzle[] = place === 'parking' ? townStore.takeFor(place, P.parking).sort((a, b) => a.minMoves - b.minMoves) : [];
 	// svelte-ignore state_referenced_locally
 	const lineup: LineupPuzzle[] = place === 'ticket' ? townStore.takeFor(place, P.lineup) : [];
-	const items = parking.length ? parking : lineup;
+	const boards = parking.length || lineup.length;
+	// svelte-ignore state_referenced_locally
+	const story = STORIES[place]![stage - 1];
 
-	const skipStory = (r: Run) => Array.from({ length: PANELS }).reduce<Run>((acc) => nextPanel(acc), r);
-	let run = $state<Run>(skipStory(startRun(items.length)));
+	let run = $state<Run>(startRun(boards));
 	let pop = $state<{ n: number; key: number } | null>(null);
 	let placeRef = $state<{ hint: () => void }>();
 
@@ -37,23 +46,35 @@
 		setTimeout(() => {
 			pop = null;
 			run = nextBoard(run);
-			if (run.phase === 'talk') {
-				run = finish(run);
-				townStore.clear(place);
-				onExit();
-			}
 		}, 1700);
+	}
+
+	function talkStar() {
+		const r = giveTalkStar(run);
+		if (!r.gained) return;
+		run = r.run;
+		townStore.award(r.gained);
+		sound.play('correct');
+		pop = { n: 1, key: Date.now() };
+		setTimeout(() => (pop = null), 1600);
+	}
+
+	function toFinale() {
+		run = finish(run);
+		townStore.clear(place);
 	}
 </script>
 
-<div class="steps">
-	<span class="stage">{stage}단계</span>
-	{#each run.solved as done, i}
-		<i class:done class:now={i === run.board && run.phase === 'board'}></i>
-	{/each}
-</div>
+{#if run.phase === 'story'}
+	<StoryScene {place} panel={story[run.panel]} index={run.panel} onnext={() => (run = nextPanel(run))} />
+{:else}
+	<div class="steps">
+		<span class="stage">{info.icon} {stage}단계</span>
+		{#each run.solved as done, i}
+			<i class:done class:now={i === run.board && run.phase === 'board'}></i>
+		{/each}
+	</div>
 
-{#if run.phase === 'board'}
 	{#key run.board}
 		{#if place === 'parking'}
 			<ParkingPlace bind:this={placeRef} puzzle={parking[run.board]} {onSolved} />
@@ -61,6 +82,16 @@
 			<TicketPlace bind:this={placeRef} puzzle={lineup[run.board]} {onSolved} />
 		{/if}
 	{/key}
+
+	{#if run.phase === 'board'}
+		<div class="hint">
+			<LongPressButton label="아빠 힌트 (꾹)" disabled={run.solved[run.board]} onfire={() => placeRef?.hint()} />
+		</div>
+	{:else if run.phase === 'talk'}
+		<TalkCard question={TALK[place]} starred={run.talkStar} onstar={talkStar} ondone={toFinale} />
+	{:else if run.phase === 'finale'}
+		<Finale icon={info.icon} placeName={info.name} {stage} stars={run.stars} ondone={onExit} />
+	{/if}
 {/if}
 
 {#if pop}
@@ -105,6 +136,12 @@
 	}
 	.steps i.done {
 		background: #ffb400;
+	}
+	.hint {
+		position: absolute;
+		left: 26px;
+		bottom: 26px;
+		z-index: 60;
 	}
 	.pop {
 		position: absolute;
