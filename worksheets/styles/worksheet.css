@@ -219,6 +219,126 @@
 	margin: 0 1mm;
 }
 
+/* ---------- 나눗셈 문제 칸 (왼쪽 쪼개기 59mm + 오른쪽 세로식 26mm) ---------- */
+.dot.first {
+	background: var(--ones);
+}
+.dot.second {
+	background: var(--tens);
+}
+.split {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 51mm;
+	font-size: 12.5pt;
+	white-space: nowrap;
+}
+.srow {
+	display: flex;
+	align-items: center;
+	gap: 1.2mm;
+}
+.split .box,
+.div-problem .check .box {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 12mm;
+	height: 8.5mm;
+	border: 0.4mm solid var(--line);
+	border-radius: 1.5mm;
+	font-size: 12pt;
+}
+.split .box.sm,
+.div-problem .check .box.sm {
+	width: 9mm;
+}
+.split .rem {
+	margin-left: 0.5mm;
+}
+.split .hint,
+.longdiv .hint {
+	color: var(--hint);
+}
+.split.small {
+	font-size: 10.5pt;
+	height: 38mm;
+	align-self: center;
+}
+.split.small .box {
+	width: 10mm;
+	height: 7mm;
+	font-size: 10pt;
+}
+.split.small .box.sm {
+	width: 8mm;
+}
+.longdiv {
+	border-collapse: collapse;
+	table-layout: fixed;
+	margin-left: 3mm;
+}
+.longdiv td {
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+}
+.longdiv td.op {
+	width: 8mm;
+}
+.longdiv td.dv {
+	width: 8mm;
+	position: relative;
+	font-size: 17pt;
+	font-weight: 500;
+	text-align: right;
+	padding-right: 2.2mm;
+}
+/* 나누는 수 오른쪽 ")" */
+.longdiv td.dv::after {
+	content: '';
+	position: absolute;
+	right: -0.3mm;
+	top: 0;
+	bottom: 0;
+	width: 1.8mm;
+	border-right: 0.6mm solid var(--line);
+	border-radius: 0 50% 50% 0;
+}
+.longdiv td.d {
+	width: 9mm;
+	height: 8.5mm;
+	border: 0.25mm dashed var(--grid-line);
+	font-size: 17pt;
+	font-weight: 500;
+}
+.longdiv td.q1 {
+	background: var(--ones-tint);
+}
+.longdiv td.q2 {
+	background: var(--tens-tint);
+}
+.longdiv tr.ld-n td.d {
+	border-top: 0.6mm solid var(--line);
+}
+.longdiv tr.ld-p1 td.d,
+.longdiv tr.ld-p2 td.d {
+	border-bottom: 0.6mm solid var(--line);
+}
+.div-problem .check {
+	height: 9mm;
+	display: flex;
+	align-items: center;
+	gap: 1.2mm;
+	font-size: 12pt;
+	white-space: nowrap;
+}
+.div-problem .answer .blank {
+	width: 18mm;
+}
+
 /* ---------- 페이지 (A4) ---------- */
 @page {
 	size: A4;
