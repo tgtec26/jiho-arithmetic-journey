@@ -1,0 +1,102 @@
+{
+	"id": 11,
+	"topic": "lego",
+	"icon": "🤖",
+	"title": "로봇 팔 3대",
+	"divisor": 3,
+	"story": {
+		"dividend": 69,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-coding-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-robot-arm",
+					"x": 58,
+					"y": 46,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 로봇 팔 3대를 만들어 볼 거예요.",
+					"speaker": "guest-coding-teacher"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 8,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-lego-bucket",
+					"x": 56,
+					"y": 52,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "통에 블록이 69개 있어요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-baskets",
+					"x": 40,
+					"y": 64,
+					"w": 56
+				}
+			],
+			"bubbles": [
+				{
+					"text": "바구니 3개에 똑같이 나누어 담자.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "바구니 하나에 블록이 몇 개씩 들어갈까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

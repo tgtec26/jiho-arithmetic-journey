@@ -1,0 +1,103 @@
+{
+	"id": 16,
+	"topic": "teddy",
+	"icon": "🧸",
+	"title": "곰 인형 단추",
+	"divisor": 4,
+	"story": {
+		"dividend": 70,
+		"unit": "개",
+		"restUnit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 58,
+					"y": 51,
+					"h": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "감돌이가 태어난 곰 인형 공장에 왔어요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-buttons",
+					"x": 58,
+					"y": 58,
+					"w": 32
+				}
+			],
+			"bubbles": [
+				{
+					"text": "곰 인형 단추가 70개 있구나.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-teddy-box",
+					"x": 56,
+					"y": 50,
+					"w": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "곰 인형 하나에 단추가 4개씩 필요하대요!",
+					"speaker": "jiho-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 51,
+					"h": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "인형을 몇 개 만들고, 단추는 몇 개 남을까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

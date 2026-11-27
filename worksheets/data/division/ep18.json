@@ -1,0 +1,103 @@
+{
+	"id": 18,
+	"topic": "train",
+	"icon": "🚂",
+	"title": "고속 열차 좌석",
+	"divisor": 5,
+	"story": {
+		"dividend": 63,
+		"unit": "줄",
+		"restUnit": "명"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "prop-bullet-train",
+					"x": 26,
+					"y": 60,
+					"w": 72
+				},
+				{
+					"id": "jiho-pointing",
+					"x": 4,
+					"y": 42,
+					"h": 54
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 고속 열차를 타러 왔어요!",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-conductor",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-train-seats",
+					"x": 50,
+					"y": 48,
+					"w": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "이 칸에는 한 줄에 5명씩 앉아요.",
+					"speaker": "guest-conductor"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "prop-bullet-train",
+					"x": 34,
+					"y": 64,
+					"w": 62
+				},
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 38,
+					"h": 58
+				}
+			],
+			"bubbles": [
+				{
+					"text": "이 칸에 탈 사람은 모두 63명이래.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "몇 줄을 꽉 채우고, 몇 명이 남을까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

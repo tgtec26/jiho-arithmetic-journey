@@ -1,0 +1,103 @@
+{
+	"id": 22,
+	"topic": "car",
+	"icon": "🚗",
+	"title": "주차 타워",
+	"divisor": 7,
+	"story": {
+		"dividend": 80,
+		"unit": "대",
+		"restUnit": "대"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-parking-tower",
+					"x": 60,
+					"y": 30,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "저 높은 건물은 뭐예요?",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-parking-tower",
+					"x": 62,
+					"y": 32,
+					"w": 30
+				}
+			],
+			"bubbles": [
+				{
+					"text": "주차 타워야. 모두 7층이란다.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-toy-car",
+					"x": 58,
+					"y": 64,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘 들어온 자동차가 80대래요!",
+					"speaker": "jiho-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "층마다 똑같이 세우면 한 층에 몇 대, 몇 대 남을까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

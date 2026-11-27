@@ -1,0 +1,108 @@
+{
+	"id": 14,
+	"topic": "car",
+	"icon": "🚗",
+	"title": "경주 스티커",
+	"divisor": 2,
+	"story": {
+		"dividend": 58,
+		"unit": "장"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-race-car",
+					"x": 50,
+					"y": 58,
+					"w": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "와, 자동차 경주 대회에 왔어요!",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-sticker-sheet",
+					"x": 58,
+					"y": 44,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "기념으로 자동차 스티커를 58장 받았어.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 38,
+					"y": 56,
+					"h": 41
+				},
+				{
+					"id": "prop-checkered-flag",
+					"x": 66,
+					"y": 42,
+					"w": 30
+				}
+			],
+			"bubbles": [
+				{
+					"text": "감돌이랑 나눠 가질래요!",
+					"speaker": "jiho-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "둘이 똑같이 나누면 한 명에 몇 장일까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

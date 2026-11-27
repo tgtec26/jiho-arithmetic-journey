@@ -1,0 +1,119 @@
+{
+	"id": 24,
+	"topic": "teddy",
+	"icon": "🧸",
+	"title": "나눗셈 졸업 파티",
+	"divisor": 5,
+	"story": {
+		"dividend": 87,
+		"unit": "개",
+		"restUnit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "prop-party-banner",
+					"x": 40,
+					"y": 6,
+					"w": 56
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 62,
+					"y": 51,
+					"h": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "나눗셈 졸업 파티를 열어요!",
+					"speaker": "jiho-cheering"
+				},
+				{
+					"text": "축하해!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-cookie-plate",
+					"x": 58,
+					"y": 56,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "파티 쿠키를 87개 구웠단다.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "sarang-jumping",
+					"x": 40,
+					"y": 60,
+					"h": 34
+				},
+				{
+					"id": "prop-balloons",
+					"x": 68,
+					"y": 30,
+					"w": 26
+				}
+			],
+			"bubbles": [
+				{
+					"text": "파티에 친구가 5명 와요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 51,
+					"h": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "한 명에 몇 개씩 주고, 몇 개 남을까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

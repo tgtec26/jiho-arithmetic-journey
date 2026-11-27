@@ -1,0 +1,103 @@
+{
+	"id": 21,
+	"topic": "english",
+	"icon": "🔤",
+	"title": "단어 카드 묶음",
+	"divisor": 6,
+	"story": {
+		"dividend": 75,
+		"unit": "묶음",
+		"restUnit": "장"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-english-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-word-cards",
+					"x": 54,
+					"y": 48,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 단어 카드를 묶어서 정리해요.",
+					"speaker": "guest-english-teacher"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-reading",
+					"x": 8,
+					"y": 50,
+					"h": 46
+				},
+				{
+					"id": "prop-card-box",
+					"x": 58,
+					"y": 48,
+					"w": 32
+				}
+			],
+			"bubbles": [
+				{
+					"text": "카드가 모두 75장 있어요!",
+					"speaker": "jiho-reading"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-word-cards",
+					"x": 58,
+					"y": 52,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "6장씩 한 묶음으로 묶어 볼까?",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "몇 묶음이 되고, 몇 장이 남을까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

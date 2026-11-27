@@ -1,0 +1,106 @@
+{
+	"id": 5,
+	"topic": "english",
+	"icon": "🔤",
+	"title": "단어 카드 놀이",
+	"divisor": 2,
+	"story": {
+		"dividend": 48,
+		"unit": "장"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-english-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-word-cards",
+					"x": 54,
+					"y": 48,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "Hello, 지호! 오늘은 단어 카드 놀이를 해요.",
+					"speaker": "guest-english-teacher"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-reading",
+					"x": 8,
+					"y": 50,
+					"h": 46
+				},
+				{
+					"id": "prop-card-box",
+					"x": 58,
+					"y": 48,
+					"w": 32
+				}
+			],
+			"bubbles": [
+				{
+					"text": "상자에 카드가 48장 들어 있어요!",
+					"speaker": "jiho-reading"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 8,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 60,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "감돌이랑 나눠서 외울래요!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "나도 할래!",
+					"speaker": "gamdori-waving"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "둘이 똑같이 나누면 한 명에 몇 장일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

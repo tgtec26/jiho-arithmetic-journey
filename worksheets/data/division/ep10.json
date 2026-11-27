@@ -1,0 +1,106 @@
+{
+	"id": 10,
+	"topic": "train",
+	"icon": "🚂",
+	"title": "두 줄 기찻길",
+	"divisor": 2,
+	"story": {
+		"dividend": 72,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-train",
+					"x": 50,
+					"y": 60,
+					"w": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 기찻길을 길게 만들어요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-rail-track",
+					"x": 46,
+					"y": 62,
+					"w": 50
+				}
+			],
+			"bubbles": [
+				{
+					"text": "레일 조각이 모두 72개 있구나.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 8,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 60,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "기찻길을 2줄 만들 거예요!",
+					"speaker": "jiho-cheering"
+				},
+				{
+					"text": "기차 두 대가 달리겠다!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "2줄에 똑같이 놓으면 한 줄에 몇 개일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

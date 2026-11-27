@@ -1,0 +1,107 @@
+{
+	"id": 23,
+	"topic": "cat",
+	"icon": "🐱",
+	"title": "고양이 간식 파티",
+	"divisor": 9,
+	"story": {
+		"dividend": 96,
+		"unit": "개",
+		"restUnit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-cat-group",
+					"x": 48,
+					"y": 50,
+					"w": 48
+				}
+			],
+			"bubbles": [
+				{
+					"text": "고양이 친구들이 모두 모였어요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-cat-treats",
+					"x": 58,
+					"y": 50,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "고양이 간식을 96개 가져왔단다.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "sarang-jumping",
+					"x": 60,
+					"y": 56,
+					"h": 38
+				}
+			],
+			"bubbles": [
+				{
+					"text": "사랑이까지 고양이가 9마리예요!",
+					"speaker": "jiho-surprised"
+				},
+				{
+					"text": "야옹!",
+					"speaker": "sarang-jumping"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "한 마리에 몇 개씩 먹고, 몇 개 남을까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

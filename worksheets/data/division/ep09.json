@@ -1,0 +1,107 @@
+{
+	"id": 9,
+	"topic": "soccer",
+	"icon": "⚽",
+	"title": "K리그 축구 교실",
+	"divisor": 5,
+	"story": {
+		"dividend": 75,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "prop-goal",
+					"x": 52,
+					"y": 36,
+					"w": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "K리그 어린이 축구 교실에 왔어요!",
+					"speaker": "jiho-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-soccer7",
+					"x": 6,
+					"y": 43,
+					"h": 54
+				},
+				{
+					"id": "prop-ball-basket",
+					"x": 52,
+					"y": 54,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "공을 75개 준비했어!",
+					"speaker": "guest-soccer7"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-soccer9-sky",
+					"x": 6,
+					"y": 41,
+					"h": 56
+				},
+				{
+					"id": "jiho-pointing",
+					"x": 62,
+					"y": 49,
+					"h": 49,
+					"flip": true
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 5팀으로 나누어 연습하자!",
+					"speaker": "guest-soccer9-sky"
+				},
+				{
+					"text": "저는 홀란 선수 팀!",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "5팀이 똑같이 나누면 한 팀에 공이 몇 개일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

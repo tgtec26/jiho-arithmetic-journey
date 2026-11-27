@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { DIVISION_DIR, loadEpisodes, loadStickers, validateDivEpisode } from '../lib/episodes.js';
 import { renderDivEpisode } from '../lib/render-page.js';
 import { renderDivAnswerKey } from '../lib/render-answers.js';
+import { DIV_EPISODE_TABLE } from './fixtures/division-table.js';
 
 const stickerIds = new Set(loadStickers().map((s) => s.id));
 const clone = (o) => JSON.parse(JSON.stringify(o));
@@ -48,6 +49,20 @@ describe('validateDivEpisode', () => {
 	});
 });
 
+describe('division episodes 1–24', () => {
+	const episodes = loadEpisodes(DIVISION_DIR);
+
+	it('has 24 episodes that pass every check', () => {
+		expect(episodes.map((e) => e.id)).toEqual(Array.from({ length: 24 }, (_, i) => i + 1));
+		for (const ep of episodes) expect(validateDivEpisode(ep, stickerIds), `${ep.id}회`).toEqual([]);
+	});
+
+	it.each(DIV_EPISODE_TABLE)('episode %i uses ÷ %i with story number %i', (id, d, n) => {
+		const ep = episodes.find((e) => e.id === id);
+		expect([ep.divisor, ep.story.dividend]).toEqual([d, n]);
+	});
+});
+
 describe('renderDivEpisode', () => {
 	const html = renderDivEpisode(ep01, () => null);
 
@@ -76,5 +91,6 @@ describe('renderDivAnswerKey', () => {
 		expect(html).toContain('(16번, 2알)');
 		expect(html).toContain('30 + 20');
 		expect(count(html, 'class="page answers div-set"')).toBe(1);
+		expect(html).toContain('나눗셈 정답 (아빠용)');
 	});
 });

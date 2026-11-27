@@ -1,0 +1,108 @@
+{
+	"id": 7,
+	"topic": "car",
+	"icon": "🚗",
+	"title": "장난감 주차장",
+	"divisor": 4,
+	"story": {
+		"dividend": 52,
+		"unit": "대"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "dad-smiling",
+					"x": 4,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "jiho-pointing",
+					"x": 28,
+					"y": 41,
+					"h": 56
+				},
+				{
+					"id": "prop-parking-tower",
+					"x": 66,
+					"y": 30,
+					"w": 28
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 장난감 주차장을 만들었어요!",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-toy-car",
+					"x": 58,
+					"y": 64,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "장난감 자동차가 모두 52대구나.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-parking-tower",
+					"x": 60,
+					"y": 30,
+					"w": 32
+				}
+			],
+			"bubbles": [
+				{
+					"text": "주차장은 4층이에요!",
+					"speaker": "jiho-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 53,
+					"h": 44
+				}
+			],
+			"bubbles": [
+				{
+					"text": "4층에 똑같이 세우면 한 층에 몇 대일까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,106 @@
+{
+	"id": 2,
+	"topic": "train",
+	"icon": "🚂",
+	"title": "꼬마 기차 타기",
+	"divisor": 3,
+	"story": {
+		"dividend": 36,
+		"unit": "명"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-pointing",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-train",
+					"x": 46,
+					"y": 62,
+					"w": 52
+				}
+			],
+			"bubbles": [
+				{
+					"text": "아빠, 꼬마 기차를 기다리는 줄이 길어요!",
+					"speaker": "jiho-pointing"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-conductor",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-train",
+					"x": 40,
+					"y": 60,
+					"w": 58
+				}
+			],
+			"bubbles": [
+				{
+					"text": "이번 기차에는 36명이 탈 거예요.",
+					"speaker": "guest-conductor"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 8,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-waving",
+					"x": 60,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "기차는 모두 3칸이래!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "나도 탈래!",
+					"speaker": "gamdori-waving"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "3칸에 똑같이 나누어 타면 한 칸에 몇 명일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,107 @@
+{
+	"id": 20,
+	"topic": "piano",
+	"icon": "🎹",
+	"title": "칭찬 스티커",
+	"divisor": 8,
+	"story": {
+		"dividend": 85,
+		"unit": "장",
+		"restUnit": "장"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-piano-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-piano",
+					"x": 54,
+					"y": 48,
+					"w": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘 연주회 모두 정말 잘했어요!",
+					"speaker": "guest-piano-teacher"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 4,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-sticker-sheet",
+					"x": 56,
+					"y": 44,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "선생님이 칭찬 스티커를 85장 주셨어요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-surprised",
+					"x": 60,
+					"y": 57,
+					"h": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "연주회에 나온 친구는 8명이에요!",
+					"speaker": "jiho-surprised"
+				},
+				{
+					"text": "다 같이 받겠다!",
+					"speaker": "gamdori-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "한 명에 몇 장씩 받고, 몇 장이 남을까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

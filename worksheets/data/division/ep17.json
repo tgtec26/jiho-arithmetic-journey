@@ -1,0 +1,106 @@
+{
+	"id": 17,
+	"topic": "soccer",
+	"icon": "⚽",
+	"title": "월드컵 스티커",
+	"divisor": 6,
+	"story": {
+		"dividend": 84,
+		"unit": "장"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 6,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "prop-tv",
+					"x": 54,
+					"y": 42,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "2026 월드컵이 곧 시작해요!",
+					"speaker": "jiho-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-sticker-sheet",
+					"x": 58,
+					"y": 44,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "월드컵 축구 스티커를 84장 샀단다.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 60,
+					"y": 54,
+					"h": 43
+				}
+			],
+			"bubbles": [
+				{
+					"text": "축구 교실 친구 6명이랑 나눌래요!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "다들 좋아하겠다!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 8,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "6명이 똑같이 나누면 한 명에 몇 장일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

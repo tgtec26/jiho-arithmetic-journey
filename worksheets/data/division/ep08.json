@@ -1,0 +1,112 @@
+{
+	"id": 8,
+	"topic": "teddy",
+	"icon": "🧸",
+	"title": "감돌이 생일 쿠키",
+	"divisor": 3,
+	"story": {
+		"dividend": 45,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-birthday-cake",
+					"x": 34,
+					"y": 66,
+					"w": 28
+				},
+				{
+					"id": "gamdori-cheering",
+					"x": 62,
+					"y": 51,
+					"h": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "오늘은 감돌이 생일이에요!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "고마워!",
+					"speaker": "gamdori-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-cookie-plate",
+					"x": 58,
+					"y": 56,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "생일 쿠키를 45개 구웠단다.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-cheering",
+					"x": 8,
+					"y": 42,
+					"h": 55
+				},
+				{
+					"id": "prop-gift-bags",
+					"x": 46,
+					"y": 62,
+					"w": 48
+				}
+			],
+			"bubbles": [
+				{
+					"text": "손님 3명에게 쿠키 봉투를 줄 거예요!",
+					"speaker": "jiho-cheering"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-thinking",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "gamdori-thinking",
+					"x": 60,
+					"y": 51,
+					"h": 46
+				}
+			],
+			"bubbles": [
+				{
+					"text": "봉투 3개에 똑같이 담으면 한 봉투에 몇 개일까?",
+					"speaker": "gamdori-thinking"
+				}
+			]
+		}
+	]
+}

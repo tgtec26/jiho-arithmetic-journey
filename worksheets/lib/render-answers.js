@@ -37,21 +37,21 @@ function section(ep, lines) {
 }
 
 /** A4 한 쪽에 6회씩 */
-function paginate(episodes, blockOf, setClass = '') {
+function paginate(episodes, blockOf, title, setClass = '') {
 	const pages = [];
 	for (let i = 0; i < episodes.length; i += PER_PAGE) {
 		const blocks = episodes.slice(i, i + PER_PAGE).map(blockOf).join('');
-		pages.push(`<div class="page answers${setClass}"><header class="phead"><span class="title">정답 (아빠용)</span></header>${blocks}</div>`);
+		pages.push(`<div class="page answers${setClass}"><header class="phead"><span class="title">${title}</span></header>${blocks}</div>`);
 	}
 	return pages.join('');
 }
 
 /** 곱셈 정답지 */
 export function renderAnswerKey(episodes) {
-	return paginate(episodes, block);
+	return paginate(episodes, block, '정답 (아빠용)');
 }
 
 /** 나눗셈 정답지 */
 export function renderDivAnswerKey(episodes) {
-	return paginate(episodes, divBlock, ' div-set');
+	return paginate(episodes, divBlock, '나눗셈 정답 (아빠용)', ' div-set');
 }

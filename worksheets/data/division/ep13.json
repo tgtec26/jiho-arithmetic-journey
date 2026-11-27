@@ -1,0 +1,102 @@
+{
+	"id": 13,
+	"topic": "english",
+	"icon": "🔤",
+	"title": "영어 동화책",
+	"divisor": 4,
+	"story": {
+		"dividend": 96,
+		"unit": "쪽"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "guest-english-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-book-stack",
+					"x": 56,
+					"y": 52,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "이 영어 동화책을 읽어 볼까요?",
+					"speaker": "guest-english-teacher"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-book-stack",
+					"x": 58,
+					"y": 54,
+					"w": 32
+				}
+			],
+			"bubbles": [
+				{
+					"text": "우와, 모두 96쪽이에요!",
+					"speaker": "jiho-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-calendar",
+					"x": 62,
+					"y": 42,
+					"w": 30
+				}
+			],
+			"bubbles": [
+				{
+					"text": "4일 동안 나누어 읽으면 어떨까?",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "날마다 똑같이 읽으면 하루에 몇 쪽일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,102 @@
+{
+	"id": 19,
+	"topic": "lego",
+	"icon": "🤖",
+	"title": "꼬마 로봇 만들기",
+	"divisor": 7,
+	"story": {
+		"dividend": 91,
+		"unit": "대"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-lego-bucket",
+					"x": 56,
+					"y": 50,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "레고 블록 통을 꺼냈어요!",
+					"speaker": "jiho-happy"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 4,
+					"y": 40,
+					"h": 57
+				},
+				{
+					"id": "prop-lego-blocks",
+					"x": 52,
+					"y": 56,
+					"w": 42
+				}
+			],
+			"bubbles": [
+				{
+					"text": "블록을 세어 보니 91개구나.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "guest-coding-teacher",
+					"x": 6,
+					"y": 34,
+					"h": 62
+				},
+				{
+					"id": "prop-lego-robot",
+					"x": 58,
+					"y": 50,
+					"w": 34
+				}
+			],
+			"bubbles": [
+				{
+					"text": "이 꼬마 로봇은 블록 7개로 만들어요.",
+					"speaker": "guest-coding-teacher"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-sitting",
+					"x": 62,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "블록 91개로 로봇을 몇 대 만들 수 있을까?",
+					"speaker": "sarang-sitting"
+				}
+			]
+		}
+	]
+}

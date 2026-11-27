@@ -1,0 +1,106 @@
+{
+	"id": 6,
+	"topic": "cat",
+	"icon": "🐱",
+	"title": "사랑이 친구들",
+	"divisor": 4,
+	"story": {
+		"dividend": 48,
+		"unit": "개"
+	},
+	"practice": null,
+	"panels": [
+		{
+			"stickers": [
+				{
+					"id": "jiho-happy",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "sarang-jumping",
+					"x": 48,
+					"y": 52,
+					"h": 40
+				}
+			],
+			"bubbles": [
+				{
+					"text": "사랑이 친구들이 놀러 왔어요!",
+					"speaker": "jiho-happy"
+				},
+				{
+					"text": "야옹!",
+					"speaker": "sarang-jumping"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "dad-explaining",
+					"x": 6,
+					"y": 37,
+					"h": 60
+				},
+				{
+					"id": "prop-cat-treats",
+					"x": 58,
+					"y": 50,
+					"w": 36
+				}
+			],
+			"bubbles": [
+				{
+					"text": "고양이 간식이 모두 48개 있단다.",
+					"speaker": "dad-explaining"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-surprised",
+					"x": 6,
+					"y": 40,
+					"h": 56
+				},
+				{
+					"id": "prop-cat-group",
+					"x": 48,
+					"y": 50,
+					"w": 48
+				}
+			],
+			"bubbles": [
+				{
+					"text": "사랑이까지 고양이가 4마리예요!",
+					"speaker": "jiho-surprised"
+				}
+			]
+		},
+		{
+			"stickers": [
+				{
+					"id": "jiho-thinking",
+					"x": 8,
+					"y": 40,
+					"h": 58
+				},
+				{
+					"id": "sarang-curious",
+					"x": 60,
+					"y": 58,
+					"h": 39
+				}
+			],
+			"bubbles": [
+				{
+					"text": "4마리가 똑같이 나누면 한 마리에 몇 개일까?",
+					"speaker": "sarang-curious"
+				}
+			]
+		}
+	]
+}
