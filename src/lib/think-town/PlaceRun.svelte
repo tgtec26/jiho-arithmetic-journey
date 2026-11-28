@@ -5,6 +5,7 @@
 	import { placeOf } from './data/places';
 	import ParkingPlace from './places/ParkingPlace.svelte';
 	import TicketPlace from './places/TicketPlace.svelte';
+	import BlocksPlace from './places/BlocksPlace.svelte';
 	import StoryScene from './StoryScene.svelte';
 	import TalkCard from './TalkCard.svelte';
 	import Finale from './Finale.svelte';
@@ -28,7 +29,11 @@
 	const parking: ParkingPuzzle[] = place === 'parking' ? townStore.takeFor(place, P.parking).sort((a, b) => a.minMoves - b.minMoves) : [];
 	// svelte-ignore state_referenced_locally
 	const lineup: LineupPuzzle[] = place === 'ticket' ? townStore.takeFor(place, P.lineup) : [];
-	const boards = parking.length || lineup.length;
+	// 블록도 블록 수가 적은 판부터
+	const blockN = (p: { heights: string[] }) => [...p.heights.join('')].reduce((a, ch) => a + Number(ch), 0);
+	// svelte-ignore state_referenced_locally
+	const blocks = place === 'blocks' ? townStore.takeFor(place, P.blocks).sort((a, b) => blockN(a) - blockN(b)) : [];
+	const boards = parking.length || lineup.length || blocks.length;
 	// svelte-ignore state_referenced_locally
 	const story = STORIES[place]![stage - 1];
 
@@ -80,6 +85,8 @@
 			<ParkingPlace bind:this={placeRef} puzzle={parking[run.board]} {onSolved} />
 		{:else if place === 'ticket'}
 			<TicketPlace bind:this={placeRef} puzzle={lineup[run.board]} {onSolved} />
+		{:else if place === 'blocks'}
+			<BlocksPlace bind:this={placeRef} puzzle={blocks[run.board]} {stage} {onSolved} />
 		{/if}
 	{/key}
 

@@ -12,7 +12,7 @@ export type Place = {
 
 export const PLACES: Place[] = [
 	{ id: 'parking', name: '주차장', icon: '🚗', activity: '주차장 탈출', built: true, spot: { x: 105, y: 40, z: 14 } },
-	{ id: 'blocks', name: '블록 공방', icon: '🧱', activity: '쌓기나무', built: false, spot: { x: 297, y: 45, z: 46 } },
+	{ id: 'blocks', name: '블록 공방', icon: '🧱', activity: '쌓기나무', built: true, spot: { x: 297, y: 45, z: 46 } },
 	{ id: 'clothes', name: '옷가게', icon: '👕', activity: '경우의 수', built: false, spot: { x: 425, y: 110, z: 40 } },
 	{ id: 'ticket', name: '기차역 매표소', icon: '🎫', activity: '줄 세우기', built: true, spot: { x: 75, y: 268, z: 0, below: true } },
 	{ id: 'garden', name: '사랑이 정원', icon: '🌼', activity: '모양 스도쿠', built: false, spot: { x: 300, y: 250, z: 0, dx: -30 } },
