@@ -16,7 +16,7 @@ export const PLACES: Place[] = [
 	{ id: 'clothes', name: '옷가게', icon: '👕', activity: '경우의 수', built: true, spot: { x: 425, y: 110, z: 40 } },
 	{ id: 'ticket', name: '기차역 매표소', icon: '🎫', activity: '줄 세우기', built: true, spot: { x: 75, y: 268, z: 0, below: true } },
 	{ id: 'garden', name: '사랑이 정원', icon: '🌼', activity: '모양 스도쿠', built: true, spot: { x: 300, y: 250, z: 0, dx: -30 } },
-	{ id: 'seesaw', name: '시소 놀이터', icon: '⚖️', activity: '무게 추론', built: false, spot: { x: 415, y: 255, z: 12, dx: 40 } }
+	{ id: 'seesaw', name: '시소 놀이터', icon: '⚖️', activity: '무게 추론', built: true, spot: { x: 415, y: 255, z: 12, dx: 40 } }
 ];
 
 export const placeOf = (id: PlaceId) => PLACES.find((p) => p.id === id)!;

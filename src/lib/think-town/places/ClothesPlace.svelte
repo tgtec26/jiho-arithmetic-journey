@@ -97,14 +97,13 @@
 	export function hint() {
 		if (solved) return;
 		const h = clothesHint(album, puzzle);
-		if (!h) {
-			glowDone = true;
-			later('hint', 1600, () => (glowDone = false));
-			return;
-		}
-		outfit = h;
-		glowCamera = true;
-		later('hint', 1600, () => (glowCamera = false));
+		if (h) outfit = h;
+		glowCamera = !!h;
+		glowDone = !h;
+		later('hint', 1600, () => {
+			glowCamera = false;
+			glowDone = false;
+		});
 	}
 </script>
 

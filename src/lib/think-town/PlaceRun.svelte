@@ -8,6 +8,8 @@
 	import BlocksPlace from './places/BlocksPlace.svelte';
 	import GardenPlace from './places/GardenPlace.svelte';
 	import ClothesPlace from './places/ClothesPlace.svelte';
+	import SeesawPlace from './places/SeesawPlace.svelte';
+	import { SEESAW_POOLS } from './data/seesaw';
 	import StoryScene from './StoryScene.svelte';
 	import TalkCard from './TalkCard.svelte';
 	import Finale from './Finale.svelte';
@@ -44,7 +46,9 @@
 	// 옷가게는 조합 수가 적은 판부터
 	// svelte-ignore state_referenced_locally
 	const clothes = place === 'clothes' ? townStore.takeFor(place, P.clothes as Outfits[][]).sort((a, b) => totalOutfits(a) - totalOutfits(b)) : [];
-	const boards = parking.length || lineup.length || blocks.length || garden.length || clothes.length;
+	// svelte-ignore state_referenced_locally
+	const seesaw = place === 'seesaw' ? townStore.takeFor(place, SEESAW_POOLS) : [];
+	const boards = parking.length || lineup.length || blocks.length || garden.length || clothes.length || seesaw.length;
 	// svelte-ignore state_referenced_locally
 	const story = STORIES[place]![stage - 1];
 
@@ -102,6 +106,8 @@
 			<GardenPlace bind:this={placeRef} puzzle={garden[run.board]} {onSolved} />
 		{:else if place === 'clothes'}
 			<ClothesPlace bind:this={placeRef} puzzle={clothes[run.board]} {stage} {onSolved} />
+		{:else if place === 'seesaw'}
+			<SeesawPlace bind:this={placeRef} puzzle={seesaw[run.board]} {onSolved} />
 		{/if}
 	{/key}
 
