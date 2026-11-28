@@ -123,6 +123,60 @@ export const STORIES: Partial<Record<PlaceId, Panel[][]>> = {
 			panel('가장 예쁜 꽃밭을 보여 주자.', dad('smiling', 260), bear('cheering', 470)),
 			panel('빈칸이 많아도 다 채울 수 있을까?', jiho('thinking', 300), cat('curious', 480))
 		]
+	],
+	clothes: [
+		[
+			panel('감돌이 옷가게에 어서 오세요!', bear('waving', 300), jiho('happy', 480)),
+			panel('셔츠랑 바지가 있네! 입혀서 찍어 볼래.', jiho('pointing', 320), bear('cheering', 500)),
+			panel('몇 가지로 입을 수 있을까?', bear('thinking', 300), jiho('thinking', 480))
+		],
+		[
+			panel('새 옷이 잔뜩 들어왔어요!', bear('cheering', 300), jiho('surprised', 480)),
+			panel('옷이 많으면 빠뜨리기 쉬워.', dad('explaining', 260), jiho('thinking', 470)),
+			panel('이번에는 몇 가지가 나올까?', jiho('thinking', 300), bear('thinking', 500))
+		],
+		[
+			panel('이번엔 모자도 있어요!', bear('waving', 300), cat('curious', 480)),
+			panel('모자까지 쓰면 더 많아지겠다!', jiho('surprised', 300), cat('jumping', 480)),
+			panel('모자까지 몇 가지로 입을 수 있을까?', dad('thinking', 260), jiho('thinking', 470))
+		],
+		[
+			panel('어? 사진첩에 빈칸이 없어요.', jiho('surprised', 300), bear('surprised', 500)),
+			panel('몇 장인지는 지호가 알아내야 해.', bear('thinking', 300), jiho('thinking', 480)),
+			panel('다 찾았는지 어떻게 알 수 있을까?', dad('thinking', 260), jiho('thinking', 470))
+		],
+		[
+			panel('오늘은 옷가게 패션쇼 날이에요!', bear('cheering', 300), jiho('cheering', 480)),
+			panel('옷차림을 하나도 빠짐없이 보여 주자.', dad('smiling', 260), cat('happy', 470)),
+			panel('모든 옷차림을 다 찍을 수 있을까?', jiho('thinking', 300), bear('thinking', 500))
+		]
+	],
+	seesaw: [
+		[
+			panel('사랑이가 장난감 친구들을 데려왔어!', jiho('happy', 300), cat('jumping', 480)),
+			panel('크기는 같은데 무게는 다 달라.', dad('explaining', 260), jiho('thinking', 470)),
+			panel('시소에 태워 보면 누가 제일 무거울까?', jiho('thinking', 300), cat('curious', 480))
+		],
+		[
+			panel('내 장난감 친구도 같이 탈래!', bear('waving', 300), cat('happy', 480)),
+			panel('친구가 넷으로 늘었네!', jiho('pointing', 320), bear('cheering', 500)),
+			panel('적게 재고 가장 무거운 친구를 찾을까?', dad('thinking', 260), jiho('thinking', 470))
+		],
+		[
+			panel('이번엔 무거운 순서대로 세워 보자.', dad('smiling', 260), jiho('happy', 470)),
+			panel('1등, 2등, 3등을 다 알아야 해요?', jiho('thinking', 300), cat('curious', 480)),
+			panel('어떤 둘부터 재 볼까?', dad('thinking', 260), jiho('thinking', 470))
+		],
+		[
+			panel('야옹! 넷 다 줄 세워 줘!', cat('jumping', 300), bear('cheering', 480)),
+			panel('잰 것을 잘 기억하면 할 수 있어.', dad('explaining', 260), jiho('thinking', 470)),
+			panel('다섯 번 안에 순서를 알 수 있을까?', jiho('thinking', 300), cat('curious', 480))
+		],
+		[
+			panel('시소 대회가 열렸어요!', bear('cheering', 300), jiho('cheering', 480)),
+			panel('친구가 다섯이 될 때도 있대.', dad('thumbsup', 260), cat('happy', 470)),
+			panel('이번에도 적게 재고 맞힐 수 있을까?', jiho('thinking', 300), bear('thinking', 500))
+		]
 	]
 };
 

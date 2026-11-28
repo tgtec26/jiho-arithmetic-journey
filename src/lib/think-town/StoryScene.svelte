@@ -4,6 +4,8 @@
 	import Box3D from './diorama/Box3D.svelte';
 	import Doll from './diorama/Doll.svelte';
 	import FlowerArt from './art/FlowerArt.svelte';
+	import OutfitArt from './art/OutfitArt.svelte';
+	import ToyArt from './art/ToyArt.svelte';
 	import { projectOnStage, type BoardInfo } from './diorama/context';
 	import type { Panel } from './data/stories';
 	import type { PlaceId } from './rules/progress';
@@ -11,7 +13,19 @@
 	let { place, panel, index, onnext }: { place: PlaceId; panel: Panel; index: number; onnext: () => void } = $props();
 
 	const CAM: BoardInfo = { width: 760, depth: 300, cx: 640, cy: 540, tilt: 56, turn: -8, zoom: 1.1 };
-	const GROUND: Partial<Record<PlaceId, string>> = { parking: '#8a919b', blocks: '#e6cc9a', garden: '#a9d68a' };
+	const GROUND: Partial<Record<PlaceId, string>> = {
+		parking: '#8a919b',
+		blocks: '#e6cc9a',
+		garden: '#a9d68a',
+		clothes: '#f4dbe5',
+		seesaw: '#ecdcae'
+	};
+	const MANNEQUINS: [number, number, string, string, string | null][] = [
+		[70, 110, 'red', 'navy', null],
+		[140, 200, 'yellow', 'brown', 'teal'],
+		[630, 110, 'blue', 'gray', 'orange'],
+		[700, 200, 'green', 'pink', null]
+	];
 	const speaker = $derived(panel.cast.find((c) => c.sticker === panel.speaker)!);
 	const bubble = $derived.by(() => {
 		const feet = projectOnStage(CAM, speaker.x, speaker.y);
@@ -37,6 +51,20 @@
 		<div class="bed" style="left:590px;top:40px;width:150px;height:200px"></div>
 		{#each [[70, 90, '●'], [130, 120, '▲'], [80, 190, '■'], [140, 220, '★'], [630, 90, '★'], [700, 130, '●'], [640, 200, '▲'], [700, 225, '■']] as [fx, fy, f]}
 			<Doll x={+fx} y={+fy} height={70}><FlowerArt shape={String(f)} /></Doll>
+		{/each}
+	{:else if place === 'clothes'}
+		<div class="rug" style="left:20px;top:30px;width:170px;height:230px"></div>
+		<div class="rug" style="left:580px;top:30px;width:170px;height:230px"></div>
+		{#each MANNEQUINS as [mx, my, sh, pa, ha]}
+			<Doll x={mx} y={my} height={150}><OutfitArt shirt={sh} pants={pa} hat={ha} /></Doll>
+		{/each}
+	{:else if place === 'seesaw'}
+		<Box3D x={92} y={110} w={16} d={22} h={26} color="#9b7b5b" />
+		<Box3D x={20} y={114} w={160} d={14} h={7} z={26} color="#e0473a" radius={4} />
+		<Doll x={36} y={121} z={33} height={62}><ToyArt kind="rabbit" /></Doll>
+		<Doll x={164} y={121} z={33} height={62}><ToyArt kind="pig" /></Doll>
+		{#each [[620, 120, 'duck'], [690, 150, 'frog'], [650, 220, 'penguin']] as [tx, ty, k]}
+			<Doll x={+tx} y={+ty} height={66}><ToyArt kind={String(k)} /></Doll>
 		{/each}
 	{:else}
 		<div class="rail"></div>
@@ -69,6 +97,12 @@
 		inset: 0;
 		border-radius: 14px;
 		background: repeating-linear-gradient(90deg, rgba(120, 80, 30, 0.12) 0 2px, transparent 2px 64px);
+	}
+	.rug {
+		position: absolute;
+		border-radius: 22px;
+		background: #fff3f7;
+		box-shadow: inset 0 0 0 6px #f0b8cc;
 	}
 	.bed {
 		position: absolute;
