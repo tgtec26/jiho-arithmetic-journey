@@ -1,11 +1,12 @@
 // 생각 마을(태블릿) 퍼즐을 미리 만들어 앱에 넣는다: node worksheets/tools/make-town-puzzles.js
-// 주차장·줄 세우기, 단계 1~4는 12개씩, 단계 5(끝낸 뒤 계속하기 포함)는 40개. 단계 s = 학습지 라운드 s 범위.
+// 주차장·줄 세우기·블록·정원, 단계 1~4는 12개씩, 단계 5(끝낸 뒤 계속하기 포함)는 40개. 단계 s = 학습지 라운드 s 범위.
 // 학습지에 나온 판과 앞서 만든 판은 피한다. seed 고정이라 같은 입력이면 같은 결과.
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { makeRng } from '../lib/think/common.js';
 import { PARKING_RANGES, generateParking } from '../lib/think/parking.js';
-import { generateLineup } from '../lib/think/logic.js';
+import { generateLineup, generateSudoku } from '../lib/think/logic.js';
+import { frontView, generateBlocks, parseHeights, sideView, topView, viewAnswers } from '../lib/think/blocks.js';
 import { LINEUP_CAST_BY_STAGE } from '../../src/lib/think-town/data/cast.ts';
 
 const ROOT = new URL('../..', import.meta.url).pathname;
@@ -18,6 +19,8 @@ const episodes = readdirSync(THINK)
 	.map((f) => JSON.parse(readFileSync(join(THINK, f), 'utf8')));
 const usedBoards = new Set(episodes.filter((e) => e.activity === 'parking').flatMap((e) => e.puzzles.map((p) => p.board.join('/'))));
 const usedClues = new Set(episodes.flatMap((e) => e.puzzles.filter((p) => p.kind === 'lineup').map((p) => JSON.stringify(p.clues))));
+const usedHeights = new Set(episodes.filter((e) => e.activity === 'blocks').flatMap((e) => e.puzzles.map((p) => p.heights.join('/'))));
+const usedGrids = new Set(episodes.flatMap((e) => e.puzzles.filter((p) => p.kind === 'sudoku').map((p) => p.grid.join('/'))));
 
 const parking = COUNTS.map((n, i) => {
 	const stage = i + 1;
@@ -46,5 +49,30 @@ const lineup = COUNTS.map((n, i) => {
 	return out;
 });
 
-writeFileSync(OUT, JSON.stringify({ parking, lineup }) + '\n');
-console.log(`parking ${parking.flat().length}, lineup ${lineup.flat().length} → ${OUT}`);
+// 블록: 단계 1·2는 층수 설계도(답 하나), 단계 3~5는 세 모양 설계도라 "가장 적게"가 뜻있게 답이 둘 이상인 것만
+const blocks = COUNTS.map((n, i) => {
+	const stage = i + 1;
+	const rng = makeRng(20262127 + stage);
+	const out = [];
+	while (out.length < n) {
+		const { heights } = generateBlocks(rng, stage, usedHeights);
+		usedHeights.add(heights.join('/'));
+		const h = parseHeights(heights);
+		if (stage >= 3 && viewAnswers(topView(h), frontView(h), sideView(h)).length < 2) continue;
+		out.push({ heights });
+	}
+	return out;
+});
+
+const garden = COUNTS.map((n, i) => {
+	const stage = i + 1;
+	const rng = makeRng(20263127 + stage);
+	return Array.from({ length: n }, () => {
+		const { grid } = generateSudoku(rng, stage, usedGrids);
+		usedGrids.add(grid.join('/'));
+		return { grid };
+	});
+});
+
+writeFileSync(OUT, JSON.stringify({ parking, lineup, blocks, garden }) + '\n');
+console.log(`parking ${parking.flat().length}, lineup ${lineup.flat().length}, blocks ${blocks.flat().length}, garden ${garden.flat().length} → ${OUT}`);
