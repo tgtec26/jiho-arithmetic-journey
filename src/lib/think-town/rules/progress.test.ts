@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { emptySave, loadSave, currentStage, takePuzzles, withCursor, clearStage, addStars, stampCount } from './progress';
+import { emptySave, loadSave, currentStage, takePuzzles, withCursor, clearStage, addStars, stampCount, aliveLevel, newlyAlive } from './progress';
 
 describe('progress', () => {
 	it('깨진 저장값이면 빈 진행', () => {
@@ -43,5 +43,13 @@ describe('progress', () => {
 		clearStage(s, 'parking');
 		withCursor(s, 'parking', 1, 2);
 		expect(s).toEqual(emptySave());
+	});
+	it('살아나는 수준: 1단계·5단계에서만 오름', () => {
+		expect([0, 1, 2, 4, 5].map(aliveLevel)).toEqual([0, 1, 1, 1, 2]);
+		expect(newlyAlive(0, 1)).toBe(1);
+		expect(newlyAlive(4, 5)).toBe(2);
+		expect(newlyAlive(1, 2)).toBe(0);
+		expect(newlyAlive(5, 5)).toBe(0);
+		expect(newlyAlive(2, 2)).toBe(0);
 	});
 });

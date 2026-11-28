@@ -7,9 +7,31 @@
 	import PlaceRun from './PlaceRun.svelte';
 	import { townStore } from './progress.svelte';
 	import { sound } from './sound.svelte';
-	import { PLACE_IDS, STAGES, stampCount, type PlaceId } from './rules/progress';
+	import { PLACE_IDS, STAGES, newlyAlive, stampCount, type PlaceId } from './rules/progress';
 
 	let view = $state<'map' | PlaceId>('map');
+	// 장소를 끝내고 돌아왔을 때 살아나는 수준이 올랐으면 지도에서 축하
+	let celebrate = $state<{ id: PlaceId; level: 1 | 2 } | null>(null);
+	let enteredCleared = 0;
+	let cheerTimer: ReturnType<typeof setTimeout> | undefined;
+
+	function enter(id: PlaceId) {
+		enteredCleared = townStore.save.places[id].cleared;
+		celebrate = null;
+		view = id;
+	}
+
+	function exit() {
+		if (view === 'map') return;
+		const id = view;
+		const level = newlyAlive(enteredCleared, townStore.save.places[id].cleared);
+		if (level) {
+			celebrate = { id, level };
+			clearTimeout(cheerTimer);
+			cheerTimer = setTimeout(() => (celebrate = null), 4000);
+		}
+		view = 'map';
+	}
 	let unlocked = false;
 	let alive = true;
 
@@ -25,21 +47,22 @@
 	onDestroy(() => {
 		alive = false;
 		sound.stopBgm();
+		clearTimeout(cheerTimer);
 	});
 </script>
 
 <Stage>
 	<div class="town" onpointerdowncapture={firstTouch} role="presentation">
 		{#if view === 'map'}
-			<TownMap onEnter={(id) => (view = id)} />
+			<TownMap onEnter={enter} {celebrate} />
 		{:else}
 			{#key view}
-				<PlaceRun place={view} onExit={() => (view = 'map')} />
+				<PlaceRun place={view} onExit={exit} />
 			{/key}
 		{/if}
 
 		<div class="hud">
-			<button class="pill btn" onclick={() => (view === 'map' ? gameStore.setMode('menu') : (view = 'map'))}>
+			<button class="pill btn" onclick={() => (view === 'map' ? gameStore.setMode('menu') : exit())}>
 				← {view === 'map' ? '메뉴' : '마을'}
 			</button>
 			<span class="pill title">생각 마을</span>

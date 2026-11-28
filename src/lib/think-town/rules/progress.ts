@@ -68,3 +68,12 @@ export function clearStage(save: TownSave, place: PlaceId): TownSave {
 export const addStars = (save: TownSave, n: number): TownSave => ({ ...save, stars: save.stars + n });
 
 export const stampCount = (save: TownSave) => PLACE_IDS.reduce((sum, id) => sum + save.places[id].cleared, 0);
+
+/** 장소가 살아난 정도: 0 그대로, 1 기본 움직임(1단계 끝), 2 완성 모습 + 깃발(5단계 끝) */
+export const aliveLevel = (cleared: number): 0 | 1 | 2 => (cleared >= STAGES ? 2 : cleared >= 1 ? 1 : 0);
+
+/** 끝낸 단계 수가 before → after로 바뀌었을 때 새로 오른 수준, 오르지 않았으면 0 */
+export function newlyAlive(before: number, after: number): 0 | 1 | 2 {
+	const lv = aliveLevel(after);
+	return lv > aliveLevel(before) ? lv : 0;
+}

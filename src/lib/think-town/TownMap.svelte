@@ -3,13 +3,47 @@
 	import Board from './diorama/Board.svelte';
 	import Box3D from './diorama/Box3D.svelte';
 	import Doll from './diorama/Doll.svelte';
+	import TownLife from './TownLife.svelte';
+	import { onMount } from 'svelte';
+	import confetti from 'canvas-confetti';
 	import { projectOnStage, type BoardInfo } from './diorama/context';
-	import { PLACES, type Place } from './data/places';
+	import { PLACES, placeOf, type Place } from './data/places';
 	import { townStore } from './progress.svelte';
 	import { sound } from './sound.svelte';
-	import type { PlaceId } from './rules/progress';
+	import { PLACE_IDS, aliveLevel, type PlaceId } from './rules/progress';
 
-	let { onEnter }: { onEnter: (id: PlaceId) => void } = $props();
+	let { onEnter, celebrate = null }: { onEnter: (id: PlaceId) => void; celebrate?: { id: PlaceId; level: 1 | 2 } | null } = $props();
+
+	const levels = $derived(
+		Object.fromEntries(PLACE_IDS.map((id) => [id, aliveLevel(townStore.save.places[id].cleared)])) as Record<PlaceId, 0 | 1 | 2>
+	);
+	const labels: Partial<Record<PlaceId, HTMLElement>> = {};
+	// 받침이 있으면 '이', 없으면 '가'
+	const iga = (w: string) => ((w.charCodeAt(w.length - 1) - 0xac00) % 28 ? '이' : '가');
+	const cheer = $derived(
+		celebrate
+			? `${placeOf(celebrate.id).icon} ${placeOf(celebrate.id).name}${celebrate.level === 1 ? `${iga(placeOf(celebrate.id).name)} 살아났어요!` : ' 완성!'}`
+			: ''
+	);
+
+	// 장소를 끝내고 돌아왔을 때 새로 살아났으면: 소리 + 그 이름표 자리에서 폭죽
+	onMount(() => {
+		if (!celebrate) return;
+		const el = labels[celebrate.id];
+		const t = setTimeout(() => {
+			sound.play('success');
+			if (!el) return;
+			const r = el.getBoundingClientRect();
+			confetti({
+				particleCount: 120,
+				spread: 80,
+				startVelocity: 32,
+				origin: { x: (r.left + r.width / 2) / innerWidth, y: (r.top + r.height) / innerHeight },
+				zIndex: 200
+			});
+		}, 350);
+		return () => clearTimeout(t);
+	});
 
 	// 마을 판(460×340)을 키워서 무대 가운데보다 조금 아래에
 	const B: BoardInfo = { width: 460, depth: 340, cx: 660, cy: 430, tilt: 58, turn: -34, zoom: 1.55 };
@@ -73,7 +107,9 @@
 	<!-- 시소 놀이터 -->
 	<div class="flat" style="left:380px;top:230px;width:70px;height:80px;background:#e7d7a8"></div>
 	<Box3D x={410} y={250} w={10} d={10} h={12} color="#9b7b5b" />
-	<Box3D x={386} y={252} w={58} d={6} h={4} z={12} color="#d9534f" />
+	{#if levels.seesaw === 0}
+		<Box3D x={386} y={252} w={58} d={6} h={4} z={12} color="#d9534f" />
+	{/if}
 	<!-- 나무 -->
 	{#each [[200, 110], [440, 20], [140, 300], [440, 330], [10, 140]] as [tx, ty]}
 		<Box3D x={tx - 4} y={ty - 4} w={8} d={8} h={14} color="#8a6a48" />
@@ -87,6 +123,7 @@
 		<Box3D x={fx} y={fy} w={3} d={fd} h={9} color="#f2c230" cls="fence" />
 		<Box3D x={fx + fw} y={fy} w={3} d={fd + 3} h={9} color="#f2c230" cls="fence" />
 	{/each}
+	<TownLife {levels} {celebrate} />
 	<Doll x={160} y={170} sticker="gamdori-waving" height={46} />
 	<Doll x={330} y={200} sticker="sarang-happy" height={34} />
 </Board>
@@ -104,6 +141,8 @@
 		class:now={p.id === suggested}
 		class:shake={shaking === p.id}
 		class:below={p.spot.below}
+		class:cheer={celebrate?.id === p.id}
+		bind:this={labels[p.id]}
 		style="left:{pos.x}px;top:{pos.y}px"
 		onclick={() => tap(p)}
 	>
@@ -118,7 +157,65 @@
 	</button>
 {/each}
 
+{#if cheer}
+	<div class="banner">{cheer}</div>
+{/if}
+
 <style>
+	.banner {
+		position: absolute;
+		left: 50%;
+		top: 92px;
+		transform: translateX(-50%);
+		background: #fff;
+		color: #2b2b2b;
+		font-size: 34px;
+		font-weight: 900;
+		padding: 14px 36px;
+		border-radius: 999px;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+		white-space: nowrap;
+		pointer-events: none;
+		z-index: 40;
+		animation: banner 3.4s ease-in-out both;
+	}
+	@keyframes banner {
+		0% {
+			transform: translateX(-50%) translateY(-30px) scale(0.6);
+			opacity: 0;
+		}
+		12% {
+			transform: translateX(-50%) scale(1.08);
+			opacity: 1;
+		}
+		20%,
+		85% {
+			transform: translateX(-50%) scale(1);
+			opacity: 1;
+		}
+		100% {
+			transform: translateX(-50%) translateY(-20px);
+			opacity: 0;
+		}
+	}
+	.label.cheer {
+		animation: cheer 0.5s ease-in-out 4 alternate;
+	}
+	@keyframes cheer {
+		to {
+			transform: translate(-50%, -100%) scale(1.15);
+			box-shadow: 0 0 0 6px #ffd84d, 0 5px 12px rgba(0, 0, 0, 0.2);
+		}
+	}
+	.label.below.cheer {
+		animation-name: cheer-below;
+	}
+	@keyframes cheer-below {
+		to {
+			transform: translate(-50%, 0) scale(1.15);
+			box-shadow: 0 0 0 6px #ffd84d, 0 5px 12px rgba(0, 0, 0, 0.2);
+		}
+	}
 	.flat {
 		position: absolute;
 		border-radius: 6px;
