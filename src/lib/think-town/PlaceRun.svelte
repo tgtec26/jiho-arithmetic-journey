@@ -7,6 +7,7 @@
 	import TicketPlace from './places/TicketPlace.svelte';
 	import BlocksPlace from './places/BlocksPlace.svelte';
 	import GardenPlace from './places/GardenPlace.svelte';
+	import ClothesPlace from './places/ClothesPlace.svelte';
 	import StoryScene from './StoryScene.svelte';
 	import TalkCard from './TalkCard.svelte';
 	import Finale from './Finale.svelte';
@@ -15,6 +16,8 @@
 	import { sound } from './sound.svelte';
 	import { finish, giveTalkStar, nextBoard, nextPanel, solve, startRun, type Run } from './rules/run';
 	import type { PlaceId } from './rules/progress';
+	import { totalOutfits } from './rules/clothes-play';
+	import type { Outfits } from '$think/counting.js';
 
 	let { place, onExit }: { place: PlaceId; onExit: () => void } = $props();
 
@@ -38,7 +41,10 @@
 	const blanks = (p: { grid: string[] }) => [...p.grid.join('')].filter((ch) => ch === '.').length;
 	// svelte-ignore state_referenced_locally
 	const garden = place === 'garden' ? townStore.takeFor(place, P.garden).sort((a, b) => blanks(a) - blanks(b)) : [];
-	const boards = parking.length || lineup.length || blocks.length || garden.length;
+	// 옷가게는 조합 수가 적은 판부터
+	// svelte-ignore state_referenced_locally
+	const clothes = place === 'clothes' ? townStore.takeFor(place, P.clothes as Outfits[][]).sort((a, b) => totalOutfits(a) - totalOutfits(b)) : [];
+	const boards = parking.length || lineup.length || blocks.length || garden.length || clothes.length;
 	// svelte-ignore state_referenced_locally
 	const story = STORIES[place]![stage - 1];
 
@@ -94,6 +100,8 @@
 			<BlocksPlace bind:this={placeRef} puzzle={blocks[run.board]} {stage} {onSolved} />
 		{:else if place === 'garden'}
 			<GardenPlace bind:this={placeRef} puzzle={garden[run.board]} {onSolved} />
+		{:else if place === 'clothes'}
+			<ClothesPlace bind:this={placeRef} puzzle={clothes[run.board]} {stage} {onSolved} />
 		{/if}
 	{/key}
 
