@@ -3,6 +3,7 @@ import P from './puzzles.json';
 import { checkParkingPuzzle } from '$think/parking.js';
 import { lineupSolutions, sudokuSolutions, SUDOKU_BLANKS, type Lineup } from '$think/logic.js';
 import { BLOCK_RANGES, blockCount, frontView, parseHeights, sideView, topView, viewAnswers } from '$think/blocks.js';
+import { OUTFIT_SIZES, type Outfits } from '$think/counting.js';
 import { LINEUP_CAST_BY_STAGE } from './cast';
 
 const episodes = import.meta.glob('/worksheets/data/think/ep*.json', { eager: true, import: 'default' }) as Record<
@@ -59,6 +60,17 @@ describe('미리 만든 퍼즐', () => {
 				expect([...p.items].sort()).toEqual([...LINEUP_CAST_BY_STAGE[s]].sort());
 			})
 		);
+	});
+	it('옷가게: 단계마다 개수·크기, 앱 안에서 겹치지 않음', () => {
+		expect(P.clothes.map((s) => s.length)).toEqual([12, 12, 12, 12, 40]);
+		P.clothes.forEach((pool, s) =>
+			pool.forEach((p: Outfits) => {
+				const sizes = [p.shirt.length, p.pants.length, ...(p.hat ? [p.hat.length] : [])];
+				expect(OUTFIT_SIZES[s + 1]).toContainEqual(sizes);
+			})
+		);
+		const keys = P.clothes.flat().map((p) => JSON.stringify(p));
+		expect(new Set(keys).size).toBe(keys.length);
 	});
 	it('겹치는 퍼즐 없음 (앱 안, 학습지와)', () => {
 		expect(worksheetBoards.length).toBeGreaterThan(0);

@@ -69,3 +69,45 @@ export function checkCountingPuzzle(p, round) {
 	if (n < 2 || n > COUNT_LIMITS[round]) errors.push(`답 ${n}가지: 라운드 ${round}는 2~${COUNT_LIMITS[round]}가지`);
 	return errors;
 }
+
+// ── 태블릿 옷가게: 셔츠 × 바지 (× 모자) 옷 조합 ──
+
+/** 옷 색 (팔레트 순서) */
+export const OUTFIT_COLORS = {
+	shirt: ['red', 'blue', 'yellow', 'green'],
+	pants: ['navy', 'brown', 'gray', 'pink'],
+	hat: ['orange', 'purple', 'teal']
+};
+
+/** 단계별 [셔츠, 바지(, 모자)] 벌 수: 1 = 4~6가지, 2 = 8~9, 3 = 모자 8, 4 = 6~9(칸 숨김), 5 = 모자 8~12(칸 숨김) */
+export const OUTFIT_SIZES = {
+	1: [[2, 2], [2, 3], [3, 2]],
+	2: [[3, 3], [2, 4], [4, 2]],
+	3: [[2, 2, 2]],
+	4: [[2, 3], [3, 2], [3, 3]],
+	5: [[2, 2, 2], [3, 2, 2], [2, 3, 2]]
+};
+
+/** 셔츠 → 바지 → 모자 순으로 늘어놓은 모든 조합 */
+export function listOutfits(p) {
+	const lists = [p.shirt, p.pants, ...(p.hat ? [p.hat] : [])];
+	return lists.reduce((acc, list) => acc.flatMap((head) => list.map((x) => [...head, x])), [[]]);
+}
+
+/** 팔레트에서 k가지를 골라 팔레트 순서대로 */
+function pickColors(rng, palette, k) {
+	const order = palette.map((c) => [rng(), c]).sort((a, b) => a[0] - b[0]);
+	const chosen = new Set(order.slice(0, k).map(([, c]) => c));
+	return palette.filter((c) => chosen.has(c));
+}
+
+/** 단계에 맞는 옷 조합 퍼즐 하나 (used에 있는 것은 피함) */
+export function generateOutfit(rng, stage, used) {
+	const sizes = OUTFIT_SIZES[stage];
+	for (;;) {
+		const [s, p, h] = sizes[Math.floor(rng() * sizes.length)];
+		const out = { shirt: pickColors(rng, OUTFIT_COLORS.shirt, s), pants: pickColors(rng, OUTFIT_COLORS.pants, p) };
+		if (h) out.hat = pickColors(rng, OUTFIT_COLORS.hat, h);
+		if (!used.has(JSON.stringify(out))) return out;
+	}
+}

@@ -1,11 +1,12 @@
 // 생각 마을(태블릿) 퍼즐을 미리 만들어 앱에 넣는다: node worksheets/tools/make-town-puzzles.js
-// 주차장·줄 세우기·블록·정원, 단계 1~4는 12개씩, 단계 5(끝낸 뒤 계속하기 포함)는 40개. 단계 s = 학습지 라운드 s 범위.
+// 주차장·줄 세우기·블록·정원·옷가게, 단계 1~4는 12개씩, 단계 5(끝낸 뒤 계속하기 포함)는 40개. 단계 s = 학습지 라운드 s 범위.
 // 학습지에 나온 판과 앞서 만든 판은 피한다. seed 고정이라 같은 입력이면 같은 결과.
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { makeRng } from '../lib/think/common.js';
 import { PARKING_RANGES, generateParking } from '../lib/think/parking.js';
 import { generateLineup, generateSudoku } from '../lib/think/logic.js';
+import { generateOutfit } from '../lib/think/counting.js';
 import { frontView, generateBlocks, parseHeights, sideView, topView, viewAnswers } from '../lib/think/blocks.js';
 import { LINEUP_CAST_BY_STAGE } from '../../src/lib/think-town/data/cast.ts';
 
@@ -74,5 +75,19 @@ const garden = COUNTS.map((n, i) => {
 	});
 });
 
-writeFileSync(OUT, JSON.stringify({ parking, lineup, blocks, garden }) + '\n');
-console.log(`parking ${parking.flat().length}, lineup ${lineup.flat().length}, blocks ${blocks.flat().length}, garden ${garden.flat().length} → ${OUT}`);
+// 옷가게: 학습지 경우의 수와는 모양이 달라 겹칠 수 없으므로 앱 안에서만 겹치지 않게
+const usedOutfits = new Set();
+const clothes = COUNTS.map((n, i) => {
+	const stage = i + 1;
+	const rng = makeRng(20264127 + stage);
+	return Array.from({ length: n }, () => {
+		const p = generateOutfit(rng, stage, usedOutfits);
+		usedOutfits.add(JSON.stringify(p));
+		return p;
+	});
+});
+
+writeFileSync(OUT, JSON.stringify({ parking, lineup, blocks, garden, clothes }) + '\n');
+console.log(
+	`parking ${parking.flat().length}, lineup ${lineup.flat().length}, blocks ${blocks.flat().length}, garden ${garden.flat().length}, clothes ${clothes.flat().length} → ${OUT}`
+);

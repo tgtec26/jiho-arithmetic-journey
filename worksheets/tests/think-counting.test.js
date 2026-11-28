@@ -2,7 +2,8 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { ROOT } from '../lib/episodes.js';
-import { checkCountingPuzzle, countingAnswer, listCases, slotsFor } from '../lib/think/counting.js';
+import { OUTFIT_COLORS, OUTFIT_SIZES, checkCountingPuzzle, countingAnswer, generateOutfit, listCases, listOutfits, slotsFor } from '../lib/think/counting.js';
+import { makeRng } from '../lib/think/common.js';
 import { countingAnswerText, renderCountingProblem } from '../lib/think/render-counting.js';
 
 const c = (name) => ({ name });
@@ -103,5 +104,35 @@ describe('counting drawing', () => {
 	it('writes the total, with the list when it is short', () => {
 		expect(countingAnswerText(shirts)).toBe('6가지 (빨-검, 빨-흰, 파-검, 파-흰, 노-검, 노-흰)');
 		expect(countingAnswerText({ kind: 'paths', text: 't', w: 3, h: 2 })).toBe('10가지');
+	});
+});
+
+describe('옷 조합 (태블릿 옷가게)', () => {
+	it('셔츠 × 바지 (× 모자) 모든 조합을 차례대로', () => {
+		expect(listOutfits({ shirt: ['red', 'blue'], pants: ['navy', 'gray', 'pink'] })).toHaveLength(6);
+		const three = listOutfits({ shirt: ['red', 'blue'], pants: ['navy', 'gray'], hat: ['orange', 'teal'] });
+		expect(three).toHaveLength(8);
+		expect(three.slice(0, 2)).toEqual([
+			['red', 'navy', 'orange'],
+			['red', 'navy', 'teal']
+		]);
+	});
+	it('단계 크기·팔레트 색·겹치지 않음', () => {
+		for (let stage = 1; stage <= 5; stage++) {
+			const rng = makeRng(stage);
+			const used = new Set();
+			for (let k = 0; k < 12; k++) {
+				const p = generateOutfit(rng, stage, used);
+				used.add(JSON.stringify(p));
+				const sizes = [p.shirt.length, p.pants.length, ...(p.hat ? [p.hat.length] : [])];
+				expect(OUTFIT_SIZES[stage]).toContainEqual(sizes);
+				for (const part of ['shirt', 'pants', 'hat']) {
+					const list = p[part] ?? [];
+					list.forEach((c) => expect(OUTFIT_COLORS[part]).toContain(c));
+					expect(list).toEqual(OUTFIT_COLORS[part].filter((c) => list.includes(c)));
+				}
+			}
+			expect(used.size).toBe(12);
+		}
 	});
 });
