@@ -78,13 +78,14 @@
 		if (solved) return;
 		const k = ++hintTok;
 		const h = blockHint(build, bp);
-		if (!h) {
-			glowCheck = true;
-			setTimeout(() => k === hintTok && (glowCheck = false), 1600);
-			return;
-		}
+		// 칸 반짝임과 확인 버튼 반짝임은 같은 타이머로 함께 끈다(힌트를 빨리 두 번 눌러도 남지 않게)
 		hinted = h;
-		setTimeout(() => k === hintTok && (hinted = null), 1600);
+		glowCheck = !h;
+		setTimeout(() => {
+			if (k !== hintTok) return;
+			hinted = null;
+			glowCheck = false;
+		}, 1600);
 	}
 </script>
 
