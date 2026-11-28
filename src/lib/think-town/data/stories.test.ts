@@ -3,8 +3,8 @@ import { STORIES, TALK } from './stories';
 import { PLACE_IDS } from '../rules/progress';
 
 describe('이야기', () => {
-	it('주차장·매표소는 단계 5개 × 3컷', () => {
-		for (const place of ['parking', 'ticket'] as const) {
+	it('만든 장소는 단계 5개 × 3컷', () => {
+		for (const place of ['parking', 'ticket', 'blocks', 'garden'] as const) {
 			expect(STORIES[place]).toHaveLength(5);
 			for (const story of STORIES[place]!) expect(story).toHaveLength(3);
 		}

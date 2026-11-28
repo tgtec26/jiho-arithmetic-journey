@@ -3,6 +3,7 @@
 	import Board from './diorama/Board.svelte';
 	import Box3D from './diorama/Box3D.svelte';
 	import Doll from './diorama/Doll.svelte';
+	import FlowerArt from './art/FlowerArt.svelte';
 	import { projectOnStage, type BoardInfo } from './diorama/context';
 	import type { Panel } from './data/stories';
 	import type { PlaceId } from './rules/progress';
@@ -10,6 +11,7 @@
 	let { place, panel, index, onnext }: { place: PlaceId; panel: Panel; index: number; onnext: () => void } = $props();
 
 	const CAM: BoardInfo = { width: 760, depth: 300, cx: 640, cy: 540, tilt: 56, turn: -8, zoom: 1.1 };
+	const GROUND: Partial<Record<PlaceId, string>> = { parking: '#8a919b', blocks: '#e6cc9a', garden: '#a9d68a' };
 	const speaker = $derived(panel.cast.find((c) => c.sticker === panel.speaker)!);
 	const bubble = $derived.by(() => {
 		const feet = projectOnStage(CAM, speaker.x, speaker.y);
@@ -17,12 +19,25 @@
 	});
 </script>
 
-<Board width={CAM.width} depth={CAM.depth} cx={CAM.cx} cy={CAM.cy} tilt={CAM.tilt} turn={CAM.turn} zoom={CAM.zoom} ground={place === 'parking' ? '#8a919b' : '#d9cdb4'} rim="#c9a77a">
+<Board width={CAM.width} depth={CAM.depth} cx={CAM.cx} cy={CAM.cy} tilt={CAM.tilt} turn={CAM.turn} zoom={CAM.zoom} ground={GROUND[place] ?? '#d9cdb4'} rim="#c9a77a">
 	{#if place === 'parking'}
 		<div class="lines"></div>
 		<Box3D x={40} y={30} w={130} d={52} h={34} color="#4d96ff" radius={8} />
 		<Box3D x={580} y={24} w={52} d={130} h={34} color="#ffb020" radius={8} />
 		<Box3D x={60} y={200} w={130} d={52} h={34} color="#e0473a" radius={8} />
+	{:else if place === 'blocks'}
+		<div class="planks"></div>
+		{#each [[40, 40, 3], [86, 40, 2], [40, 86, 1], [640, 40, 2], [686, 40, 1], [686, 86, 3]] as [bx, by, n]}
+			{#each Array(n) as _, k}
+				<Box3D x={bx} y={by} z={k * 46} w={46} d={46} h={46} color={k % 2 ? '#f2b84b' : '#e8945a'} />
+			{/each}
+		{/each}
+	{:else if place === 'garden'}
+		<div class="bed" style="left:30px;top:40px;width:150px;height:200px"></div>
+		<div class="bed" style="left:590px;top:40px;width:150px;height:200px"></div>
+		{#each [[70, 90, '●'], [130, 120, '▲'], [80, 190, '■'], [140, 220, '★'], [630, 90, '★'], [700, 130, '●'], [640, 200, '▲'], [700, 225, '■']] as [fx, fy, f]}
+			<Doll x={+fx} y={+fy} height={70}><FlowerArt shape={String(f)} /></Doll>
+		{/each}
 	{:else}
 		<div class="rail"></div>
 		<Doll x={90} y={150} sticker="prop-ticket-booth" height={210} />
@@ -48,6 +63,18 @@
 		inset: 0;
 		border-radius: 14px;
 		background: linear-gradient(90deg, rgba(255, 255, 255, 0.35) 3px, transparent 3px) 0 0 / 95px 100%;
+	}
+	.planks {
+		position: absolute;
+		inset: 0;
+		border-radius: 14px;
+		background: repeating-linear-gradient(90deg, rgba(120, 80, 30, 0.12) 0 2px, transparent 2px 64px);
+	}
+	.bed {
+		position: absolute;
+		border-radius: 18px;
+		background: #8b5e3c;
+		box-shadow: inset 0 0 0 6px #6e4a2f;
 	}
 	.rail {
 		position: absolute;

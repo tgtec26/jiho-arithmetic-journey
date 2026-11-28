@@ -13,6 +13,7 @@
 		zoom = 1,
 		ground = '#a9d68a',
 		rim = '#c9a77a',
+		cls = '',
 		children
 	}: {
 		width: number;
@@ -24,6 +25,7 @@
 		zoom?: number;
 		ground?: string;
 		rim?: string;
+		cls?: string;
 		children?: Snippet;
 	} = $props();
 
@@ -40,7 +42,7 @@
 
 <div class="anchor" style="left:{cx}px;top:{cy}px">
 	<div
-		class="board"
+		class="board {cls}"
 		style="left:{-width / 2}px;top:{-depth / 2}px;width:{width}px;height:{depth}px;transform:scale3d({zoom},{zoom},{zoom}) rotateX({tilt}deg) rotateZ({turn}deg)"
 	>
 		<div class="ground" style="background:{ground};box-shadow:0 0 0 12px {rim},0 0 0 14px #8f6d45,0 18px 30px 10px rgba(0,0,0,.18)"></div>

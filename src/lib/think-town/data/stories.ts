@@ -69,6 +69,60 @@ export const STORIES: Partial<Record<PlaceId, Panel[][]>> = {
 			panel('피아노 선생님이다! 같이 서요.', jiho('cheering', 320), guest('piano-teacher', 500)),
 			panel('다섯 명이 어떻게 줄을 설까?', dad('explaining', 300), jiho('thinking', 480))
 		]
+	],
+	blocks: [
+		[
+			panel('블록 공방에 왔어! 탑을 쌓아 볼까?', dad('smiling', 260), jiho('happy', 470)),
+			panel('설계도에 숫자가 적혀 있어요.', jiho('pointing', 300), dad('explaining', 500)),
+			panel('숫자만큼 쌓으면 될까?', dad('thinking', 260), jiho('thinking', 470))
+		],
+		[
+			panel('나도 탑 쌓을래!', bear('cheering', 300), jiho('happy', 480)),
+			panel('감돌이 설계도에도 숫자가 있네.', jiho('reading', 320), bear('waving', 500)),
+			panel('칸마다 몇 층인지 볼까?', bear('thinking', 300), jiho('thinking', 480))
+		],
+		[
+			panel('어? 이번 설계도는 숫자가 없어요.', jiho('surprised', 300), dad('smiling', 500)),
+			panel('위, 앞, 옆에서 본 모양이 있지.', dad('explaining', 260), jiho('thinking', 470)),
+			panel('세 모양을 다 맞추려면 어떻게 쌓을까?', jiho('thinking', 300), dad('thinking', 500))
+		],
+		[
+			panel('블록이 조금밖에 없어요.', jiho('surprised', 300), bear('surprised', 500)),
+			panel('그럼 아껴서 쌓아야겠다!', bear('thinking', 300), jiho('pointing', 480)),
+			panel('가장 적은 블록으로 만들 수 있을까?', dad('thinking', 260), jiho('thinking', 470))
+		],
+		[
+			panel('마을 축제에 쓸 탑을 만들어요!', jiho('cheering', 300), dad('thumbsup', 500)),
+			panel('앞에서도 옆에서도 멋져야 해.', dad('explaining', 260), jiho('happy', 470)),
+			panel('돌려 보면서 확인해 볼까?', jiho('thinking', 300), bear('thinking', 500))
+		]
+	],
+	garden: [
+		[
+			panel('사랑이가 꽃밭을 만들고 싶대요.', jiho('happy', 300), cat('jumping', 480)),
+			panel('꽃은 네 가지야. 줄마다 하나씩!', dad('explaining', 260), jiho('thinking', 470)),
+			panel('빈칸에는 어떤 꽃이 들어갈까?', jiho('thinking', 300), cat('curious', 480))
+		],
+		[
+			panel('네모 칸 안에서도 꽃이 다 달라야 해.', dad('explaining', 260), jiho('surprised', 470)),
+			panel('가로줄, 세로줄, 네모 칸 모두요?', jiho('thinking', 300), cat('curious', 480)),
+			panel('겹치지 않게 심어 볼까?', cat('happy', 300), jiho('happy', 480))
+		],
+		[
+			panel('나비가 놀러 왔어요!', jiho('pointing', 300), cat('jumping', 480)),
+			panel('꽃이 더 많이 피면 좋겠다.', bear('waving', 300), cat('happy', 480)),
+			panel('빈칸이 늘었어. 어디부터 심을까?', dad('thinking', 260), jiho('thinking', 470))
+		],
+		[
+			panel('비가 와서 꽃이 몇 개 쓰러졌어.', dad('surprised', 260), cat('sleepy', 470)),
+			panel('다시 심어 주자, 사랑아!', jiho('cheering', 300), cat('curious', 480)),
+			panel('어떤 꽃이 빠졌는지 알 수 있을까?', jiho('thinking', 300), dad('thinking', 500))
+		],
+		[
+			panel('정원 잔치에 친구들을 불렀어요!', jiho('cheering', 300), cat('jumping', 480)),
+			panel('가장 예쁜 꽃밭을 보여 주자.', dad('smiling', 260), bear('cheering', 470)),
+			panel('빈칸이 많아도 다 채울 수 있을까?', jiho('thinking', 300), cat('curious', 480))
+		]
 	]
 };
 
