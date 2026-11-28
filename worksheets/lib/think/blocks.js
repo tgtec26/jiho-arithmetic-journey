@@ -148,3 +148,33 @@ export function generateBlocks(rng, round, avoid = new Set()) {
 	}
 	throw new Error(`쌓기나무 퍼즐을 만들지 못함 (라운드 ${round})`);
 }
+
+/**
+ * 위·앞·옆 모양이 모두 같은 높이 지도 전부 (생각 마을 블록 공방: 답이 여럿일 수 있다)
+ * @param {boolean[][]} top 위에서 본 모양
+ * @param {number[]} front 앞에서 본 모양
+ * @param {number[]} side 오른쪽 옆에서 본 모양 (앞 줄→뒤 줄)
+ * @returns {number[][][]}
+ */
+export function viewAnswers(top, front, side, maxH = 3) {
+	const R = top.length;
+	const C = top[0].length;
+	const h = top.map((row) => row.map(() => 0));
+	const out = [];
+	const walk = (i) => {
+		if (i === R * C) {
+			if (frontView(h).every((v, c) => v === front[c]) && sideView(h).every((v, k) => v === side[k])) out.push(h.map((row) => [...row]));
+			return;
+		}
+		const r = Math.floor(i / C);
+		const c = i % C;
+		if (!top[r][c]) return walk(i + 1);
+		for (let v = 1; v <= Math.min(front[c], side[R - 1 - r], maxH); v++) {
+			h[r][c] = v;
+			walk(i + 1);
+		}
+		h[r][c] = 0;
+	};
+	walk(0);
+	return out;
+}

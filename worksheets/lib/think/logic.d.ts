@@ -4,3 +4,6 @@ export type Lineup = { kind: 'lineup'; items: string[]; clues: Clue[] };
 export function clueText(c: Clue): string;
 export function fits(order: string[], c: Clue): boolean;
 export function lineupSolutions(p: Lineup): string[][];
+export const SHAPES: string[];
+export const SUDOKU_BLANKS: Record<number, [number, number]>;
+export function sudokuSolutions(grid: string[], limit?: number): string[][];

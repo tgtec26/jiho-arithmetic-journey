@@ -8,7 +8,8 @@ import {
 	hiddenTops,
 	parseHeights,
 	sideView,
-	topView
+	topView,
+	viewAnswers
 } from '../lib/think/blocks.js';
 import { blocksAnswer, renderBlocksProblem, renderIsoBlocks } from '../lib/think/render-blocks.js';
 
@@ -83,5 +84,20 @@ describe('blocks drawing', () => {
 		const a = blocksAnswer({ heights: ['21', '10'], ask: ['count', 'front'] });
 		expect(a).toContain('4개');
 		expect(count(a, 'class="on"')).toBe(3); // 앞에서 본 모양: 2 + 1칸
+	});
+});
+
+describe('viewAnswers', () => {
+	it('세 모양에 맞는 탑을 모두 찾는다', () => {
+		// 위: 2×2 모두, 앞 [2,1], 옆(앞 줄→뒤 줄) [2,1]
+		const all = viewAnswers([[true, true], [true, true]], [2, 1], [2, 1]);
+		expect(all).toEqual([[[1, 1], [2, 1]]]); // 뒤 줄 [1,1], 앞 줄 [2,1]
+		// 앞 [2,2], 옆 [2,2] → 대각선 두 칸만 2여도 됨: 답 여럿
+		expect(viewAnswers([[true, true], [true, true]], [2, 2], [2, 2]).length).toBeGreaterThan(1);
+	});
+	it('정답 높이 지도는 늘 답 안에 있다', () => {
+		const t = parseHeights(['120', '311']);
+		const all = viewAnswers(topView(t), frontView(t), sideView(t));
+		expect(all.map((a) => a.join('/'))).toContain(t.join('/'));
 	});
 });
