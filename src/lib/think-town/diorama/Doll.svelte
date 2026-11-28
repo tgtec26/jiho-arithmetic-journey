@@ -48,6 +48,7 @@
 		position: absolute;
 		border-radius: 50%;
 		background: radial-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0) 70%);
+		pointer-events: none;
 	}
 	.doll {
 		position: absolute;
