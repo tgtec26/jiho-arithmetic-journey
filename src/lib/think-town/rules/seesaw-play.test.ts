@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { SEESAW_STAGES } from '$think/seesaw.js';
-import { checkPodium, podiumSlots, seesawHint, startSeesaw, weigh } from './seesaw-play';
+import { SEESAW_STAGES, keep, orders } from '$think/seesaw.js';
+import { checkPodium, podiumSlots, seesawHint, startSeesaw, weigh, type Seesaw } from './seesaw-play';
 import { SEESAW_POOLS, TOYS } from '../data/seesaw';
 import { BOARDS_PER_STAGE } from './progress';
 
@@ -22,17 +22,20 @@ describe('시소 놀이터', () => {
 		expect(r2.s).toBe(r1.s);
 	});
 	it('이미 알 수 있는 쌍도 재면 횟수가 늘고 결과는 앞뒤가 맞음', () => {
-		let s = startSeesaw(3, 'order', [2, 1, 0]);
-		s = weigh(s, 0, 1).s;
-		s = weigh(s, 1, 2).s;
-		const [first, second] = s.results;
-		if (first.light === second.heavy) {
-			// a>b, b>c 이면 a>c 로만 나와야 한다
-			const r = weigh(s, first.heavy, second.light);
-			expect(r.heavy).toBe(first.heavy);
-			expect(r.s.results).toHaveLength(3);
-		}
-		expect(s.list.length).toBeGreaterThan(0);
+		// 0>1, 1>2 를 잰 상태 (bias는 반대로 2>1>0)
+		const s: Seesaw = {
+			...startSeesaw(3, 'order', [2, 1, 0]),
+			list: keep(keep(orders(3), 0, 1), 1, 2),
+			results: [
+				{ heavy: 0, light: 1 },
+				{ heavy: 1, light: 2 }
+			]
+		};
+		const r = weigh(s, 2, 0);
+		expect(r.repeat).toBe(false);
+		expect(r.heavy).toBe(0);
+		expect(r.s.results).toHaveLength(3);
+		expect(r.s.list).toEqual([[0, 1, 2]]);
 	});
 	it('시상대: 확정 전 unsure, 확정 뒤 맞으면 right·틀리면 wrong', () => {
 		let s = startSeesaw(3, 'top', [0, 1, 2]);

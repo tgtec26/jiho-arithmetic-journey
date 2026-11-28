@@ -146,6 +146,8 @@
 	export function hint() {
 		if (solved) return;
 		const p = seesawHint(s);
+		// 더 재야 하면 재기 모드로 바꿔 둔다(반짝이는 인형을 눌렀을 때 시상대로 가지 않게)
+		if (p) setMode('weigh');
 		glowToys = p ?? [];
 		glowPodium = !p;
 		later('hint', 1600, () => {
